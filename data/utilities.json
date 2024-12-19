@@ -1,12 +1,27 @@
 {
     "maintenance_mode": false,
     "palette_format": [
-        ["auxiliary-c", "accent-c"] 
+        [
+            "auxiliary-c",
+            "accent-c"
+        ]
     ],
     "palettes": [
-        ["508AA8", "F0F3BD"],
-        ["581845", "FF5733"],
-        ["E06D06", "FFC53A"],
-        ["3C5C66", "76C8D5"]
+        [
+            "508AA8",
+            "F0F3BD"
+        ],
+        [
+            "581845",
+            "FF5733"
+        ],
+        [
+            "E06D06",
+            "FFC53A"
+        ],
+        [
+            "3C5C66",
+            "76C8D5"
+        ]
     ]
 }
