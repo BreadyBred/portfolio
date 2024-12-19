@@ -40,7 +40,7 @@ switch($_GET['action']) {
 				$images = explode('#', ${"images_name_$i"});
 				for($j = 0; $j < count($images); $j++) {
 					$image_name = get_formatted_name($images[$j]);
-					move_multiple_image($_FILES["images_$i"]['tmp_name'][$j], 'aboutme-images', $image_name);
+					move_multiple_images($_FILES["images_$i"]['tmp_name'][$j], 'aboutme-images', $image_name);
 					$image_name = $image_name . ".png";
 					$images_url[] = $image_name;
 				}

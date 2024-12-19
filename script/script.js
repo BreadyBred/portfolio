@@ -18,10 +18,3 @@ document.addEventListener('DOMContentLoaded', () => {
 		});
 	});
 });
-
-function hide_panels(event = {}) {
-    const is_trigger = event.target?.classList.contains('palette-trigger');
-    document.querySelectorAll('.palette').forEach(element => {
-        element.style.display = is_trigger && element.style.display !== 'block' ? 'block' : 'none';
-    });
-}
