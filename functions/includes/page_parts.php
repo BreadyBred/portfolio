@@ -1409,7 +1409,7 @@ function display_error_structure(string $error_type):string {
 				"page_title"    => "503",
 				"main_message"  => "This site is under maintenance.",
 				"sub_message"   => "Please come back later!",
-				"image_link"     => "https://media.discordapp.net/attachments/1157392152100343849/1299429559598583838/image1.png?ex=671d2b95&is=671bda15&hm=17755c69988bdf1aa45f77684a2757c7bbb60330e6bda042bc2388836849fc8d&=&format=webp&quality=lossless&width=445&height=445",
+				"image_link"     => "https://i.ibb.co/4FZVV2g/cat.gif",
 				"home_link_text"     => null,
 				"show_link"     => false
 			)
