@@ -15,7 +15,7 @@ function basic_checks() {
 
 function get_site_root(bool $secured = true):string {
 	if($_SERVER['HTTP_HOST'] == "localhost")
-		return 'http://localhost/travail/Projet/refonte_portfolio/';
+		return 'http://localhost/travail/portfolio/';
 
 	if(!$secured)
 		return 'http://romain-gerard.com/';
@@ -201,7 +201,17 @@ function get_project_list():array {
 }
 
 function decode(string $filename):array {
-	return json_decode(file_get_contents(get_json_folder() . "$filename.json"), true);
+    $url = get_json_folder() . "$filename.json";
+    $ch = curl_init($url);
+    
+    curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+    curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
+
+    $response = curl_exec($ch);
+
+    curl_close($ch);
+
+    return json_decode($response, true);
 }
 
 function does_project_exist(string $project_name):bool {

@@ -610,7 +610,7 @@ function display_secondary_functions():string {
 	$maintenance_text = ($maintenance_mode) ? "Désactiver" : "Activer";
 	
 	$structure = "<span class='admin-secondary-functions'>";
-		$structure .= "<a href='https://trello.com/b/FrAd5SV0/refonte-portfolio' target='_blank'class='function-title'>Accéder à la todo</a>";
+		$structure .= "<a href='https://trello.com/b/MMGrSbhQ/to-do-list' target='_blank'class='function-title'>Accéder à la todo</a>";
 		$structure .= "<a href='" . get_admin_panel_folder() . "functions/toggle_maintenance_mode.php' class='function-title'>$maintenance_text le mode maintenance</a>";
 	$structure .= "</span>";
 

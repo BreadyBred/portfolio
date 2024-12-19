@@ -1,6 +1,6 @@
 function get_site_root(secured = true) {
     if (window.location.hostname === 'localhost')
-        return 'http://localhost/travail/Projet/refonte_portfolio/';
+        return 'http://localhost/travail/portfolio/';
 
     if (!secured)
         return 'http://romain-gerard.com/';
