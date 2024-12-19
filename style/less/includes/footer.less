@@ -1,0 +1,26 @@
+// out: false
+
+.palette-item {
+	position: fixed;
+	display: flex;
+	flex-direction: column-reverse;
+	gap: @xs-gap;
+
+	left: @s-gap;
+	bottom: @s-gap;
+
+	.palette-option {
+		&.palette {
+			display: none;
+		}
+		width: @s-icon;
+		cursor: pointer;
+	}
+}
+
+footer {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	padding: @md-gap;
+}

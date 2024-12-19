@@ -1,0 +1,609 @@
+// out: false
+
+/*
+element - color_type
+element - color_type - palette
+
+elements:
+	a: accent
+	ac: accent-seethrough
+	aux: auxiliary
+	bg: background
+	s: secondary
+
+color_types:
+	ac: accent-color
+	bg: background
+	bc: border-color
+	bs: box-shadow
+	fc: font-color
+	tdc: text-decoration-color
+*/
+
+/* PALETTE 0 */
+@background-c-0: #031927;
+@auxiliary-c-0: #508AA8;
+@secondary-c-0: #9DD1F1;
+@accent-c-0: #F0F3BD;
+@accent-c-seethrough-0: #F0F3BD53;
+
+.a-ac-0 {
+	accent-color: @accent-c-0;
+}
+.a-bg-0 {
+	background-color: @accent-c-0;
+}
+.a-bc-0 {
+	border-color: @accent-c-0 !important;
+}
+.a-bs-0 {
+	color: @accent-c-0;
+}
+.a-fc-0 {
+	color: @accent-c-0;
+}
+.a-tdc-0 {
+	text-decoration-color: @accent-c-0 !important;
+}
+.a-tdc-hv-0:hover {
+	text-decoration-color: @accent-c-0 !important;
+}
+
+.ac-ac-0 {
+	accent-color: @accent-c-seethrough-0;
+}
+.ac-bg-0 {
+	background-color: @accent-c-seethrough-0;
+}
+.ac-bc-0 {
+	border-color: @accent-c-seethrough-0 !important;
+}
+.ac-bs-0 {
+	color: @accent-c-seethrough-0;
+}
+.ac-fc-0 {
+	color: @accent-c-seethrough-0;
+}
+.ac-tdc-0 {
+	text-decoration-color: @accent-c-seethrough-0 !important;
+}
+
+.aux-ac-0 {
+	accent-color: @auxiliary-c-0;
+}
+.aux-bg-0 {
+	background-color: @auxiliary-c-0;
+}
+.aux-bg-hv-0:hover {
+	background-color: @auxiliary-c-0;
+}
+.aux-bc-0 {
+	border-color: @auxiliary-c-0 !important;
+}
+.aux-bs-0 {
+	color: @auxiliary-c-0;
+}
+.aux-fc-0 {
+	color: @auxiliary-c-0;
+}
+.aux-tdc-0 {
+	text-decoration-color: @auxiliary-c-0 !important;
+}
+
+.bg-ac-0 {
+	accent-color: @background-c-0;
+}
+.bg-bg-0 {
+	background-color: @background-c-0;
+}
+.bg-bc-0 {
+	border-color: @background-c-0 !important;
+}
+.bg-bs-0 {
+	color: @background-c-0;
+}
+.bg-fc-0 {
+	color: @background-c-0;
+}
+.bg-tdc-0 {
+	text-decoration-color: @background-c-0 !important;
+}
+
+.s-ac-0 {
+	accent-color: @secondary-c-0;
+}
+.s-bg-0 {
+	background-color: @secondary-c-0;
+}
+.s-bc-0 {
+	border-color: @secondary-c-0 !important;
+}
+.s-bs-0 {
+	color: @secondary-c-0;
+}
+.s-fc-0 {
+	color: @secondary-c-0;
+}
+.s-tdc-0 {
+	text-decoration-color: @secondary-c-0 !important;
+}
+
+.button-0 {
+	color: @white-c;
+	background-color: @auxiliary-c-0;
+	box-shadow: 0 0 10px 0 @accent-c-seethrough-0;
+
+	&:hover {
+		box-shadow: 0 0 20px 0 @accent-c-seethrough-0;
+		background-color: @secondary-c-0;
+	}
+}
+
+/* ################################################################## */
+
+/* PALETTE 1 */
+@background-c-1: #1C0816;
+@auxiliary-c-1: #581845;
+@secondary-c-1: #900C3F;
+@accent-c-1: #FF5733;
+@accent-c-seethrough-1: #FF573353;
+
+.a-ac-1 {
+	accent-color: @accent-c-1;
+}
+.a-bg-1 {
+	background-color: @accent-c-1;
+}
+.a-bc-1 {
+	border-color: @accent-c-1 !important;
+}
+.a-fc-1 {
+	color: @accent-c-1;
+}
+.a-tdc-1 {
+	text-decoration-color: @accent-c-1 !important;
+}
+.a-tdc-hv-1:hover {
+	text-decoration-color: @accent-c-1 !important;
+}
+
+.ac-ac-1 {
+	accent-color: @accent-c-seethrough-1;
+}
+.ac-bg-1 {
+	background-color: @accent-c-seethrough-1;
+}
+.ac-bc-1 {
+	border-color: @accent-c-seethrough-1 !important;
+}
+.ac-fc-1 {
+	color: @accent-c-seethrough-1;
+}
+.ac-tdc-1 {
+	text-decoration-color: @accent-c-seethrough-1 !important;
+}
+
+.aux-ac-1 {
+	accent-color: @auxiliary-c-1;
+}
+.aux-bg-1 {
+	background-color: @auxiliary-c-1;
+}
+.aux-bg-hv-1:hover {
+	background-color: @auxiliary-c-1;
+}
+.aux-bc-1 {
+	border-color: @auxiliary-c-1 !important;
+}
+.aux-fc-1 {
+	color: @auxiliary-c-1;
+}
+.aux-tdc-1 {
+	text-decoration-color: @auxiliary-c-1 !important;
+}
+
+.bg-ac-1 {
+	accent-color: @background-c-1;
+}
+.bg-bg-1 {
+	background-color: @background-c-1;
+}
+.bg-bc-1 {
+	border-color: @background-c-1 !important;
+}
+.bg-fc-1 {
+	color: @background-c-1;
+}
+.bg-tdc-1 {
+	text-decoration-color: @background-c-1 !important;
+}
+
+.s-ac-1 {
+	accent-color: @secondary-c-1;
+}
+.s-bg-1 {
+	background-color: @secondary-c-1;
+}
+.s-bc-1 {
+	border-color: @secondary-c-1 !important;
+}
+.s-fc-1 {
+	color: @secondary-c-1;
+}
+.s-tdc-1 {
+	text-decoration-color: @secondary-c-1 !important;
+}
+
+.button-1 {
+	color: @white-c;
+	background-color: @auxiliary-c-1;
+	box-shadow: 0 0 10px 0 @accent-c-seethrough-1;
+
+	&:hover {
+		box-shadow: 0 0 20px 0 @accent-c-seethrough-1;
+		background-color: @secondary-c-1;
+	}
+}
+
+/* ################################################################## */
+
+/* PALETTE 2 */
+@background-c-2: #161032;
+@auxiliary-c-2: #E06D06;
+@secondary-c-2: #B26700;
+@accent-c-2: #FFC53A;
+@accent-c-seethrough-2: #FFC53A53;
+
+.a-ac-2 {
+	accent-color: @accent-c-2;
+}
+.a-bg-2 {
+	background-color: @accent-c-2;
+}
+.a-bc-2 {
+	border-color: @accent-c-2 !important;
+}
+.a-bs-2 {
+	color: @accent-c-2;
+}
+.a-fc-2 {
+	color: @accent-c-2;
+}
+.a-tdc-2 {
+	text-decoration-color: @accent-c-2 !important;
+}
+.a-tdc-hv-2:hover {
+	text-decoration-color: @accent-c-2 !important;
+}
+
+.ac-ac-2 {
+	accent-color: @accent-c-seethrough-2;
+}
+.ac-bg-2 {
+	background-color: @accent-c-seethrough-2;
+}
+.ac-bc-2 {
+	border-color: @accent-c-seethrough-2 !important;
+}
+.ac-bs-2 {
+	color: @accent-c-seethrough-2;
+}
+.ac-fc-2 {
+	color: @accent-c-seethrough-2;
+}
+.ac-tdc-2 {
+	text-decoration-color: @accent-c-seethrough-2 !important;
+}
+
+.aux-ac-2 {
+	accent-color: @auxiliary-c-2;
+}
+.aux-bg-2 {
+	background-color: @auxiliary-c-2;
+}
+.aux-bg-hv-2:hover {
+	background-color: @auxiliary-c-2;
+}
+.aux-bc-2 {
+	border-color: @auxiliary-c-2 !important;
+}
+.aux-bs-2 {
+	color: @auxiliary-c-2;
+}
+.aux-fc-2 {
+	color: @auxiliary-c-2;
+}
+.aux-tdc-2 {
+	text-decoration-color: @auxiliary-c-2 !important;
+}
+
+.bg-ac-2 {
+	accent-color: @background-c-2;
+}
+.bg-bg-2 {
+	background-color: @background-c-2;
+}
+.bg-bc-2 {
+	border-color: @background-c-2 !important;
+}
+.bg-bs-2 {
+	color: @background-c-2;
+}
+.bg-fc-2 {
+	color: @background-c-2;
+}
+.bg-tdc-2 {
+	text-decoration-color: @background-c-2 !important;
+}
+
+.s-ac-2 {
+	accent-color: @secondary-c-2;
+}
+.s-bg-2 {
+	background-color: @secondary-c-2;
+}
+.s-bc-2 {
+	border-color: @secondary-c-2 !important;
+}
+.s-bs-2 {
+	color: @secondary-c-2;
+}
+.s-fc-2 {
+	color: @secondary-c-2;
+}
+.s-tdc-2 {
+	text-decoration-color: @secondary-c-2 !important;
+}
+
+.button-2 {
+	color: @white-c;
+	background-color: @auxiliary-c-2;
+	box-shadow: 0 0 10px 0 @accent-c-seethrough-2;
+
+	&:hover {
+		box-shadow: 0 0 20px 0 @accent-c-seethrough-2;
+		background-color: @secondary-c-2;
+	}
+}
+
+/* ################################################################## */
+
+/* PALETTE 3 */
+@background-c-3: #1e1d27;
+@auxiliary-c-3: #3C5C66;
+@secondary-c-3: #F0FFF0;
+@accent-c-3: #76C8D5;
+@accent-c-seethrough-3: #76C8D553;
+
+.a-ac-3 {
+	accent-color: @accent-c-3;
+}
+.a-bg-3 {
+	background-color: @accent-c-3;
+}
+.a-bc-3 {
+	border-color: @accent-c-3 !important;
+}
+.a-bs-3 {
+	color: @accent-c-3;
+}
+.a-fc-3 {
+	color: @accent-c-3;
+}
+.a-tdc-3 {
+	text-decoration-color: @accent-c-3 !important;
+}
+.a-tdc-hv-3:hover {
+	text-decoration-color: @accent-c-3 !important;
+}
+
+.ac-ac-3 {
+	accent-color: @accent-c-seethrough-3;
+}
+.ac-bg-3 {
+	background-color: @accent-c-seethrough-3;
+}
+.ac-bc-3 {
+	border-color: @accent-c-seethrough-3 !important;
+}
+.ac-bs-3 {
+	color: @accent-c-seethrough-3;
+}
+.ac-fc-3 {
+	color: @accent-c-seethrough-3;
+}
+.ac-tdc-3 {
+	text-decoration-color: @accent-c-seethrough-3 !important;
+}
+
+.aux-ac-3 {
+	accent-color: @auxiliary-c-3;
+}
+.aux-bg-3 {
+	background-color: @auxiliary-c-3;
+}
+.aux-bg-hv-3:hover {
+	background-color: @auxiliary-c-3;
+}
+.aux-bc-3 {
+	border-color: @auxiliary-c-3 !important;
+}
+.aux-bs-3 {
+	color: @auxiliary-c-3;
+}
+.aux-fc-3 {
+	color: @auxiliary-c-3;
+}
+.aux-tdc-3 {
+	text-decoration-color: @auxiliary-c-3 !important;
+}
+
+.bg-ac-3 {
+	accent-color: @background-c-3;
+}
+.bg-bg-3 {
+	background-color: @background-c-3;
+}
+.bg-bc-3 {
+	border-color: @background-c-3 !important;
+}
+.bg-bs-3 {
+	color: @background-c-3;
+}
+.bg-fc-3 {
+	color: @background-c-3;
+}
+.bg-tdc-3 {
+	text-decoration-color: @background-c-3 !important;
+}
+
+.s-ac-3 {
+	accent-color: @secondary-c-3;
+}
+.s-bg-3 {
+	background-color: @secondary-c-3;
+}
+.s-bc-3 {
+	border-color: @secondary-c-3 !important;
+}
+.s-bs-3 {
+	color: @secondary-c-3;
+}
+.s-fc-3 {
+	color: @secondary-c-3;
+}
+.s-tdc-3 {
+	text-decoration-color: @secondary-c-3 !important;
+}
+
+.button-3 {
+	color: @white-c;
+	background-color: @auxiliary-c-3;
+	box-shadow: 0 0 10px 0 @accent-c-seethrough-3;
+
+	&:hover {
+		box-shadow: 0 0 30px 0 @accent-c-seethrough-3;
+		background-color: @secondary-c-3;
+	}
+}
+
+/* ################################################################## */
+
+/* PALETTE 4 */
+@background-c-4: #FFF;
+@auxiliary-c-4: #FFF;
+@secondary-c-4: #FFF;
+@accent-c-4: #FFF;
+@accent-c-seethrough-4: #FFFFFF53;
+
+.a-ac-4 {
+	accent-color: @accent-c-4;
+}
+.a-bg-4 {
+	background-color: @accent-c-4;
+}
+.a-bc-4 {
+	border-color: @accent-c-4 !important;
+}
+.a-bs-4 {
+	color: @accent-c-4;
+}
+.a-fc-4 {
+	color: @accent-c-4;
+}
+.a-tdc-4 {
+	text-decoration-color: @accent-c-4 !important;
+}
+.a-tdc-hv-4:hover {
+	text-decoration-color: @accent-c-4 !important;
+}
+
+.ac-ac-4 {
+	accent-color: @accent-c-seethrough-4;
+}
+.ac-bg-4 {
+	background-color: @accent-c-seethrough-4;
+}
+.ac-bc-4 {
+	border-color: @accent-c-seethrough-4 !important;
+}
+.ac-bs-4 {
+	color: @accent-c-seethrough-4;
+}
+.ac-fc-4 {
+	color: @accent-c-seethrough-4;
+}
+.ac-tdc-4 {
+	text-decoration-color: @accent-c-seethrough-4 !important;
+}
+
+.aux-ac-4 {
+	accent-color: @auxiliary-c-4;
+}
+.aux-bg-4 {
+	background-color: @auxiliary-c-4;
+}
+.aux-bg-hv-4:hover {
+	background-color: @auxiliary-c-4;
+}
+.aux-bc-4 {
+	border-color: @auxiliary-c-4 !important;
+}
+.aux-bs-4 {
+	color: @auxiliary-c-4;
+}
+.aux-fc-4 {
+	color: @auxiliary-c-4;
+}
+.aux-tdc-4 {
+	text-decoration-color: @auxiliary-c-4 !important;
+}
+
+.bg-ac-4 {
+	accent-color: @background-c-4;
+}
+.bg-bg-4 {
+	background-color: @background-c-4;
+}
+.bg-bc-4 {
+	border-color: @background-c-4 !important;
+}
+.bg-bs-4 {
+	color: @background-c-4;
+}
+.bg-fc-4 {
+	color: @background-c-4;
+}
+.bg-tdc-4 {
+	text-decoration-color: @background-c-4 !important;
+}
+
+.s-ac-4 {
+	accent-color: @secondary-c-4;
+}
+.s-bg-4 {
+	background-color: @secondary-c-4;
+}
+.s-bc-4 {
+	border-color: @secondary-c-4 !important;
+}
+.s-bs-4 {
+	color: @secondary-c-4;
+}
+.s-fc-4 {
+	color: @secondary-c-4;
+}
+.s-tdc-4 {
+	text-decoration-color: @secondary-c-4 !important;
+}
+
+.button-4 {
+	color: @white-c;
+	background-color: @auxiliary-c-4;
+	box-shadow: 0 0 10px 0 @accent-c-seethrough-4;
+
+	&:hover {
+		box-shadow: 0 0 40px 0 @accent-c-seethrough-4;
+		background-color: @secondary-c-4;
+	}
+}

@@ -1,0 +1,40 @@
+// out: false
+
+header {
+	nav {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		margin: @s-gap @l-gap;
+
+		img {
+			width: @md-icon;
+		}
+
+		ul {
+			display: flex;
+			gap: @xl-gap;
+			list-style-type: none;
+
+			li {
+				position: relative;
+				cursor: pointer;
+
+				.line {
+					display: inline-block;
+					position: absolute;
+					opacity: 0;
+					width: 100%;
+					height: 1px;
+					left: 0;
+					bottom: -@xs-gap;
+					transition: opacity .25s ease-in-out;
+				}
+
+				&:hover .line {
+					opacity: 1;
+				}
+			}
+		}
+	}
+}
