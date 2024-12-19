@@ -1,10 +1,28 @@
 {
+    "codewars": {
+        "name": "Codewars",
+        "synopsis": "Exercices de programmation",
+        "description": "Dans ce repository GitHub, je regroupe mes solutions aux exercices propos\u00e9s par Codewars, une plateforme reconnue pour mettre les comp\u00e9tences des d\u00e9veloppeurs \u00e0 l\u2019\u00e9preuve gr\u00e2ce \u00e0 des probl\u00e9matiques vari\u00e9es et stimulantes. Les exercices sont principalement r\u00e9alis\u00e9s en PHP et JavaScript, deux langages que j\u2019affectionne particuli\u00e8rement, avec quelques incursions en Python pour \u00e9largir mon champ de comp\u00e9tences. Ce d\u00e9p\u00f4t n\u2019est pas seulement un recueil de code, mais \u00e9galement un t\u00e9moignage de mon \u00e9volution en tant que d\u00e9veloppeur, motiv\u00e9 par le d\u00e9sir d\u2019apprendre, de relever des d\u00e9fis et d\u2019am\u00e9liorer constamment mes connaissances. Que vous soyez curieux de d\u00e9couvrir mes solutions ou int\u00e9ress\u00e9s par des collaborations, ce repository est une fen\u00eatre ouverte sur mon univers de programmation.",
+        "date": "18\/03\/2024",
+        "link": "https:\/\/github.com\/BreadyBred\/codewars",
+        "image_url": "codewars",
+        "thumbnail_url": "codewars",
+        "important_techs": [
+            "JavaScript",
+            "PHP"
+        ],
+        "tech_used": [
+            "JavaScript",
+            "PHP"
+        ],
+        "to_show": true
+    },
     "poketeam_shuffle": {
         "name": "Pok\u00e9Team Shuffle",
         "synopsis": "Pok\u00e9mon Showdown Randomizer",
         "description": "\"Pok\u00e9Team Shuffle\" est un projet con\u00e7u pour les joueurs de Pok\u00e9mon Showdown qui souhaitent ajouter un coup d'improvisation \u00e0 leurs combats. Plut\u00f4t que de s\u00e9lectionner soigneusement des Pok\u00e9mon puissants ou optimis\u00e9s pour la strat\u00e9gie, ce g\u00e9n\u00e9rateur cr\u00e9e une \u00e9quipe al\u00e9atoire de six Pok\u00e9mon. Cela permet aux joueurs de d\u00e9couvrir de nouvelles combinaisons, d'exp\u00e9rimenter des strat\u00e9gies inattendues, et d'aborder les combats avec une approche plus d\u00e9tendue et amusante",
         "date": "16\/09\/2024",
-        "link": "https://pokeshuffle.freesite.online/",
+        "link": "https:\/\/pokeshuffle.freesite.online\/",
         "image_url": "poketeam_shuffle",
         "thumbnail_url": "poketeam_shuffle",
         "important_techs": [
@@ -66,7 +84,7 @@
         "synopsis": "Maquettage d'une application",
         "description": "Cette id\u00e9e nous est venu au cours d'un projet Hackaton. R\u00e9partis en groupe, nous devions trouver une innovation, la penser et la construire la plus approfondie possible. Ma\u00efChef est une application de cuisine personnalis\u00e9e. Cr\u00e9ez des plats uniques avec vos propres ingr\u00e9dients",
         "date": "17\/11\/2023",
-        "link": "https://maichef.42web.io",
+        "link": "https:\/\/maichef.42web.io",
         "image_url": "maichef",
         "thumbnail_url": "maichef",
         "important_techs": [
