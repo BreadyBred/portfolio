@@ -1,6 +1,8 @@
 .env
-user.json
-google*.html
-robots.txt
 .htaccess
 .user.ini
+user.json
+google*.html
+sitemap.xml
+log.txt
+robots.txt
