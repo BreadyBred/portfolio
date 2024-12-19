@@ -1383,7 +1383,7 @@ function display_error_structure(string $error_type):string {
 				"page_title" 	=> "503",
 				"main_message" 	=> "Ce site est en cours de maintenance.",
 				"sub_message" 	=> "Veuillez revenir plus tard !",
-				"image_link"     => "https://media.discordapp.net/attachments/1157392152100343849/1299429559598583838/image1.png?ex=671d2b95&is=671bda15&hm=17755c69988bdf1aa45f77684a2757c7bbb60330e6bda042bc2388836849fc8d&=&format=webp&quality=lossless&width=445&height=445",
+				"image_link"     => "display_error_structure",
 				"home_link_text"     => null,
 				"show_link"     => false
 			)
