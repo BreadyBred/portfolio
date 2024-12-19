@@ -101,13 +101,14 @@ function redirect_to_maintenance_screen():void {
 }
 
 function send_login_notification():void {
+	require_once "load_environment.php";
 	$mail = new PHPMailer(true);
 
 	$mail->isSMTP();
-	$mail->Host = 'smtp.gmail.com';
+	$mail->Host = $_ENV["SMTP_HOST"];
 	$mail->SMTPAuth = true;
-	$mail->Username = 'gerarromain@gmail.com';
-	$mail->Password = 'mvsy lvkc xvkd myqe';
+	$mail->Username = $_ENV["SMTP_USERNAME"];
+	$mail->Password = $_ENV["SMTP_PASSWORD"];
 	$mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
 	$mail->Port = 587;
 	
