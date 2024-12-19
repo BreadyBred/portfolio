@@ -87,7 +87,7 @@ function initialize_palette(set_palette, landing = true) {
 		document.getElementById('main-logo').src = `${get_images_folder()}logo/${set_palette}/logo_256.png`;
 
 		// CV
-		change_source(document.querySelector('#cv-file'), 'href', set_palette);
+		// change_source(document.querySelector('#cv-file'), 'href', set_palette);
 
 		// Compétences
 		document.querySelectorAll('.competence').forEach(competence => {
