@@ -1383,7 +1383,7 @@ function display_error_structure(string $error_type):string {
 				"page_title" 	=> "503",
 				"main_message" 	=> "Ce site est en cours de maintenance.",
 				"sub_message" 	=> "Veuillez revenir plus tard !",
-				"image_link"     => "display_error_structure",
+				"image_link"     => "https://i.ibb.co/4FZVV2g/cat.gif",
 				"home_link_text"     => null,
 				"show_link"     => false
 			)
