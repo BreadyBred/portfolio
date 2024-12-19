@@ -972,6 +972,7 @@ color_types:
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    gap: 10px;
   }
   section.project-showcase .main-content .project-presentation .project-details .project-overall .tech-used {
     display: flex;
@@ -2211,6 +2212,7 @@ color_types:
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    gap: 10px;
   }
   section.project-showcase .main-content .project-presentation .project-details .project-overall .tech-used {
     display: flex;
@@ -3481,6 +3483,7 @@ color_types:
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    gap: 5px;
   }
   section.project-showcase .main-content .project-presentation .project-details .project-overall .tech-used {
     display: flex;
