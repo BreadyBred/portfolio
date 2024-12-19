@@ -1,0 +1,114 @@
+{
+    "simple-content": [
+        "Bienvenue sur mon portfolio !",
+        "Jeune d\u00e9veloppeur web de 23 ans, j'ai toujours été passionn\u00e9 par la programmation et l'informatique en général. Je me suis sp\u00e9cialis\u00e9 dans le d\u00e9veloppement web lors de mon Bachelor Universitaire de Technologie, mais je bricole en HTML, CSS, JavaScript, PHP, etc... depuis que je suis sorti du lycée.",
+        "Toujours curieux concernant le développement web, je suis souvent \u00e0 la recherche des nouvelles tendances du domaine afin de m'approcher de mon but : Combiner mon travail et ma passion !"
+    ],
+    "complex-content": [
+        {
+            "title": "Un outil au service des autres",
+            "lines": [
+                {
+                    "line": "Le web est une plateforme puissante, et j'aime l'idée que mes créations puissent simplifier la vie des utilisateurs.",
+                    "has_images": false,
+                    "images_links": [],
+                    "has_links": false,
+                    "links": []
+                },
+                {
+                    "line": "Que ce soit un outil de gestion, une vitrine professionnelle ou une application ludique, chaque projet est une occasion de rendre quelque chose d'utile et d'intuitif.",
+                    "has_images": false,
+                    "images_links": [],
+                    "has_links": false,
+                    "links": []
+                }
+            ]
+        },
+        {
+            "title": "Un développeur en quête d'amélioration continue",
+            "lines": [
+                {
+                    "line": "Je crois fermement que le domaine du développement web évolue constamment, et c'est ce qui me passionne !",
+                    "has_images": false,
+                    "images_links": [],
+                    "has_links": false,
+                    "links": []
+                },
+                {
+                    "line": "J'apprécie particulièrement le travail collaboratif, où chaque échange et retour d'expérience contribue à créer des solutions toujours plus optimisées.",
+                    "has_images": false,
+                    "images_links": [],
+                    "has_links": false,
+                    "links": []
+                },
+                {
+                    "line": "J'apprécie particulièrement le travail collaboratif, où chaque échange et retour d'expérience contribue à créer des solutions toujours plus optimisées.",
+                    "has_images": false,
+                    "images_links": [],
+                    "has_links": false,
+                    "links": []
+                }
+            ]
+        },
+        {
+            "title": "Les technologies que je pr\u00e9f\u00e8re",
+            "lines": [
+                {
+                    "line": "Je suis tr\u00e8s attach\u00e9 \u00e0 la conception \u00ab from scratch \u00bb et \u00e0 l'utilisation de PHP pour les sites dynamiques.",
+                    "has_images": false,
+                    "images_links": [],
+                    "has_links": false,
+                    "links": []
+                },
+                {
+                    "line": "J'ai exp\u00e9riment\u00e9 la conception de sites \u00e0 l'aide de frameworks tels que CodeIgniter ou Symfony pour PHP, mais aussi ReactJS pour JavaScript",
+                    "has_images": false,
+                    "images_links": [],
+                    "has_links": false,
+                    "links": []
+                }
+            ]
+        },
+        {
+            "title": "Nouveaut\u00e9s",
+            "lines": [
+                {
+                    "line": "&emsp;- Certifi\u00e9 *Opquast* en 2024 *#*",
+                    "has_images": true,
+                    "images_links": [
+                        "opquast.png"
+                    ],
+                    "has_links": true,
+                    "links": [
+                        "Certificat_Opquast.pdf",
+                        "Certificat_Opquast.pdf"
+                    ]
+                },
+                {
+                    "line": "&emsp;- Certifi\u00e9 *EFSET* en 2024 : *4Skills* / *2Skills*",
+                    "has_images": true,
+                    "images_links": [
+                        "73.png",
+                        "76.png"
+                    ],
+                    "has_links": true,
+                    "links": [
+                        "https://cert.efset.org/3xzcDP",
+                        "EFSET_4Skills.pdf",
+                        "EFSET_2Skills.pdf"
+                    ]
+                },
+                {
+                    "line": "&emsp;- Nouvelle pr\u00e9sence sur *Github* & *Codewars*",
+                    "has_images": false,
+                    "images_links": [],
+                    "has_links": true,
+                    "links": [
+                        "https:\/\/github.com\/BreadyBred\/",
+                        "https:\/\/www.codewars.com\/users\/BreadyBred"
+                    ]
+                }
+            ]
+        }
+    ]
+}

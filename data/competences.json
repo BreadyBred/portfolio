@@ -1,0 +1,36 @@
+{
+    "D\u00e9veloppement Web": {
+        "HTML5": "HTML5",
+        "CSS3": "CSS3",
+        "TailwindCSS": "Tailwind",
+        "SASS": "SASS",
+        "LESS": "LESS",
+        "JavaScript": "JavaScript",
+        "jQuery": "jQuery",
+        "TypeScript": "TypeScript",
+        "React": "React",
+        "Next.JS": "NextJS",
+        "Vite": "ViteJS",
+        "PHP": "PHP",
+        "CodeIgniter": "CodeIgniter",
+        "Symfony": "Symfony",
+        "MySQL": "MySQL"
+    },
+    "Programmation": {
+        "C": "C",
+        "Python": "Python",
+        "Unity": "Unity",
+        ".NET": ".NET"
+    },
+    "CMS": {
+        "Wordpress": "Wordpress",
+        "Shopify": "Shopify",
+        "Prestashop": "Prestashop",
+        "Drupal": "Drupal"
+    },
+    "Autres": {
+        "Git": "Git",
+        "Github": "Github",
+        "Figma": "Figma"
+    }
+}

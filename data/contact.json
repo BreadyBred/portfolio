@@ -1,0 +1,34 @@
+{
+    "contact-icon": [
+        {
+            "link": "https:\/\/www.linkedin.com\/in\/romain-gerard\/",
+            "image": "linkedin.png"
+        },
+        {
+            "link": "https:\/\/www.malt.fr\/profile\/romaingerard",
+            "image": "malt.png"
+        },
+        {
+            "link": "https:\/\/www.codewars.com\/users\/BreadyBred",
+            "image": "codewars.png"
+        },
+        {
+            "link": "https:\/\/github.com\/BreadyBred\/",
+            "image": "github.png"
+        },
+        {
+            "link": "https:\/\/www.fiverr.com\/romaingerard840",
+            "image": "fiverr.png"
+        }
+    ],
+    "contact-text": [
+        {
+            "link": "tel:0777702699",
+            "text": "+33 7 77 70 26 99"
+        },
+        {
+            "link": "mailto:gerarromain@gmail.com",
+            "text": "gerarromain@gmail.com"
+        }
+    ]
+}
