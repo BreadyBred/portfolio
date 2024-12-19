@@ -1,0 +1,95 @@
+%!Adobe-FontList 1.22
+%Locale:0x40c
+
+%BeginFont
+Handler:DirectoryHandler
+FontType:TrueType
+FontName:AmaticSC-Bold
+FamilyName:Amatic SC
+StyleName:Bold
+FullName:Amatic SC Bold
+MenuName:Amatic SC
+StyleBits:2
+WritingScript:Roman
+OutlineFileName:C:\Users\romai\OneDrive\Bureau\Visuels\Font\AmaticSC-Bold.ttf
+DataFormat:sfntData
+hasSVG:no
+VariableFontType:NonVariableFont
+FileLength:146796
+FileModTime:1700142770
+WeightClass:700
+WidthClass:5
+AngleClass:0
+NameArray:0,Win,1,Amatic SC
+%EndFont
+
+%BeginFont
+Handler:DirectoryHandler
+FontType:TrueType
+FontName:AmaticSC-Regular
+FamilyName:Amatic SC
+StyleName:Regular
+FullName:Amatic SC Regular
+MenuName:Amatic SC
+StyleBits:0
+WritingScript:Roman
+OutlineFileName:C:\Users\romai\OneDrive\Bureau\Visuels\Font\AmaticSC-Regular.ttf
+DataFormat:sfntData
+hasSVG:no
+VariableFontType:NonVariableFont
+FileLength:142696
+FileModTime:1700142770
+WeightClass:400
+WidthClass:5
+AngleClass:0
+NameArray:0,Win,1,Amatic SC
+%EndFont
+
+%BeginFont
+Handler:DirectoryHandler
+FontType:TrueType
+FontName:BadScript-Regular
+FamilyName:Bad Script
+StyleName:Regular
+FullName:Bad Script Regular
+MenuName:Bad Script
+StyleBits:0
+FamilyNameNative:Bad Script
+StyleNameNative:Regular
+FullNameNative:Bad Script Regular
+WritingScript:Cyrillic
+OutlineFileName:C:\Users\romai\OneDrive\Bureau\Visuels\Font\BadScript-Regular.ttf
+DataFormat:sfntData
+hasSVG:no
+VariableFontType:NonVariableFont
+FileLength:50780
+FileModTime:1700142927
+WeightClass:400
+WidthClass:5
+AngleClass:0
+NameArray:0,Win,1,Bad Script
+%EndFont
+
+%BeginFont
+Handler:DirectoryHandler
+FontType:TrueType
+FontName:Cookie-Regular
+FamilyName:Cookie
+StyleName:Regular
+FullName:Cookie-Regular
+MenuName:Cookie
+StyleBits:0
+WritingScript:Roman
+OutlineFileName:C:\Users\romai\OneDrive\Bureau\Visuels\Font\Cookie-Regular.ttf
+DataFormat:sfntData
+hasSVG:no
+VariableFontType:NonVariableFont
+FileLength:43800
+FileModTime:1511587866
+WeightClass:400
+WidthClass:5
+AngleClass:0
+NameArray:0,Mac,4,Cookie-Regular
+NameArray:0,Win,1,Cookie
+%EndFont
+
