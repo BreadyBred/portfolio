@@ -21,7 +21,7 @@
     "poketeam_shuffle": {
         "name": "Pok\u00e9Team Shuffle",
         "synopsis": "Pok\u00e9mon Showdown Randomizer",
-        "description": "\"Pok\u00e9Team Shuffle\" est un projet con\u00e7u pour les joueurs de Pok\u00e9mon Showdown qui souhaitent ajouter un coup d'improvisation \u00e0 leurs combats. Plut\u00f4t que de s\u00e9lectionner soigneusement des Pok\u00e9mon puissants ou optimis\u00e9s pour la strat\u00e9gie, ce g\u00e9n\u00e9rateur cr\u00e9e une \u00e9quipe al\u00e9atoire de six Pok\u00e9mon. Cela permet aux joueurs de d\u00e9couvrir de nouvelles combinaisons, d'exp\u00e9rimenter des strat\u00e9gies inattendues, et d'aborder les combats avec une approche plus d\u00e9tendue et amusante.",
+        "description": "\"PokéTeam Shuffle\" est un générateur d'équipes Pokémon aléatoires conçu pour les joueurs de Pokémon Showdown. Lassé(e) de composer des équipes classiques ? Ce site web vous propose une expérience rafraîchissante en générant une équipe de six Pokémon de manière aléatoire. Chaque Pokémon est présenté avec sa carte détaillée : nom, sprite, types, numéro de Pokédex et statistiques. Vous pouvez relancer la génération d'équipe complète avec le bouton \"Roll\" ou cibler un seul Pokémon de votre équipe pour le remplacer. Un sélecteur de génération permet également de personnaliser davantage la génération aléatoire. Idéal pour des combats amicaux et pour découvrir des synergies inattendues !",
         "date": "16\/09\/2024",
         "link": "https:\/\/pokeshuffle.freesite.online\/",
         "image_url": "poketeam_shuffle",
@@ -83,7 +83,7 @@
     "maichef": {
         "name": "Ma\u00efChef",
         "synopsis": "Maquettage d'une application",
-        "description": "Cette id\u00e9e nous est venu au cours d'un projet Hackaton. R\u00e9partis en groupe, nous devions trouver une innovation, la penser et la construire la plus approfondie possible. Ma\u00efChef est une application de cuisine personnalis\u00e9e. Cr\u00e9ez des plats uniques avec vos propres ingr\u00e9dients.",
+        "description": "Cette id\u00e9e nous est venu au cours d'un projet Hackaton. R\u00e9partis en groupe, nous devions trouver une innovation, la penser et la construire la plus approfondie possible. Ma\u00efChef est une application de cuisine personnalis\u00e9e, cr\u00e9ez des plats uniques avec vos propres ingr\u00e9dients !",
         "date": "17\/11\/2023",
         "link": "https:\/\/maichef.42web.io",
         "image_url": "maichef",
