@@ -433,7 +433,7 @@ function display_single_project(string $project_name):string {
 	$description_lines = explode('. ', $description);
 	$description = "";
 	foreach($description_lines as $description_line)
-		$description .= "<span>$description_line.</span>";
+		$description .= "<span>$description_line</span>";
 
 	$structure = "
 	<section class='project-showcase'>
@@ -560,7 +560,7 @@ function display_primary_functions():string {
 			$structure .= "<h2 class='underlined cat-title'>Projets</h2>";
 			$structure .= "<span class='functions'>";
 				$structure .= "<h3 class='function-title a-tdc-hv' data-id='create-project'	>Ajouter un projet</h3>";
-				$structure .= "<h3 class='function-title a-tdc-hv' data-id='update-project'	>Update un projet</h3>";
+				$structure .= "<h3 class='function-title a-tdc-hv' data-id='update-project'	>Modifier un projet</h3>";
 				$structure .= "<h3 class='function-title a-tdc-hv' data-id='show-project'	>Montrer un projet</h3>";
 				$structure .= "<h3 class='function-title a-tdc-hv' data-id='hide-project'	>Cacher un projet</h3>";
 				$structure .= "<h3 class='function-title a-tdc-hv' data-id='delete-project'	>Supprimer un projet</h3>";
