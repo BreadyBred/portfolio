@@ -432,8 +432,10 @@ function display_single_project(string $project_name):string {
 
 	$description_lines = explode('. ', $description);
 	$description = "";
-	foreach($description_lines as $description_line)
-		$description .= "<span>$description_line</span>";
+	foreach($description_lines as $description_line) {
+		$point = (in_array(substr($description_line, -1), [".", "!", "?"])) ? "" : ".";
+		$description .= "<span>{$description_line}{$point}</span>";
+	}
 
 	$structure = "
 	<section class='project-showcase'>
