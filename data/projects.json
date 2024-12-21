@@ -41,9 +41,9 @@
     "la_reconquete": {
         "name": "La Reconqu\u00eate",
         "synopsis": "Projet Universitaire de 1\u00e8re ann\u00e9e",
-        "description": "\u00ab La Reconqu\u00eate \u00bb est un projet ambitieux et novateur issu de ma premi\u00e8re ann\u00e9e de DUT, repr\u00e9sentant mon bapt\u00eame dans le monde de la conception web. Ce projet multidimensionnel englobe la cr\u00e9ation d'un site web interactif offrant une plong\u00e9e immersive dans l'\u00e9poque m\u00e9di\u00e9vale ainsi que des visuels pour l'\u00e9v\u00e8nement.",
+        "description": "\"La Reconquête\" est un projet ambitieux mené lors de ma première année de DUT, constituant une première expérience concrète dans le développement web. Ce projet m'a permis d'acquérir des compétences en conception de sites web interactifs, en création de supports visuels et en gestion de projet. Il comprend la réalisation d'un site web immersif sur l'époque médiévale, ainsi que la conception de visuels pour la promotion de l'événement.",
         "date": "10\/07\/2020",
-        "link": "https:\/\/lareconquete.netlify.app\/",
+        "link": "https://lareconquete.42web.io",
         "image_url": "la_reconquete",
         "thumbnail_url": "la_reconquete",
         "important_techs": [
@@ -83,7 +83,7 @@
     "maichef": {
         "name": "Ma\u00efChef",
         "synopsis": "Maquettage d'une application",
-        "description": "Cette id\u00e9e nous est venu au cours d'un projet Hackaton. R\u00e9partis en groupe, nous devions trouver une innovation, la penser et la construire la plus approfondie possible. Ma\u00efChef est une application de cuisine personnalis\u00e9e, cr\u00e9ez des plats uniques avec vos propres ingr\u00e9dients !",
+        "description": "\"Maïchef\" est le fruit d'un projet passionnant mené lors d'un Hackathon ! En équipe, nous avons développé cette application de cuisine personnalisée, permettant aux utilisateurs de créer des plats uniques avec leurs ingrédients. Ce Hackathon a été une expérience formatrice intense, nous permettant de mettre en pratique nos compétences en conception, développement et gestion de projet.",
         "date": "17\/11\/2023",
         "link": "https:\/\/maichef.42web.io",
         "image_url": "maichef",
