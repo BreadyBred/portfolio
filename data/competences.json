@@ -20,7 +20,9 @@
         "C": "C",
         "Python": "Python",
         "Unity": "Unity",
-        ".NET": ".NET"
+        ".NET": ".NET",
+        "gnubash": "Bash",
+        "yaml": "Yaml"
     },
     "CMS": {
         "Wordpress": "Wordpress",
