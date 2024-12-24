@@ -1,0 +1,25 @@
+# Redirection HTTP vers HTTPS (sauf fichiers JSON)
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    RewriteCond %{HTTPS} off
+    RewriteCond %{REQUEST_URI} !\.(json)$ [NC]
+    RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+</IfModule>
+
+# Fonts
+AddType application/vnd.ms-fontobject .eot
+AddType font/truetype .ttf
+AddType font/opentype .otf
+AddType font/opentype .woff
+AddType image/svg+xml .svg
+
+<FilesMatch "\.(ttf|otf|eot|woff|svg)$">
+        <IfModule mod_headers.c>
+                Header set Access-Control-Allow-Origin "*"
+        </IfModule>
+</FilesMatch>
+
+# Création d'erreurs 403 et 404
+options -indexes
+ErrorDocument 403 https://romain-gerard.com/error/?e=403
+ErrorDocument 404 https://romain-gerard.com/error/?e=404
