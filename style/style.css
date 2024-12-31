@@ -1054,22 +1054,22 @@ color_types:
     overflow-y: scroll;
     scrollbar-width: thin;
   }
-  .admin-panel .left-side .admin-primary-functions .project-category {
+  .admin-panel .left-side .admin-primary-functions .function-category {
     display: flex;
     flex-direction: column;
     gap: 10px;
   }
-  .admin-panel .left-side .admin-primary-functions .project-category .functions {
+  .admin-panel .left-side .admin-primary-functions .function-category .functions {
     display: flex;
     flex-direction: column;
     gap: 5px;
   }
-  .admin-panel .left-side .admin-primary-functions .project-category .functions .function-title {
+  .admin-panel .left-side .admin-primary-functions .function-category .functions .function-title {
     cursor: pointer;
     width: fit-content;
   }
-  .admin-panel .left-side .admin-primary-functions .project-category .functions .function-title:hover,
-  .admin-panel .left-side .admin-primary-functions .project-category .functions .function-title.selected {
+  .admin-panel .left-side .admin-primary-functions .function-category .functions .function-title:hover,
+  .admin-panel .left-side .admin-primary-functions .function-category .functions .function-title.selected {
     text-decoration: underline;
   }
   .admin-panel .left-side .admin-secondary-functions {
@@ -2294,22 +2294,22 @@ color_types:
     overflow-y: scroll;
     scrollbar-width: thin;
   }
-  .admin-panel .left-side .admin-primary-functions .project-category {
+  .admin-panel .left-side .admin-primary-functions .function-category {
     display: flex;
     flex-direction: column;
     gap: 10px;
   }
-  .admin-panel .left-side .admin-primary-functions .project-category .functions {
+  .admin-panel .left-side .admin-primary-functions .function-category .functions {
     display: flex;
     flex-direction: column;
     gap: 5px;
   }
-  .admin-panel .left-side .admin-primary-functions .project-category .functions .function-title {
+  .admin-panel .left-side .admin-primary-functions .function-category .functions .function-title {
     cursor: pointer;
     width: fit-content;
   }
-  .admin-panel .left-side .admin-primary-functions .project-category .functions .function-title:hover,
-  .admin-panel .left-side .admin-primary-functions .project-category .functions .function-title.selected {
+  .admin-panel .left-side .admin-primary-functions .function-category .functions .function-title:hover,
+  .admin-panel .left-side .admin-primary-functions .function-category .functions .function-title.selected {
     text-decoration: underline;
   }
   .admin-panel .left-side .admin-secondary-functions {
@@ -3565,22 +3565,22 @@ color_types:
     overflow-y: scroll;
     scrollbar-width: thin;
   }
-  .admin-panel .left-side .admin-primary-functions .project-category {
+  .admin-panel .left-side .admin-primary-functions .function-category {
     display: flex;
     flex-direction: column;
     gap: 5px;
   }
-  .admin-panel .left-side .admin-primary-functions .project-category .functions {
+  .admin-panel .left-side .admin-primary-functions .function-category .functions {
     display: flex;
     flex-direction: column;
     gap: 2.5px;
   }
-  .admin-panel .left-side .admin-primary-functions .project-category .functions .function-title {
+  .admin-panel .left-side .admin-primary-functions .function-category .functions .function-title {
     cursor: pointer;
     width: fit-content;
   }
-  .admin-panel .left-side .admin-primary-functions .project-category .functions .function-title:hover,
-  .admin-panel .left-side .admin-primary-functions .project-category .functions .function-title.selected {
+  .admin-panel .left-side .admin-primary-functions .function-category .functions .function-title:hover,
+  .admin-panel .left-side .admin-primary-functions .function-category .functions .function-title.selected {
     text-decoration: underline;
   }
   .admin-panel .left-side .admin-secondary-functions {

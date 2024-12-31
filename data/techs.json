@@ -1,23 +1,24 @@
 {
-	"techs": [
-		"HTML5",
-		"CSS3",
-		"TailWind",
-		"LESS",
-		"JavaScript",
-		"jQuery",
-		"React",
-		"NextJS",
-		"ViteJS",
-		"AJAX",
-		"API",
-		"PHP",
-		"CodeIgniter",
-		"MySQL",
-		"JSON",
-		"XML",
-		"Figma",
-		"C#",
-		"Python"
-	]
+    "techs": [
+        "HTML5",
+        "CSS3",
+        "TailWind",
+        "LESS",
+        "JavaScript",
+        "jQuery",
+        "React",
+        "NextJS",
+        "ViteJS",
+        "AJAX",
+        "API",
+        "PHP",
+        "CodeIgniter",
+        "MySQL",
+        "JSON",
+        "XML",
+        "Figma",
+        "C#",
+        "Python",
+        "Moi"
+    ]
 }
