@@ -677,7 +677,7 @@ function display_delete_tech_panel():string {
 	return "
 		<form method='POST' action='" . get_admin_panel_folder() . "functions/modify_techs.php?action=delete' class='hide functions-panel aux-bc' id='delete-tech'>
 			<h4>Supprimer une technologie</h4>
-			<select class='aux-bc tech_list' name='tech' size=10 style='width:100%' required>
+			<select class='aux-bc tech_list' name='name' size=10 style='width:100%' required>
 				$tech_list
 			</select>
 			<input type='hidden' name='category' id='category'>
