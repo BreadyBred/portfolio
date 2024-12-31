@@ -143,19 +143,21 @@ function display_error_structure(string $error_type):string {
 		"fr" => array(
 			"403" => array(
 				"page_title" 	=> "403",
-				"main_message" 	=> "L’accès n’est pas autorisé.",
-				"sub_message" 	=> "On dirait que tu t’es perdu...",
-				"image_link"     => "https://i.ibb.co/ZW9Sk14/larry.png",
-				"home_link_text"     => "Retrouve la voie...",
-				"show_link"     => true
+				"main_message" 	=> "On dirait que tu n’as pas le droit d’être ici",
+				"sub_message" 	=> "Larry le malicieux va s’occuper de ton cas",
+				"image_link"    => "https://i.ibb.co/ZW9Sk14/larry.png",
+				"home_link_text"=> "Échappe-toi vite...",
+				"show_link"     => true,
+				"additional_class" => null
 			),
 			"404" => array(
 				"page_title" 	=> "404",
 				"main_message" 	=> "La page n'existe pas.",
 				"sub_message" 	=> "On dirait que tu t’es perdu...",
-				"image_link"     => "https://i.ibb.co/4FZVV2g/cat.gif",
-				"home_link_text"     => "Retrouve la voie...",
-				"show_link"     => true
+				"image_link"    => "https://i.ibb.co/4FZVV2g/cat.gif",
+				"home_link_text" => "Retrouve la voie...",
+				"show_link"     => true,
+				"additional_class" => "big"
 			),
 			"503" => array(
 				"page_title" 	=> "503",
@@ -163,14 +165,15 @@ function display_error_structure(string $error_type):string {
 				"sub_message" 	=> "Veuillez revenir plus tard !",
 				"image_link"     => "https://i.ibb.co/4FZVV2g/cat.gif",
 				"home_link_text"     => null,
-				"show_link"     => false
+				"show_link"     => false,
+				"additional_class" => "big"
 			)
 		)
 	);
 
 	$error_infos = $error_codes["fr"][$error_type];
 	
-	extract($error_infos); //? $page_title, $main_message, $sub_message, $image_link, $home_link_text, $show_link
+	extract($error_infos); //? $page_title, $main_message, $sub_message, $image_link, $home_link_text, $show_link, $additional_class
 
 	$home_link = ($show_link) ? "<a href='" . get_site_root() . "' class='underlined'>$home_link_text</a>" : "";
 
@@ -184,7 +187,7 @@ function display_error_structure(string $error_type):string {
 				<span class='bold'>$main_message</span>
 				<span>$sub_message</span>
 			</span>
-			<img src='$image_link' alt=''>
+			<img src='$image_link' alt='' class='$additional_class'>
 			$home_link
 		</span>
 	";

@@ -1213,9 +1213,12 @@ color_types:
     height: 2px;
   }
   .extra-page img {
+    width: 100%;
+    margin: 10px auto;
+  }
+  .extra-page img.big {
     height: 200px;
     max-width: 100%;
-    margin: 10px auto;
   }
   .extra-page a {
     align-self: flex-end;
@@ -2453,9 +2456,12 @@ color_types:
     height: 2px;
   }
   .extra-page img {
+    width: 100%;
+    margin: 10px auto;
+  }
+  .extra-page img.big {
     height: 200px;
     max-width: 100%;
-    margin: 10px auto;
   }
   .extra-page a {
     align-self: flex-end;
@@ -3724,9 +3730,12 @@ color_types:
     height: 2px;
   }
   .extra-page img {
+    width: 100%;
+    margin: 5px auto;
+  }
+  .extra-page img.big {
     height: 200px;
     max-width: 100%;
-    margin: 5px auto;
   }
   .extra-page a {
     align-self: flex-end;
