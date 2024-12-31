@@ -145,7 +145,7 @@ function display_error_structure(string $error_type):string {
 				"page_title" 	=> "403",
 				"main_message" 	=> "L’accès n’est pas autorisé.",
 				"sub_message" 	=> "On dirait que tu t’es perdu...",
-				"image_link"     => "https://ibb.co/ZW9Sk14",
+				"image_link"     => "https://i.ibb.co/ZW9Sk14/larry.png",
 				"home_link_text"     => "Retrouve la voie...",
 				"show_link"     => true
 			),
