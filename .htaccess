@@ -5,9 +5,9 @@ AddType font/opentype .woff
 AddType image/svg+xml .svg
 
 <FilesMatch "\.(ttf|otf|eot|woff|svg)$">
-        <IfModule mod_headers.c>
-                Header set Access-Control-Allow-Origin "*"
-        </IfModule>
+	<IfModule mod_headers.c>
+		Header set Access-Control-Allow-Origin "*"
+	</IfModule>
 </FilesMatch>
 
 options -indexes
