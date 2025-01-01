@@ -612,6 +612,10 @@ color_types:
     box-shadow: 0 0 40px 0 #FFFFFF53;
     background-color: #FFF;
   }
+  .line,
+  .v-line {
+    user-select: none;
+  }
   .button {
     transition: all 0.25s ease-in-out;
     border: none;
@@ -1854,6 +1858,10 @@ color_types:
   .button-4:hover {
     box-shadow: 0 0 40px 0 #FFFFFF53;
     background-color: #FFF;
+  }
+  .line,
+  .v-line {
+    user-select: none;
   }
   .button {
     transition: all 0.25s ease-in-out;
@@ -3128,6 +3136,10 @@ color_types:
   .button-4:hover {
     box-shadow: 0 0 40px 0 #FFFFFF53;
     background-color: #FFF;
+  }
+  .line,
+  .v-line {
+    user-select: none;
   }
   .button {
     transition: all 0.25s ease-in-out;
