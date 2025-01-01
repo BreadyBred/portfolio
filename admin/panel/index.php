@@ -1,7 +1,7 @@
 <?php
 
-include '../../functions/functions.php';
 session_start();
+include '../../functions/functions.php';
 
 check_session();
 check_palette();

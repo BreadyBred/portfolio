@@ -41,14 +41,14 @@ switch($_GET['action']) {
 		$projects = array($project_id => $new_project) + $projects;
 		
 		if(isset($_FILES['zip_file'])) {
-			if ($_FILES['zip_file']['type'] == 'application/x-zip-compressed'){
+			if($_FILES['zip_file']['type'] == 'application/x-zip-compressed'){
 				$zip_tmp = $_FILES['zip_file']['tmp_name'];
 				$zip_path = str_repeat('../', $url_depth) . "projects/$project_id.zip";
 				$file_path = str_repeat('../', $url_depth) . "projects/$project_id/";
 		
 				move_uploaded_file($zip_tmp, $zip_path);
 				$zip = new ZipArchive;
-				if ($zip->open($zip_path) === TRUE) {
+				if($zip->open($zip_path) === TRUE) {
 					$zip->extractTo($file_path);
 					$zip->close();
 				}

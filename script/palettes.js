@@ -113,7 +113,7 @@ function initialize_palette(set_palette, landing = true) {
 function change_source(target, type, new_palette) {
 	let previous_source = (type == 'href') ? target.href : target.src;
 	for (let i = 0; i <= get_active_palettes_amount(); i++)
-		if (previous_source.includes(i.toString()))
+		if(previous_source.includes(i.toString()))
 			if(type == 'href')
 				target.href = previous_source.split(i.toString()).join(new_palette);
 			else

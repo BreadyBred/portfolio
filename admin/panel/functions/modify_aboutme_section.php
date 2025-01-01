@@ -68,7 +68,7 @@ switch($_GET['action']) {
 		break;
 	case 'delete-simple':
 		foreach ($aboutme_section['simple-content'] as $key => $entry) {
-			if ($key == $id) {
+			if($key == $id) {
 				unset($aboutme_section['simple-content'][$key]);
 				$aboutme_section['simple-content'] = array_values($aboutme_section['simple-content']);
 				break;
@@ -78,7 +78,7 @@ switch($_GET['action']) {
 		break;
 	case 'delete-complex':
 		foreach ($aboutme_section['complex-content'] as $key => $entry) {
-			if ($key == $id) {
+			if($key == $id) {
 				foreach($aboutme_section['complex-content'][$key]['lines'] as $line) {
 					foreach($line['images_links'] as $image_link) {
 						$icon_path = str_repeat('../', $url_depth) . "medias/images/aboutme-images/$image_link";

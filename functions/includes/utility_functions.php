@@ -9,36 +9,37 @@ function log_(mixed $element):void {
 	echo "<pre>" . print_r($element, true) . "</pre>";
 }
 
-function basic_checks() {
-	check_palette();
-	check_if_maintenance_mode_on();
-}
-
-function check_if_maintenance_mode_on():void {
+function is_maintenance_mode_on():bool {
 	if(decode('utilities')['maintenance_mode'])
-		redirect_to_maintenance_screen();
+		return true;
+
+	return false;
 }
 
 function redirect_to_maintenance_screen():void {
 	header('Location:' . get_maintenance_screen());
 }
 
+function redirect_to_site_root():void {
+	header('Location:' . get_site_root());
+}
+
 function get_URL_depth(string $url): int {
 	$base_url = get_site_root();
 	$base_url = rtrim($base_url, '/');
 	
-	if (strpos($url, $base_url) === 0) {
+	if(strpos($url, $base_url) === 0) {
 		$relative_path = substr($url, strlen($base_url));
 		$relative_path = ltrim($relative_path, '/');
 		
-		if (empty($relative_path))
+		if(empty($relative_path))
 			return 0;
 		
 		$segments = explode('/', $relative_path);
 
 		$last_segment = end($segments);
 
-		if (strpos($last_segment, '.') !== false)
+		if(strpos($last_segment, '.') !== false)
 			array_pop($segments);
 		
 		return count($segments);

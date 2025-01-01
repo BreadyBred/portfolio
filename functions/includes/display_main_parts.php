@@ -257,10 +257,10 @@ function display_education():string {
 				</span>
 		";
 
-		if ($specialty) {
+		if($specialty) {
 			$structure .= "<span class='scholar-speciality italic'>$specialty</span>";
 		}
-		if ($major) {
+		if($major) {
 			$structure .= "<span class='scholar-major italic a-fc'>$major</span>";
 		}
 		
