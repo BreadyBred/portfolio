@@ -10,19 +10,15 @@
             "lines": [
                 {
                     "line": "Le web est une plateforme puissante, et j'aime l'idée que mes créations puissent simplifier la vie des utilisateurs.",
-                    "has_images": false,
                     "images_links": [],
-                    "images_alt": [],
-                    "has_links": false,
+                    "images_alt": null,
                     "links": [],
                     "links_text": null
                 },
                 {
                     "line": "Que ce soit un outil de gestion, une vitrine professionnelle ou une application ludique, chaque projet est une occasion de rendre quelque chose d'utile et d'intuitif.",
-                    "has_images": false,
                     "images_links": [],
-                    "images_alt": [],
-                    "has_links": false,
+                    "images_alt": null,
                     "links": [],
                     "links_text": null
                 }
@@ -33,28 +29,15 @@
             "lines": [
                 {
                     "line": "Je crois fermement que le domaine du développement web évolue constamment, et c'est ce qui me passionne !",
-                    "has_images": false,
                     "images_links": [],
-                    "images_alt": [],
-                    "has_links": false,
+                    "images_alt": null,
                     "links": [],
                     "links_text": null
                 },
                 {
                     "line": "J'apprécie particulièrement le travail collaboratif, où chaque échange et retour d'expérience contribue à créer des solutions toujours plus optimisées.",
-                    "has_images": false,
                     "images_links": [],
-                    "images_alt": [],
-                    "has_links": false,
-                    "links": [],
-                    "links_text": null
-                },
-                {
-                    "line": "J'apprécie particulièrement le travail collaboratif, où chaque échange et retour d'expérience contribue à créer des solutions toujours plus optimisées.",
-                    "has_images": false,
-                    "images_links": [],
-                    "images_alt": [],
-                    "has_links": false,
+                    "images_alt": null,
                     "links": [],
                     "links_text": null
                 }
@@ -65,68 +48,43 @@
             "lines": [
                 {
                     "line": "Je suis tr\u00e8s attach\u00e9 \u00e0 la conception \u00ab from scratch \u00bb et \u00e0 l'utilisation de PHP pour les sites dynamiques.",
-                    "has_images": false,
                     "images_links": [],
-                    "images_alt": [],
-                    "has_links": false,
+                    "images_alt": null,
                     "links": [],
                     "links_text": null
                 },
                 {
                     "line": "J'ai exp\u00e9riment\u00e9 la conception de sites \u00e0 l'aide de frameworks tels que CodeIgniter ou Symfony pour PHP, mais aussi ReactJS pour JavaScript",
-                    "has_images": false,
                     "images_links": [],
-                    "images_alt": [],
-                    "has_links": false,
+                    "images_alt": null,
                     "links": [],
                     "links_text": null
                 }
             ]
         },
         {
-            "title": "Nouveaut\u00e9s",
+            "title": "Certificats",
             "lines": [
                 {
-                    "line": "&emsp;- Certifi\u00e9 *Opquast* en 2024 *#*",
-                    "has_images": true,
-                    "images_links": [
-                        "opquast.png"
-                    ],
-                    "images_alt": "Certificat Opquast",
-                    "has_links": true,
-                    "links": [
-                        "Certificat_Opquast.pdf",
-                        "Certificat_Opquast.pdf"
-                    ],
-                    "links_text": "Voir le certificat Opquast"
+                    "line": "&emsp;- *IELTS* : Score de 7.5, CEFR : C1 (2025)",
+                    "images_links": [],
+                    "images_alt": null,
+                    "links": ["IELTS.pdf"],
+                    "links_text": "Voir le certificat IELTS"
                 },
                 {
-                    "line": "&emsp;- Certifi\u00e9 *EFSET* en 2024 : *4Skills* / *2Skills*",
-                    "has_images": true,
-                    "images_links": [
-                        "73.png",
-                        "76.png"
-                    ],
-                    "images_alt": "EFSET",
-                    "has_links": true,
-                    "links": [
-                        "https://cert.efset.org/3xzcDP",
-                        "EFSET_4Skills.pdf",
-                        "EFSET_2Skills.pdf"
-                    ],
+                    "line": "&emsp;- *EFSET* : Niveau C1/C2 (2025)",
+                    "images_links": [],
+                    "images_alt": null,
+                    "links": ["https://cert.efset.org/3xzcDP"],
                     "links_text": "Voir le certificat EFSET"
                 },
                 {
-                    "line": "&emsp;- Nouvelle pr\u00e9sence sur *Github* & *Codewars*",
-                    "has_images": false,
+                    "line": "&emsp;- *Opquast* : Certification obtenue, 825 sur 100 (2024)",
                     "images_links": [],
-                    "images_alt": [],
-                    "has_links": true,
-                    "links": [
-                        "https:\/\/github.com\/BreadyBred\/",
-                        "https:\/\/www.codewars.com\/users\/BreadyBred"
-                    ],
-                    "links_text": null
+                    "images_alt": null,
+                    "links": ["Certificat_Opquast.pdf"],
+                    "links_text": "Voir le certificat Opquast"
                 }
             ]
         }

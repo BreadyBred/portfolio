@@ -784,12 +784,12 @@ color_types:
     flex-direction: column;
     gap: 5px;
   }
-  section.aboutme-section > span .main-content .written-content .double .content-with-image {
+  section.aboutme-section > span .main-content .written-content .double .content-with-image-or-link {
     display: flex;
     align-items: center;
     gap: 10px;
   }
-  section.aboutme-section > span .main-content .written-content .double .content-with-image img {
+  section.aboutme-section > span .main-content .written-content .double .content-with-image-or-link img {
     width: 35px;
   }
   section.aboutme-section .aboutme-footer {
@@ -2031,12 +2031,12 @@ color_types:
     flex-direction: column;
     gap: 5px;
   }
-  section.aboutme-section > span .main-content .written-content .double .content-with-image {
+  section.aboutme-section > span .main-content .written-content .double .content-with-image-or-link {
     display: flex;
     align-items: center;
     gap: 10px;
   }
-  section.aboutme-section > span .main-content .written-content .double .content-with-image img {
+  section.aboutme-section > span .main-content .written-content .double .content-with-image-or-link img {
     width: 35px;
   }
   section.aboutme-section .aboutme-footer {
@@ -3309,12 +3309,12 @@ color_types:
     flex-direction: column;
     gap: 2.5px;
   }
-  section.aboutme-section > span .main-content .written-content .double .content-with-image {
+  section.aboutme-section > span .main-content .written-content .double .content-with-image-or-link {
     display: flex;
     align-items: center;
     gap: 5px;
   }
-  section.aboutme-section > span .main-content .written-content .double .content-with-image img {
+  section.aboutme-section > span .main-content .written-content .double .content-with-image-or-link img {
     width: 35px;
   }
   section.aboutme-section .aboutme-footer {

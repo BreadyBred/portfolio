@@ -35,8 +35,7 @@ switch($_GET['action']) {
 			$links_url = array();
 
 			// has images
-			$has_images = !empty(${"has_images_$i"}) ? true : false;
-			if($has_images) {
+			if(!empty(${"has_images_$i"})) {
 				$images = explode('#', ${"images_name_$i"});
 				for($j = 0; $j < count($images); $j++) {
 					$image_name = get_formatted_name($images[$j]);
@@ -47,7 +46,7 @@ switch($_GET['action']) {
 			}
 
 			// has links
-			$has_links = !empty(${"has_links_$i"}) ? true : false;
+			$has_links = !empty($links);
 			if($has_links) {
 				$links = explode('#', ${"links_$i"});
 				for($k = 0; $k < count($links); $k++)
@@ -56,10 +55,10 @@ switch($_GET['action']) {
 
 			$new_entry['lines'][] = array(
 				'line' 			=> ${"line_$i"},
-				'has_images' 	=> $has_images,
+				'images_alt' 	=> $images_alt,
 				'images_links' 	=> $images_url,
-				'has_links' 	=> $has_links,
 				'links' 		=> $links_url,
+				'links_text'	=> $links_text
 			);
 		}
 

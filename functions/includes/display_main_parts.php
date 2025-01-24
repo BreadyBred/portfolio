@@ -27,7 +27,9 @@ function display_aboutme():string {
 
 			foreach($lines as $line_array) {
 				extract($line_array);
-				$span_class = ($has_images) ? "content-with-image" : "";
+				$has_images = !empty($images_links);
+				$has_links = !empty($links);
+				$span_class = ($has_images || $has_links) ? "content-with-image-or-link" : "";
 
 				if($has_images) {
 					foreach($images_links as $images_link) {
