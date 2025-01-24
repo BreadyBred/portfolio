@@ -108,7 +108,7 @@ function display_single_project(string $project_name):string {
 					</span>
 				</span>
 				<span class='project-details'>
-					<img src='" . get_projects_illustrations_folder() . "$image_url.png'>
+					<img src='" . get_projects_illustrations_folder() . "$image_url.png' alt='$name Illustration'>
 					<span class='project-overall'>
 						<span class='tech-used'>
 							$project_tech
