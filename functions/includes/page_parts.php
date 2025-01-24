@@ -32,7 +32,7 @@ function display_header():string {
 	return "
 	<header class='bottom-border aux-bc'>
 		<nav>
-			<a href='" . get_site_root() . "'>
+			<a href='" . get_site_root() . "' aria-label='Retour à l'accueil'>
 				<img src='" . get_images_folder() . "logo/$palette/logo_256.png' id='main-logo' alt=''>
 			</a>
 			<ul class='desktop-only'>
@@ -143,8 +143,8 @@ function display_error_structure(string $error_type):string {
 		"fr" => array(
 			"403" => array(
 				"page_title" 	=> "403",
-				"main_message" 	=> "On dirait que tu n’as pas le droit d’être ici",
-				"sub_message" 	=> "Larry le malicieux va s’occuper de ton cas",
+				"main_message" 	=> "On dirait que tu n'as pas le droit d'être ici",
+				"sub_message" 	=> "Larry le malicieux va s'occuper de ton cas",
 				"image_link"    => "https://i.ibb.co/ZW9Sk14/larry.png",
 				"home_link_text"=> "Échappe-toi vite...",
 				"show_link"     => true,
@@ -153,7 +153,7 @@ function display_error_structure(string $error_type):string {
 			"404" => array(
 				"page_title" 	=> "404",
 				"main_message" 	=> "La page n'existe pas.",
-				"sub_message" 	=> "On dirait que tu t’es perdu...",
+				"sub_message" 	=> "On dirait que tu t'es perdu...",
 				"image_link"    => "https://i.ibb.co/4FZVV2g/cat.gif",
 				"home_link_text" => "Retrouve la voie...",
 				"show_link"     => true,

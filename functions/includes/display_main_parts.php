@@ -322,7 +322,7 @@ function display_contact():string {
 				break;
 		}
 
-		$social_icons .= "<a class='img' target='_blank' href='$link'><img src='" . get_images_folder() . "contact-logos/$palette/$image' class='contact-logo' alt=''></a>";
+		$social_icons .= "<a class='img' target='_blank' href='$link' aria-label='Icône de contact'><img src='" . get_images_folder() . "contact-logos/$palette/$image' class='contact-logo' alt=''></a>";
 	
 		$icon_counter++;
 	}
