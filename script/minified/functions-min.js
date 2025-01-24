@@ -1,1 +1,1 @@
-function o(o=!0){return"localhost"===window.location.hostname?"http://localhost/travail/portfolio/":o?"https://romain-gerard.com/":"http://romain-gerard.com/"}function t(){return o()+"medias/images/"}
+function get_site_root(t=!0){return"localhost"===window.location.hostname?"http://localhost/travail/portfolio/":t?"https://romain-gerard.com/":"http://romain-gerard.com/"}function get_images_folder(){return get_site_root()+"medias/images/"}
