@@ -784,6 +784,11 @@ color_types:
     flex-direction: column;
     gap: 5px;
   }
+  section.aboutme-section > span .main-content .written-content .double > span:has(.content-with-image-or-link) {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+  }
   section.aboutme-section > span .main-content .written-content .double .content-with-image-or-link {
     display: flex;
     align-items: center;
@@ -2027,6 +2032,11 @@ color_types:
     gap: 10px;
   }
   section.aboutme-section > span .main-content .written-content .double {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+  }
+  section.aboutme-section > span .main-content .written-content .double > span:has(.content-with-image-or-link) {
     display: flex;
     flex-direction: column;
     gap: 5px;
@@ -3305,6 +3315,11 @@ color_types:
     gap: 5px;
   }
   section.aboutme-section > span .main-content .written-content .double {
+    display: flex;
+    flex-direction: column;
+    gap: 2.5px;
+  }
+  section.aboutme-section > span .main-content .written-content .double > span:has(.content-with-image-or-link) {
     display: flex;
     flex-direction: column;
     gap: 2.5px;
