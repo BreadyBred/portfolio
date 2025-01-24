@@ -28,9 +28,10 @@ function display_aboutme():string {
 			foreach($lines as $line_array) {
 				extract($line_array);
 				$span_class = ($has_images) ? "content-with-image" : "";
+
 				if($has_images) {
 					foreach($images_links as $images_link) {
-						$image_path = (str_contains($images_link, 'http')) ? "<img src='$images_link' alt=''>" : "<img src='" . get_images_folder() . "aboutme-images/$images_link' alt=''>";
+						$image_path = (str_contains($images_link, 'http')) ? "<img src='$images_link' alt='$images_alt'>" : "<img src='" . get_images_folder() . "aboutme-images/$images_link' alt='$images_alt'>";
 						$line = preg_replace('/#/', $image_path, $line, 1);
 					}
 				}
@@ -47,7 +48,7 @@ function display_aboutme():string {
 
 						$direct_link = ($is_local) ? get_files_folder() . $link : $link;
 
-						$line = preg_replace($pattern, "<a href='$direct_link' target='_blank' class='underlined'>$placeholder</a>", $line, 1);
+						$line = preg_replace($pattern, "<a href='$direct_link' target='_blank' class='underlined' aria-label='$links_text'>$placeholder</a>", $line, 1);
 					}
 				}
 
