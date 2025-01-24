@@ -1,0 +1,1 @@
+function o(o=!0){return"localhost"===window.location.hostname?"http://localhost/travail/portfolio/":o?"https://romain-gerard.com/":"http://romain-gerard.com/"}function t(){return o()+"medias/images/"}
