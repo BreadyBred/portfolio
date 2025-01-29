@@ -1,4 +1,25 @@
 {
+    "codewars_rank_fetcher": {
+        "name": "Codewars Rank Fetcher",
+        "synopsis": "Application de bureau",
+        "description": "Codewars Rank Fetcher est une application de bureau con\u00e7ue pour automatiser la r\u00e9cup\u00e9ration et le stockage de vos classements Codewars. Gr\u00e2ce \u00e0 une interface intuitive, elle permet aux utilisateurs de suivre leur progression en r\u00e9cup\u00e9rant leurs rangs directement depuis l\u2019API de Codewars. L\u2019application offre une personnalisation avanc\u00e9e, permettant de sp\u00e9cifier un nom d\u2019utilisateur, de s\u00e9lectionner les cat\u00e9gories \u00e0 suivre et d\u2019ordonner les classements du plus haut au plus bas. Les donn\u00e9es sont stock\u00e9es au format JSON, facilitant leur int\u00e9gration dans un portfolio, un CV ou un site personnel. Facile \u00e0 utiliser, il suffit d\u2019entrer son nom d\u2019utilisateur, de choisir ses pr\u00e9f\u00e9rences et de lancer la r\u00e9cup\u00e9ration des classements. Une fois le processus termin\u00e9, les r\u00e9sultats sont accessibles sous forme de fichier structur\u00e9, pr\u00eat \u00e0 \u00eatre consult\u00e9 ou r\u00e9utilis\u00e9. Que ce soit pour pr\u00e9parer un entretien, suivre ses progr\u00e8s ou mettre en valeur ses comp\u00e9tences, Codewars Rank Fetcher simplifie la gestion des classements en offrant une solution rapide et efficace pour centraliser ses performances en programmation.",
+        "date": "19\/01\/2025",
+        "link": "https:\/\/github.com\/BreadyBred\/codewars-rank-fetcher\/",
+        "image_url": "codewars_rank_fetcher",
+        "thumbnail_url": "codewars_rank_fetcher",
+        "important_techs": [
+            "Python",
+            "threading",
+            "tkinter"
+        ],
+        "tech_used": [
+            "API",
+            "Python",
+            "threading",
+            "tkinter"
+        ],
+        "to_show": true
+    },
     "codewars": {
         "name": "Codewars",
         "synopsis": "Exercices de programmation",
@@ -21,7 +42,7 @@
     "poketeam_shuffle": {
         "name": "Pok\u00e9Team Shuffle",
         "synopsis": "Pok\u00e9mon Showdown Randomizer",
-        "description": "\"PokéTeam Shuffle\" est un générateur d'équipes Pokémon aléatoires conçu pour les joueurs de Pokémon Showdown. Lassé(e) de composer des équipes classiques ? Ce site web vous propose une expérience rafraîchissante en générant une équipe de six Pokémon de manière aléatoire. Chaque Pokémon est présenté avec sa carte détaillée : nom, sprite, types, numéro de Pokédex et statistiques. Vous pouvez relancer la génération d'équipe complète avec le bouton \"Roll\" ou cibler un seul Pokémon de votre équipe pour le remplacer. Un sélecteur de génération permet également de personnaliser davantage la génération aléatoire. Idéal pour des combats amicaux et pour découvrir des synergies inattendues !",
+        "description": "\"Pok\u00e9Team Shuffle\" est un g\u00e9n\u00e9rateur d'\u00e9quipes Pok\u00e9mon al\u00e9atoires con\u00e7u pour les joueurs de Pok\u00e9mon Showdown. Lass\u00e9(e) de composer des \u00e9quipes classiques ? Ce site web vous propose une exp\u00e9rience rafra\u00eechissante en g\u00e9n\u00e9rant une \u00e9quipe de six Pok\u00e9mon de mani\u00e8re al\u00e9atoire. Chaque Pok\u00e9mon est pr\u00e9sent\u00e9 avec sa carte d\u00e9taill\u00e9e : nom, sprite, types, num\u00e9ro de Pok\u00e9dex et statistiques. Vous pouvez relancer la g\u00e9n\u00e9ration d'\u00e9quipe compl\u00e8te avec le bouton \"Roll\" ou cibler un seul Pok\u00e9mon de votre \u00e9quipe pour le remplacer. Un s\u00e9lecteur de g\u00e9n\u00e9ration permet \u00e9galement de personnaliser davantage la g\u00e9n\u00e9ration al\u00e9atoire. Id\u00e9al pour des combats amicaux et pour d\u00e9couvrir des synergies inattendues !",
         "date": "16\/09\/2024",
         "link": "https:\/\/pokeshuffle.freesite.online\/",
         "image_url": "poketeam_shuffle",
@@ -41,9 +62,9 @@
     "la_reconquete": {
         "name": "La Reconqu\u00eate",
         "synopsis": "Projet Universitaire de 1\u00e8re ann\u00e9e",
-        "description": "\"La Reconquête\" est un projet ambitieux mené lors de ma première année de DUT, constituant une première expérience concrète dans le développement web. Ce projet m'a permis d'acquérir des compétences en conception de sites web interactifs, en création de supports visuels et en gestion de projet. Il comprend la réalisation d'un site web immersif sur l'époque médiévale, ainsi que la conception de visuels pour la promotion de l'événement.",
+        "description": "\"La Reconqu\u00eate\" est un projet ambitieux men\u00e9 lors de ma premi\u00e8re ann\u00e9e de DUT, constituant une premi\u00e8re exp\u00e9rience concr\u00e8te dans le d\u00e9veloppement web. Ce projet m'a permis d'acqu\u00e9rir des comp\u00e9tences en conception de sites web interactifs, en cr\u00e9ation de supports visuels et en gestion de projet. Il comprend la r\u00e9alisation d'un site web immersif sur l'\u00e9poque m\u00e9di\u00e9vale, ainsi que la conception de visuels pour la promotion de l'\u00e9v\u00e9nement.",
         "date": "10\/07\/2020",
-        "link": "https://lareconquete.42web.io",
+        "link": "https:\/\/lareconquete.42web.io",
         "image_url": "la_reconquete",
         "thumbnail_url": "la_reconquete",
         "important_techs": [
@@ -83,7 +104,7 @@
     "maichef": {
         "name": "Ma\u00efChef",
         "synopsis": "Maquettage d'une application",
-        "description": "\"Maïchef\" est le fruit d'un projet passionnant mené lors d'un Hackathon ! En équipe, nous avons développé cette application de cuisine personnalisée, permettant aux utilisateurs de créer des plats uniques avec leurs ingrédients. Ce Hackathon a été une expérience formatrice intense, nous permettant de mettre en pratique nos compétences en conception, développement et gestion de projet.",
+        "description": "\"Ma\u00efchef\" est le fruit d'un projet passionnant men\u00e9 lors d'un Hackathon ! En \u00e9quipe, nous avons d\u00e9velopp\u00e9 cette application de cuisine personnalis\u00e9e, permettant aux utilisateurs de cr\u00e9er des plats uniques avec leurs ingr\u00e9dients. Ce Hackathon a \u00e9t\u00e9 une exp\u00e9rience formatrice intense, nous permettant de mettre en pratique nos comp\u00e9tences en conception, d\u00e9veloppement et gestion de projet.",
         "date": "17\/11\/2023",
         "link": "https:\/\/maichef.42web.io",
         "image_url": "maichef",

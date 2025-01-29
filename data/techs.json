@@ -18,6 +18,8 @@
         "XML",
         "Figma",
         "C#",
-        "Python"
+        "Python",
+        "threading",
+        "tkinter"
     ]
 }
