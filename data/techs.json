@@ -5,6 +5,7 @@
         "TailWind",
         "LESS",
         "JavaScript",
+        "NodeJS",
         "jQuery",
         "React",
         "NextJS",
@@ -15,11 +16,12 @@
         "CodeIgniter",
         "MySQL",
         "JSON",
-        "XML",
         "Figma",
         "C#",
+        "Shell",
         "Python",
         "threading",
-        "tkinter"
+        "tkinter",
+        null
     ]
 }

@@ -1,5 +1,5 @@
 {
-    "maintenance_mode": false,
+    "maintenance_mode": true,
     "palette_format": [
         [
             "auxiliary-c",
