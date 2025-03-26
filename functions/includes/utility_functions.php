@@ -194,3 +194,29 @@ function get_browser_language():string {
 	$lang = substr($_SERVER['HTTP_ACCEPT_LANGUAGE'], 0, 2);
 	return ($lang == 'fr') ? $lang : "en";
 }
+
+function load_env() {
+    $env_file = get_site_root() . "/.env";   
+    $env_contents = file_get_contents($env_file);
+    $env_lines = explode("\n", $env_contents);
+    $env_vars = [];
+
+    foreach($env_lines as $line) {
+        $line = trim($line);
+
+        if(empty($line) || strpos($line, "#") === 0) {
+            continue;
+        }
+
+        $parts = explode("=", $line, 2);
+
+        if(count($parts) == 2) {
+            $key = trim($parts[0]);
+            $value = trim($parts[1]);
+            $value = trim($value, '"\'');
+            $env_vars[$key] = $value;
+        }
+    }
+    
+    return $env_vars;
+}
