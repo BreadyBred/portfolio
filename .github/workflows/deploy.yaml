@@ -26,23 +26,23 @@ jobs:
           set mirror:parallel-transfer-count 5
           
           # Individual files
-          put index.php -o /home/romaing/www/index.php
-          put .htaccess -o /home/romaing/www/.htaccess
+          put index.php -o www/index.php
+          put .htaccess -o www/.htaccess
           
           # Recursive directories
-          mirror -R admin/ /home/romaing/www/admin/
-          mirror -R data/ /home/romaing/www/data/
-          mirror -R error/ /home/romaing/www/error/
-          mirror -R functions/ /home/romaing/www/functions/
-          mirror -R medias/ /home/romaing/www/medias/
-          mirror -R projects/ /home/romaing/www/projects/
+          mirror -R admin/ www/admin/
+          mirror -R data/ www/data/
+          mirror -R error/ www/error/
+          mirror -R functions/ www/functions/
+          mirror -R medias/ www/medias/
+          mirror -R projects/ www/projects/
           
           # Mirror specific directories
-          mirror -R script/minified/ /home/romaing/www/script/minified/
+          mirror -R script/minified/ www/script/minified/
           
           # Individual file in subdirectory
-          mkdir -f -p /home/romaing/www/style/
-          put style/style.css -o /home/romaing/www/style/style.css
+          mkdir -f -p www/style/
+          put style/style.css -o www/style/style.css
           
           bye
           EOF
