@@ -5,3 +5,5 @@ google*.html
 sitemap.xml
 log.txt
 robots.txt
+node_modules/
+*-lock.*
