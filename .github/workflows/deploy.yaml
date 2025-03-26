@@ -27,16 +27,18 @@ jobs:
           
           # Individual files
           put index.php -o /home/romaing/www/index.php
-          put functions.php -o /home/romaing/www/.htaccess
+          put .htaccess -o /home/romaing/www/.htaccess
           
           # Recursive directories
-          mirror -R includes/ /home/romaing/www/admin/
-          mirror -R includes/ /home/romaing/www/data/
-          mirror -R includes/ /home/romaing/www/error/
-          mirror -R includes/ /home/romaing/www/functions/
-          mirror -R includes/ /home/romaing/www/medias/
-          mirror -R includes/ /home/romaing/www/projects/
-          mirror -R includes/ /home/romaing/www/script/
+          mirror -R admin/ /home/romaing/www/admin/
+          mirror -R data/ /home/romaing/www/data/
+          mirror -R error/ /home/romaing/www/error/
+          mirror -R functions/ /home/romaing/www/functions/
+          mirror -R medias/ /home/romaing/www/medias/
+          mirror -R projects/ /home/romaing/www/projects/
+          
+          # Mirror specific directories
+          mirror -R script/minified/ /home/romaing/www/script/minified/
           
           # Individual file in subdirectory
           mkdir -f -p /home/romaing/www/style/
