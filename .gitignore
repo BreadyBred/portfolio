@@ -1,6 +1,5 @@
 .env
 .user.ini
-user.json
 google*.html
 sitemap.xml
 log.txt
