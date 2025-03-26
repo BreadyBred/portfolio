@@ -1,0 +1,53 @@
+name: Website Deployment
+
+on:
+  push:
+    branches:
+      - deploy
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Code Verification
+        uses: actions/checkout@v1
+
+      - name: LFTP install
+        run: sudo apt-get install -y lftp
+
+      - name: Create LFTP script
+        run: |
+          cat > deploy.lftp << EOF
+          open -u ${{ secrets.FTP_USER }},${{ secrets.FTP_PASS }} ${{ secrets.FTP_HOST }}
+          
+          # Global settings
+          set mirror:use-pget-n 5
+          set mirror:parallel-transfer-count 5
+          
+          # Individual files
+          put index.php -o /home/romaing/www/index.php
+          put functions.php -o /home/romaing/www/.htaccess
+          
+          # Recursive directories
+          mirror -R includes/ /home/romaing/www/admin/
+          mirror -R includes/ /home/romaing/www/data/
+          mirror -R includes/ /home/romaing/www/error/
+          mirror -R includes/ /home/romaing/www/functions/
+          mirror -R includes/ /home/romaing/www/medias/
+          mirror -R includes/ /home/romaing/www/projects/
+          mirror -R includes/ /home/romaing/www/script/
+          
+          # Individual file in subdirectory
+          mkdir -f -p /home/romaing/www/style/
+          put style/style.css -o /home/romaing/www/style/style.css
+          
+          bye
+          EOF
+
+      - name: Deployment script execution
+        run: |
+          echo "Script beginning..."
+          echo "Connection to ${{ secrets.FTP_HOST }} with username ${{ secrets.FTP_USER }}"
+          lftp -f deploy.lftp
+          echo "Script finished."
