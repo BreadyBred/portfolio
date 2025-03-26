@@ -612,6 +612,9 @@ color_types:
     box-shadow: 0 0 40px 0 #FFFFFF53;
     background-color: #FFF;
   }
+  .empty {
+    display: none;
+  }
   .line,
   .v-line {
     user-select: none;
@@ -1863,6 +1866,9 @@ color_types:
   .button-4:hover {
     box-shadow: 0 0 40px 0 #FFFFFF53;
     background-color: #FFF;
+  }
+  .empty {
+    display: none;
   }
   .line,
   .v-line {
@@ -3146,6 +3152,9 @@ color_types:
   .button-4:hover {
     box-shadow: 0 0 40px 0 #FFFFFF53;
     background-color: #FFF;
+  }
+  .empty {
+    display: none;
   }
   .line,
   .v-line {

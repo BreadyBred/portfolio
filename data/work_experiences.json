@@ -1,5 +1,29 @@
 [
     {
+        "name": "Développeur Web",
+        "date": "Juil. 2024 - Today",
+        "company_name": "Freelance",
+        "status": "",
+        "descriptions": [
+            {
+                "line": "Création de sites web sur mesure",
+                "tabulations": 1
+            },
+            {
+                "line": "HTML, CSS, JavaScript, PHP, MySQL",
+                "tabulations": 2
+            },
+            {
+                "line": "Refonte et optimisation de sites existants",
+                "tabulations": 1
+            },
+            {
+                "line": "Gestion de l'hébergement et maintenance technique",
+                "tabulations": 1
+            }
+        ]
+    },
+    {
         "name": "Webmaster\/Infographiste",
         "date": "Avr. 2024 - Juil. 2024",
         "company_name": "Prescott",

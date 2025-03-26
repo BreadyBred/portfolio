@@ -201,6 +201,7 @@ function display_work_exp():string {
 
 	foreach($work_experiences as $work_experience) {
 		extract($work_experience);
+		$is_status_empty_class = ($status == "") ? "empty" : "";
 
 		$structure .= "
 		<span class='work-experience'>
@@ -210,7 +211,7 @@ function display_work_exp():string {
 				<span class='work-experience-name'>$name</span>
 			</span>
 			<span class='work-experience-job italic'>$company_name</span>
-			<span class='work-experience-state italic a-fc'>($status)</span>
+			<span class='work-experience-state italic a-fc $is_status_empty_class'>($status)</span>
 			<span class='work-experience-description small italic'>";
 		
 		foreach($descriptions as $description) {
