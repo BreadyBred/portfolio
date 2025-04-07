@@ -199,7 +199,7 @@ function display_footer(): string {
 
 	return "
 		$palette_choice
-		<footer class='top-border aux-bc'><span>Romain GERARD <a href='" . get_admin_folder() . "'>©</a> 2024</span></footer>
+		<footer class='top-border aux-bc'><span>Romain GERARD <a href='" . get_admin_folder() . "'>©</a> 2025</span></footer>
 	";
 }
 
