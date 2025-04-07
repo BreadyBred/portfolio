@@ -1,0 +1,12 @@
+{
+    "name": "romain/portfolio",
+    "require": {
+        "phpmailer/phpmailer": "^6.9"
+    },
+    "authors": [
+        {
+            "name": "BreadyBred",
+            "email": "gerarromain@gmail.com"
+        }
+    ]
+}

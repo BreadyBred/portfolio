@@ -41,7 +41,7 @@ switch($_GET['action']) {
 
 	case 'delete-icon':	case 'delete':
 		foreach ($contact_section['contact-icon'] as $key => $entry) {
-			if($entry['link'] === $link) {
+			if ($entry['link'] === $link) {
 				$filename = $contact_section['contact-icon'][$key]['image'];
 				$icon_path = str_repeat('../', $url_depth) . "medias/images/contact-logos/$filename";
 				unlink($icon_path);
@@ -55,7 +55,7 @@ switch($_GET['action']) {
 		break;
 	case 'delete-text':
 		foreach ($contact_section['contact-text'] as $key => $entry) {
-			if($entry['link'] === $link) {
+			if ($entry['link'] === $link) {
 				unset($contact_section['contact-text'][$key]);
 				$contact_section['contact-text'] = array_values($contact_section['contact-text']);
 				break;
@@ -70,7 +70,7 @@ $file_path = str_repeat('../', $url_depth) . "data/contact.json";
 
 $resultat = file_put_contents($file_path, $json_data);
 
-if($resultat) {
+if ($resultat) {
 	$response["success"] = true;
 	$response["message"] = "Le lien a bien été $action.";
 }

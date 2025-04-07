@@ -6,3 +6,5 @@ log.txt
 robots.txt
 node_modules/
 *-lock.*
+*.lock
+/vendor/

@@ -1,6 +1,6 @@
 <?php
 
-function display_aboutme():string {
+function display_aboutme(): string {
 	$aboutme_json = decode('aboutme');
 	$basic_lines = $aboutme_json['simple-content'];
 	$total_basic_lines = count($basic_lines); 
@@ -11,42 +11,44 @@ function display_aboutme():string {
 
 	$current_index = 0;
 
-	foreach($basic_lines as $basic_line) {
+	foreach ($basic_lines as $basic_line) {
 		$basic_content .= $basic_line;
 		$current_index++;
-		if($current_index < $total_basic_lines)
+		if ($current_index < $total_basic_lines) {
 			$basic_content .= str_repeat("<br>", 2);
+		}
 	}
 
-	foreach($complex_lines as $complex_line) {
+	foreach ($complex_lines as $complex_line) {
 		extract($complex_line);
 
 		$complex_content .= "<span class='double'>";
 			$complex_content .= "<span class='subtitle underlined'>$title</span>";
 			$complex_content .= "<span>";
 
-			foreach($lines as $line_array) {
+			foreach ($lines as $line_array) {
 				extract($line_array);
 				$has_images = !empty($images_links);
 				$has_links = !empty($links);
 				$span_class = ($has_images || $has_links) ? "content-with-image-or-link" : "";
 
-				if($has_images) {
-					foreach($images_links as $images_link) {
+				if ($has_images) {
+					foreach ($images_links as $images_link) {
 						$image_path = (str_contains($images_link, 'http')) ? "<img src='$images_link' alt='$images_alt'>" : "<img src='" . get_images_folder() . "aboutme-images/$images_link' alt='$images_alt'>";
 						$line = preg_replace('/#/', $image_path, $line, 1);
 					}
 				}
 
-				if($has_links) {
-					foreach($links as $link) {
+				if ($has_links) {
+					foreach ($links as $link) {
 						$pattern = '/\*(.*?)\*/';
 						$is_local = true;
-						if(str_contains($link, 'http'))
+						if (str_contains($link, 'http'))
 							$is_local = false;
 						
-						if(preg_match($pattern, $line, $words))
+						if (preg_match($pattern, $line, $words)) {
 							$placeholder = $words[1];
+						}
 
 						$direct_link = ($is_local) ? get_files_folder() . $link : $link;
 
@@ -91,18 +93,18 @@ function display_aboutme():string {
 	</span> */
 }
 
-function display_competences():string {
+function display_competences(): string {
 	$categories = decode('competences');
 
 	$competence_text = "";
-	foreach($categories as $category_name => $category) {
+	foreach ($categories as $category_name => $category) {
 		$competence_text .= "
 		<span class='category'>
 			<span class='category-title'>$category_name</span>
 			<span class='categorised-competences'>
 		";
 
-		foreach($category as $formatted_competence => $competence) {
+		foreach ($category as $formatted_competence => $competence) {
 			$competence_link = get_competence_link($formatted_competence, $competence);
 			$competence_text .= "<img class='competence' src='$competence_link' alt='$competence'>";
 		}
@@ -126,11 +128,11 @@ function display_competences():string {
 	";
 }
 
-function display_projects():string {
+function display_projects(): string {
 	$projects = get_shown_projects_list();
 	$project_list = array_values($projects);
 
-	usort($project_list, function ($a, $b) {
+	usort($project_list, function (array $a, array $b): int {
 		$date_a = DateTime::createFromFormat('d/m/Y', $a['date']);
 		$date_b = DateTime::createFromFormat('d/m/Y', $b['date']);
 		
@@ -156,7 +158,7 @@ function display_projects():string {
 				$position = ($j == 0) ? "first" : "last";
 				$project_tech = "";
 
-				foreach($important_techs as $tech) {
+				foreach ($important_techs as $tech) {
 					$project_tech .= "<span class='tech a-bc'>$tech</span>"; 
 				}
 
@@ -188,7 +190,7 @@ function display_projects():string {
 	return $structure;
 }
 
-function display_work_exp():string {
+function display_work_exp(): string {
 	$work_experiences = decode('work_experiences');
 
 	$structure = "
@@ -199,7 +201,7 @@ function display_work_exp():string {
 		</span>
 		<span class='work-experiences'>";
 
-	foreach($work_experiences as $work_experience) {
+	foreach ($work_experiences as $work_experience) {
 		extract($work_experience);
 		$is_status_empty_class = ($status == "") ? "empty" : "";
 
@@ -214,7 +216,7 @@ function display_work_exp():string {
 			<span class='work-experience-state italic a-fc $is_status_empty_class'>($status)</span>
 			<span class='work-experience-description small italic'>";
 		
-		foreach($descriptions as $description) {
+		foreach ($descriptions as $description) {
 			extract($description);
 
 			$tabs = str_repeat("&emsp;", $tabulations);
@@ -237,7 +239,7 @@ function display_work_exp():string {
 	return $structure;
 }
 
-function display_education():string {
+function display_education(): string {
 	$educations = decode('educations');
 
 	$structure = "
@@ -249,7 +251,7 @@ function display_education():string {
 			<span class='scholarships'>
 	";
 
-	foreach($educations as $education) {
+	foreach ($educations as $education) {
 		extract($education);
 
 		$structure .= "
@@ -261,10 +263,10 @@ function display_education():string {
 				</span>
 		";
 
-		if($specialty) {
+		if ($specialty) {
 			$structure .= "<span class='scholar-speciality italic'>$specialty</span>";
 		}
-		if($major) {
+		if ($major) {
 			$structure .= "<span class='scholar-major italic a-fc'>$major</span>";
 		}
 		
@@ -280,7 +282,7 @@ function display_education():string {
 	return $structure;
 }
 
-function display_experiences():string {
+function display_experiences(): string {
 	$structure = "<section class='experiences-section' id='experiences-section'>";
 	$structure .= display_work_exp();
 	$structure .= display_education();
@@ -289,7 +291,7 @@ function display_experiences():string {
 	return $structure;
 }
 
-function display_contact():string {
+function display_contact(): string {
 	
 	$contact_json = decode('contact');
 
@@ -303,7 +305,7 @@ function display_contact():string {
 
 	$icon_counter = 1;
 
-	foreach($contact_icons as $contact_icon) {
+	foreach ($contact_icons as $contact_icon) {
 		extract($contact_icon);
 
 		switch($icon_counter) {
@@ -333,7 +335,7 @@ function display_contact():string {
 
 	$social_icons .= "</span>";
 
-	foreach($contact_texts as $contact_text) {
+	foreach ($contact_texts as $contact_text) {
 		extract($contact_text);
 		$social_texts .= "<a href='$link' class='italic underlined text'>$text</a>";
 	}
@@ -354,12 +356,13 @@ function display_contact():string {
 	";
 }
 
-function display_palette_choice():string {
+function display_palette_choice(): string {
 	$structure = "<span class='palette-item'>";
 	$structure .= "<img class='palette-option palette-trigger' src='" . get_images_folder() . "palette-icons/palette_plus.png' alt='Palette picker'>";
 	
-	for($i = 0; $i < count(get_active_palettes()); $i++)
+	for ($i = 0; $i < count(get_active_palettes()); $i++) {
 		$structure .= "<img class='palette-option palette' src='" . get_images_folder() . "palette-icons/$i.png' data-id='$i' alt='Palette $i'>";
+	}
 	
 	$structure .= "</span>";
 	

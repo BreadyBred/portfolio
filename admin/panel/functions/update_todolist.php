@@ -16,7 +16,7 @@ $file_path = str_repeat('../', $url_depth) . "medias/files/todo.txt";
 
 $resultat = file_put_contents($file_path, $todolist_text);
 
-if($resultat) {
+if ($resultat) {
 	$response["success"] = true;
 	$response["message"] = "La todolist a bien été modifiée.";
 }
