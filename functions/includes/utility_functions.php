@@ -56,8 +56,12 @@ function get_current_URL() {
 	return $protocol . $host . $request_URI;
 }
 
+function is_on_localhost(): bool {
+	return $_SERVER['HTTP_HOST'] === "localhost";
+}
+
 function get_site_root(bool $secured = true):string {
-	if($_SERVER['HTTP_HOST'] == "localhost")
+	if(is_on_localhost())
 		return 'http://localhost/travail/portfolio/';
 
 	if(!$secured)
@@ -195,25 +199,26 @@ function get_browser_language():string {
 	return ($lang == 'fr') ? $lang : "en";
 }
 
-function load_env() {
-    $env_file = get_site_root() . "/.env";   
-    $env_contents = file_get_contents($env_file);
-    $env_lines = explode("\n", $env_contents);
+function load_env(): array {
+    $env_file = ((is_on_localhost()) ? $_SERVER['DOCUMENT_ROOT'] . "/travail/portfolio" : $_SERVER['DOCUMENT_ROOT']) . "/.env";
+    
+    if (!file_exists($env_file) || !is_readable($env_file)) {
+        return [];
+    }
+    
+    $env_lines = file($env_file, FILE_IGNORE_NEW_LINES | FILE_SKIP_EMPTY_LINES);
     $env_vars = [];
-
-    foreach($env_lines as $line) {
+    
+    foreach ($env_lines as $line) {
         $line = trim($line);
-
-        if(empty($line) || strpos($line, "#") === 0) {
+        if (empty($line) || strpos($line, "#") === 0) {
             continue;
         }
-
+        
         $parts = explode("=", $line, 2);
-
-        if(count($parts) == 2) {
+        if (count($parts) == 2) {
             $key = trim($parts[0]);
-            $value = trim($parts[1]);
-            $value = trim($value, '"\'');
+            $value = trim($parts[1], " \t\n\r\0\x0B\"'");
             $env_vars[$key] = $value;
         }
     }
