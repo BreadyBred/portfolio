@@ -401,8 +401,9 @@ function display_create_project_panel():string {
 	$tech_count = count($techs);
 	$tech_choice = "";
 
-	foreach ($techs as $tech)
+	foreach ($techs as $tech) {
 		$tech_choice .= "<option class='aux-bg-hv' value='$tech'>$tech</option>";
+	}
 
 	return "
 	<form method='POST' action='" . get_admin_panel_folder() . "functions/modify_project.php?action=add' enctype='multipart/form-data' class='hide functions-panel aux-bc' id='create-project'>

@@ -360,8 +360,9 @@ function display_palette_choice():string {
 	$structure = "<span class='palette-item'>";
 	$structure .= "<img class='palette-option palette-trigger' src='" . get_images_folder() . "palette-icons/palette_plus.png' alt='Palette picker'>";
 	
-	for ($i = 0; $i < count(get_active_palettes()); $i++)
+	for ($i = 0; $i < count(get_active_palettes()); $i++) {
 		$structure .= "<img class='palette-option palette' src='" . get_images_folder() . "palette-icons/$i.png' data-id='$i' alt='Palette $i'>";
+	}
 	
 	$structure .= "</span>";
 	
