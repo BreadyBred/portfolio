@@ -29,7 +29,7 @@ $file_path = str_repeat('../', $url_depth) . "medias/files/CV_${prefix}_Romain-G
 
 $resultat = move_uploaded_file($tmp_name, $file_path);
 
-if($resultat) {
+if ($resultat) {
 	$response["success"] = true;
 	$response["message"] = "Le CV a bien été remplacé.";
 }

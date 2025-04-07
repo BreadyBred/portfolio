@@ -10,8 +10,9 @@ function log_(mixed $element):void {
 }
 
 function is_maintenance_mode_on():bool {
-	if(decode('utilities')['maintenance_mode'])
+	if (decode('utilities')['maintenance_mode']) {
 		return true;
+	}
 
 	return false;
 }
@@ -28,19 +29,21 @@ function get_URL_depth(string $url): int {
 	$base_url = get_site_root();
 	$base_url = rtrim($base_url, '/');
 	
-	if(strpos($url, $base_url) === 0) {
+	if (strpos($url, $base_url) === 0) {
 		$relative_path = substr($url, strlen($base_url));
 		$relative_path = ltrim($relative_path, '/');
 		
-		if(empty($relative_path))
+		if (empty($relative_path)) {
 			return 0;
+		}
 		
 		$segments = explode('/', $relative_path);
 
 		$last_segment = end($segments);
 
-		if(strpos($last_segment, '.') !== false)
+		if (strpos($last_segment, '.') !== false) {
 			array_pop($segments);
+		}
 		
 		return count($segments);
 	} else {
@@ -61,11 +64,13 @@ function is_on_localhost(): bool {
 }
 
 function get_site_root(bool $secured = true):string {
-	if(is_on_localhost())
+	if (is_on_localhost()) {
 		return 'http://localhost/travail/portfolio/';
+	}
 
-	if(!$secured)
+	if (!$secured) {
 		return 'http://romain-gerard.com/';
+	}
 
 	return 'https://romain-gerard.com/';
 }
@@ -149,7 +154,7 @@ function get_formatted_name(string $name):string {
 
 	$name = strtolower($name);
 
-	if(substr($name, -1) === '_') {
+	if (substr($name, -1) === '_') {
 		$name = substr($name, 0, -1);
 	}
 	
@@ -186,7 +191,7 @@ function decode(string $filename):array {
 }
 
 function check_session():void {
-	if(empty($_COOKIE['login'])) {
+	if (empty($_COOKIE['login'])) {
 		session_unset();
 		session_destroy();
 		header("Location: " . get_site_root() . "admin/");

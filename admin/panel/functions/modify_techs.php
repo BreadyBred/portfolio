@@ -31,7 +31,7 @@ $file_path = str_repeat('../', $url_depth) . "data/techs.json";
 
 $resultat = file_put_contents($file_path, $json_data);
 
-if($resultat) {
+if ($resultat) {
 	$response["success"] = true;
 	$response["message"] = "La technologie $name a bien été $action.";
 }

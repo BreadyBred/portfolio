@@ -15,7 +15,7 @@ $work_experiences = decode('work_experiences');
 
 $lines = explode('-', $description);
 $description_lines = array();
-foreach($lines as $line) {
+foreach ($lines as $line) {
 	$description_lines[] = array(
 		"line" 			=> $line,
 		"tabulations"	=> 1
@@ -49,7 +49,7 @@ $file_path = str_repeat('../', $url_depth) . "data/work_experiences.json";
 
 $resultat = file_put_contents($file_path, $json_data);
 
-if($resultat) {
+if ($resultat) {
 	$response["success"] = true;
 	$response["message"] = "L'expérience professionnelle $name a bien été $action.";
 }

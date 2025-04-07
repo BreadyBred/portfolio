@@ -77,12 +77,12 @@ function display_single_project(string $project_name):string {
 	extract($projects[$project_name]);
 
 	$project_tech = "";
-	foreach($tech_used as $tech)
+	foreach ($tech_used as $tech)
 		$project_tech .= "<span class='tech a-bc'>$tech</span>";
 
 	$description_lines = explode('. ', $description);
 	$description = "";
-	foreach($description_lines as $description_line) {
+	foreach ($description_lines as $description_line) {
 		$point = (in_array(substr($description_line, -1), [".", "!", "?"])) ? "" : ".";
 		$description .= "<span>{$description_line}{$point}</span>";
 	}

@@ -34,7 +34,7 @@ function display_admin_structure():string {
 		$structure .= "</span>";
 	$structure .= "</section>";
 
-	if(isset($_SESSION['server_response'])) {
+	if (isset($_SESSION['server_response'])) {
 		$server_response = json_decode($_SESSION['server_response'], JSON_PRETTY_PRINT);
 		$structure .= display_popup($server_response['success'], $server_response['message']);
 		unset($_SESSION['server_response']);
@@ -361,7 +361,7 @@ function display_delete_simple_content_panel():string {
 	$simple_contents_count = count($simple_contents);
 	$simple_contents_list = "";
 
-	foreach($simple_contents as $id => $simple_content) {
+	foreach ($simple_contents as $id => $simple_content) {
 		$simple_contents_list .= "<option class='aux-bg-hv' value='$id'>" . substr($simple_content, 0, 50) . "...</option>";
 	}
 
@@ -381,7 +381,7 @@ function display_delete_complex_content_panel():string {
 	$complex_contents_count = count($complex_contents);
 	$complex_contents_list = "";
 
-	foreach($complex_contents as $id => $complex_content) {
+	foreach ($complex_contents as $id => $complex_content) {
 		$complex_contents_list .= "<option class='aux-bg-hv' value='$id'>" . $complex_content['title'] . "...</option>";
 	}
 
@@ -401,7 +401,7 @@ function display_create_project_panel():string {
 	$tech_count = count($techs);
 	$tech_choice = "";
 
-	foreach($techs as $tech)
+	foreach ($techs as $tech)
 		$tech_choice .= "<option class='aux-bg-hv' value='$tech'>$tech</option>";
 
 	return "
@@ -475,12 +475,13 @@ function display_update_project_panel():string {
 	$project_list = sort_in_radio($project_list, 'update');
 
 	$projects_info = "";
-	foreach($projects as $project_id => $project) {
+	foreach ($projects as $project_id => $project) {
 		$projects_info .= display_project_info_panel($project_id, $project);
 	}
 
-	if(empty($project_list))
+	if (empty($project_list)) {
 		$project_list = "Aucun projet ne peut être affiché";
+	}
 
 	return "
 		<form class='hide functions-panel aux-bc' id='update-project'>
@@ -503,7 +504,7 @@ function display_project_info_panel(string $project_id, array $project):string {
 	$tech_count = count($techs);
 	$important_tech_choice = $tech_choice = "";
 
-	foreach($techs as $tech) {
+	foreach ($techs as $tech) {
 		$is_used = (in_array($tech, $tech_used)) ? "selected" : "";
 		$is_important = (in_array($tech, $important_techs)) ? "selected" : "";
 
@@ -557,8 +558,9 @@ function display_show_project_panel():string {
 	$project_list = get_hidden_projects_list();
 	$project_list = sort_in_radio($project_list, 'show');
 
-	if(empty($project_list))
+	if (empty($project_list)) {
 		$project_list = "Aucun projet ne peut être affiché";
+	}
 
 	return "
 		<form method='POST' action='" . get_admin_panel_folder() . "functions/modify_project.php?action=show' class='hide functions-panel aux-bc' id='show-project'>
@@ -576,8 +578,9 @@ function display_hide_project_panel():string {
 	$project_list = get_shown_projects_list();
 	$project_list = sort_in_radio($project_list, 'hide');
 
-	if(empty($project_list))
+	if (empty($project_list)) {
 		$project_list = "Aucun projet ne peut être affiché";
+	}
 
 	return "
 		<form method='POST' action='" . get_admin_panel_folder() . "functions/modify_project.php?action=hide' class='hide functions-panel aux-bc' id='hide-project'>
@@ -612,7 +615,7 @@ function display_add_competence_panel():string {
 
 	$category_count = count($competences);
 	$category_text = "";
-	foreach($competences as $category => $competence) {
+	foreach ($competences as $category => $competence) {
 		$category_text .= "
 			<option class='aux-bg-hv' value='$category'>$category</option>
 		";
@@ -820,7 +823,7 @@ function display_delete_contact_icon_panel():string {
 	$contact_icons_count = count($contact_icons);
 	$contact_icons_list = "";
 
-	foreach($contact_icons as $id => $contact_icons) {
+	foreach ($contact_icons as $id => $contact_icons) {
 		extract($contact_icons);
 		$contact_icons_list .= "<option class='aux-bg-hv' value='$link'>$link</option>";
 	}
@@ -841,7 +844,7 @@ function display_delete_contact_text_panel():string {
 	$contact_texts_count = count($contact_texts);
 	$contact_texts_list = "";
 
-	foreach($contact_texts as $id => $contact_text) {
+	foreach ($contact_texts as $id => $contact_text) {
 		extract($contact_text);
 		$contact_texts_list .= "<option class='aux-bg-hv' value='$link'>$link</option>";
 	}

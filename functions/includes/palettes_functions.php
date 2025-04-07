@@ -19,6 +19,7 @@ function set_basic_palette():void {
 }
 
 function check_palette() {
-	if(!isset($_COOKIE['color_palette']))
+	if (!isset($_COOKIE['color_palette'])) {
 		set_basic_palette();
+	}
 }

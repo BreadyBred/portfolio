@@ -22,7 +22,7 @@ $file_path = str_repeat('../', $url_depth) . "data/utilities.json";
 
 $resultat = file_put_contents($file_path, $json_data);
 
-if($resultat) {
+if ($resultat) {
 	$response["success"] = true;
 	$response["message"] = "Le mode maintenance a bien été $action.";
 }

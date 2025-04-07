@@ -9,11 +9,12 @@ function get_project_full_name(string $formatted_name):string {
 function get_shown_projects_list():array {
 	$projects = decode('projects');
 	$project_list = array();
-	foreach($projects as $project_id => $project) {
+	foreach ($projects as $project_id => $project) {
 		extract($project);
 		
-		if($to_show)
+		if ($to_show) {
 			$project_list[$project_id] = $project;
+		}
 	}
 
 	return $project_list;
@@ -22,11 +23,12 @@ function get_shown_projects_list():array {
 function get_hidden_projects_list():array {
 	$projects = decode('projects');
 	$project_list = array();
-	foreach($projects as $project_id => $project) {
+	foreach ($projects as $project_id => $project) {
 		extract($project);
 
-		if(!$to_show)
+		if (!$to_show) {
 			$project_list[$project_id] = $project;
+		}
 	}
 	return $project_list;
 }
@@ -39,8 +41,9 @@ function get_project_list():array {
 function does_project_exist(string $project_name):bool {
 	$projects = decode('projects');
 
-	if(array_key_exists($project_name, $projects))
+	if (array_key_exists($project_name, $projects)) {
 		return true;
+	}
 
 	return false;
 }
@@ -48,7 +51,7 @@ function does_project_exist(string $project_name):bool {
 function sort_in_radio(array $elements, string $prefix):string {
 	$structure = "";
 
-	foreach($elements as $id => $element) {
+	foreach ($elements as $id => $element) {
 		extract($element);
 
 		$html_id = $prefix . "-" .$id;
@@ -67,7 +70,7 @@ function sort_in_radio(array $elements, string $prefix):string {
 function sort_in_option(array $elements):string {
 	$structure = "";
 
-	foreach($elements as $id => $element) {
+	foreach ($elements as $id => $element) {
 		extract($element);
 
 		$structure .= "
@@ -81,11 +84,11 @@ function sort_in_option(array $elements):string {
 function sort_competences_in_option(array $competences):string {
 	$structure = "";
 
-	foreach($competences as $category => $elements) {
+	foreach ($competences as $category => $elements) {
 		$structure .= "
 			<optgroup label='$category'>
 		";
-		foreach($elements as $formatted_competence => $competence) {
+		foreach ($elements as $formatted_competence => $competence) {
 			$structure .= "
 				<option class='aux-bg-hv' value='$formatted_competence'>$competence</option>
 			";

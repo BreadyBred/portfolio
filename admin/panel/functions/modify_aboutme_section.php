@@ -26,18 +26,19 @@ switch($_GET['action']) {
 			'lines' => array()
 		);
 
-		for($i = 1; $i <= 5; $i++) {
+		for ($i = 1; $i <= 5; $i++) {
 
-			if(empty(${"line_$i"}))
+			if (empty(${"line_$i"})) {
 				break;
+			}
 
 			$images_url = array();
 			$links_url = array();
 
 			// has images
-			if(!empty(${"has_images_$i"})) {
+			if (!empty(${"has_images_$i"})) {
 				$images = explode('#', ${"images_name_$i"});
-				for($j = 0; $j < count($images); $j++) {
+				for ($j = 0; $j < count($images); $j++) {
 					$image_name = get_formatted_name($images[$j]);
 					move_multiple_images($_FILES["images_$i"]['tmp_name'][$j], 'aboutme-images', $image_name);
 					$image_name = $image_name . ".png";
@@ -47,9 +48,9 @@ switch($_GET['action']) {
 
 			// has links
 			$has_links = !empty($links);
-			if($has_links) {
+			if ($has_links) {
 				$links = explode('#', ${"links_$i"});
-				for($k = 0; $k < count($links); $k++)
+				for ($k = 0; $k < count($links); $k++)
 					$links_url[] = $links[$k];
 			}
 
@@ -67,7 +68,7 @@ switch($_GET['action']) {
 		break;
 	case 'delete-simple':
 		foreach ($aboutme_section['simple-content'] as $key => $entry) {
-			if($key == $id) {
+			if ($key == $id) {
 				unset($aboutme_section['simple-content'][$key]);
 				$aboutme_section['simple-content'] = array_values($aboutme_section['simple-content']);
 				break;
@@ -77,9 +78,9 @@ switch($_GET['action']) {
 		break;
 	case 'delete-complex':
 		foreach ($aboutme_section['complex-content'] as $key => $entry) {
-			if($key == $id) {
-				foreach($aboutme_section['complex-content'][$key]['lines'] as $line) {
-					foreach($line['images_links'] as $image_link) {
+			if ($key == $id) {
+				foreach ($aboutme_section['complex-content'][$key]['lines'] as $line) {
+					foreach ($line['images_links'] as $image_link) {
 						$icon_path = str_repeat('../', $url_depth) . "medias/images/aboutme-images/$image_link";
 						unlink($icon_path);
 					}
@@ -98,7 +99,7 @@ $file_path = str_repeat('../', $url_depth) . "data/aboutme.json";
 
 $resultat = file_put_contents($file_path, $json_data);
 
-if($resultat) {
+if ($resultat) {
 	$response["success"] = true;
 	$response["message"] = "Le texte a bien été $action.";
 }
