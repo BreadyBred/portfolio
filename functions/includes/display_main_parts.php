@@ -1,6 +1,6 @@
 <?php
 
-function display_aboutme():string {
+function display_aboutme(): string {
 	$aboutme_json = decode('aboutme');
 	$basic_lines = $aboutme_json['simple-content'];
 	$total_basic_lines = count($basic_lines); 
@@ -93,7 +93,7 @@ function display_aboutme():string {
 	</span> */
 }
 
-function display_competences():string {
+function display_competences(): string {
 	$categories = decode('competences');
 
 	$competence_text = "";
@@ -128,11 +128,11 @@ function display_competences():string {
 	";
 }
 
-function display_projects():string {
+function display_projects(): string {
 	$projects = get_shown_projects_list();
 	$project_list = array_values($projects);
 
-	usort($project_list, function ($a, $b) {
+	usort($project_list, function (array $a, array $b): int {
 		$date_a = DateTime::createFromFormat('d/m/Y', $a['date']);
 		$date_b = DateTime::createFromFormat('d/m/Y', $b['date']);
 		
@@ -190,7 +190,7 @@ function display_projects():string {
 	return $structure;
 }
 
-function display_work_exp():string {
+function display_work_exp(): string {
 	$work_experiences = decode('work_experiences');
 
 	$structure = "
@@ -239,7 +239,7 @@ function display_work_exp():string {
 	return $structure;
 }
 
-function display_education():string {
+function display_education(): string {
 	$educations = decode('educations');
 
 	$structure = "
@@ -282,7 +282,7 @@ function display_education():string {
 	return $structure;
 }
 
-function display_experiences():string {
+function display_experiences(): string {
 	$structure = "<section class='experiences-section' id='experiences-section'>";
 	$structure .= display_work_exp();
 	$structure .= display_education();
@@ -291,7 +291,7 @@ function display_experiences():string {
 	return $structure;
 }
 
-function display_contact():string {
+function display_contact(): string {
 	
 	$contact_json = decode('contact');
 
@@ -356,7 +356,7 @@ function display_contact():string {
 	";
 }
 
-function display_palette_choice():string {
+function display_palette_choice(): string {
 	$structure = "<span class='palette-item'>";
 	$structure .= "<img class='palette-option palette-trigger' src='" . get_images_folder() . "palette-icons/palette_plus.png' alt='Palette picker'>";
 	

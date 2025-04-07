@@ -5,11 +5,11 @@ require __DIR__ . '/../PHPMailer/src/SMTP.php';
 
 use PHPMailer\PHPMailer\PHPMailer;
 
-function log_(mixed $element):void {
+function log_(mixed $element): void {
 	echo "<pre>" . print_r($element, true) . "</pre>";
 }
 
-function is_maintenance_mode_on():bool {
+function is_maintenance_mode_on(): bool {
 	if (decode('utilities')['maintenance_mode']) {
 		return true;
 	}
@@ -17,11 +17,11 @@ function is_maintenance_mode_on():bool {
 	return false;
 }
 
-function redirect_to_maintenance_screen():void {
+function redirect_to_maintenance_screen(): void {
 	header('Location:' . get_maintenance_screen());
 }
 
-function redirect_to_site_root():void {
+function redirect_to_site_root(): void {
 	header('Location:' . get_site_root());
 }
 
@@ -51,7 +51,7 @@ function get_URL_depth(string $url): int {
 	}
 }
 
-function get_current_URL() {
+function get_current_URL(): string {
 	$protocol = (!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] !== 'off' || $_SERVER['SERVER_PORT'] == 443) ? "https://" : "http://";
 	$host = $_SERVER['HTTP_HOST'];
 	$request_URI = $_SERVER['REQUEST_URI'];
@@ -63,7 +63,7 @@ function is_on_localhost(): bool {
 	return $_SERVER['HTTP_HOST'] === "localhost";
 }
 
-function get_site_root(bool $secured = true):string {
+function get_site_root(bool $secured = true): string {
 	if (is_on_localhost()) {
 		return 'http://localhost/travail/portfolio/';
 	}
@@ -75,43 +75,43 @@ function get_site_root(bool $secured = true):string {
 	return 'https://romain-gerard.com/';
 }
 
-function get_maintenance_screen():string {
+function get_maintenance_screen(): string {
 	return get_site_root() . 'error/?e=503';
 }
 
-function get_images_folder():string {
+function get_images_folder(): string {
 	return get_site_root() . 'medias/images/';
 }
 
-function get_script_folder():string {
+function get_script_folder(): string {
 	return get_site_root() . 'script/';
 }
 
-function get_projects_illustrations_folder():string {
+function get_projects_illustrations_folder(): string {
 	return get_images_folder() . 'projects/illustrations/';
 }
 
-function get_projects_thumbnails_folder():string {
+function get_projects_thumbnails_folder(): string {
 	return get_images_folder() . 'projects/thumbnails/';
 }
 
-function get_files_folder():string {
+function get_files_folder(): string {
 	return get_site_root() . 'medias/files/';
 }
 
-function get_admin_folder():string {
+function get_admin_folder(): string {
 	return get_site_root() . 'admin/';
 }
 
-function get_admin_panel_folder():string {
+function get_admin_panel_folder(): string {
 	return get_site_root() . 'admin/panel/';
 }
 
-function get_json_folder():string {
+function get_json_folder(): string {
 	return get_site_root(false) . 'data/';
 }
 
-function send_login_notification():void {
+function send_login_notification(): void {
 	require_once "load_environment.php";
 	$mail = new PHPMailer(true);
 
@@ -136,7 +136,7 @@ function send_login_notification():void {
 	$mail->send();
 }
 
-function add_in_log():void {
+function add_in_log(): void {
     $log_file = __DIR__ . '/../../medias/files/log.txt';
 
 	$date = date("d/m/Y");
@@ -146,7 +146,7 @@ function add_in_log():void {
     file_put_contents($log_file, $log_message, FILE_APPEND | LOCK_EX);
 }
 
-function get_formatted_name(string $name):string {
+function get_formatted_name(string $name): string {
 	$search =  [' ', '\'', '(', ')', ',', '.', ':'];
 	$replace = ['_', ''  , '' , '', '', '', ''    ];
 
@@ -172,11 +172,11 @@ function get_formatted_name(string $name):string {
 	return strtr($name, $regex);
 }
 
-function get_ten_years():int {
+function get_ten_years(): int {
 	return (10 * 365 * 24 * 60 * 60);
 }
 
-function decode(string $filename):array {
+function decode(string $filename): array {
     $url = get_json_folder() . "$filename.json";
     $ch = curl_init($url);
     
@@ -190,7 +190,7 @@ function decode(string $filename):array {
     return json_decode($response, true);
 }
 
-function check_session():void {
+function check_session(): void {
 	if (empty($_COOKIE['login'])) {
 		session_unset();
 		session_destroy();
@@ -199,7 +199,7 @@ function check_session():void {
 	}
 }
 
-function get_browser_language():string {
+function get_browser_language(): string {
 	$lang = substr($_SERVER['HTTP_ACCEPT_LANGUAGE'], 0, 2);
 	return ($lang == 'fr') ? $lang : "en";
 }

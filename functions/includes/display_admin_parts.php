@@ -1,6 +1,6 @@
 <?php
 
-function display_login_form():string {
+function display_login_form(): string {
 	$error_message = (isset($_GET['error'])) ? "La combinaison Username/Password est erronée" : "";
 
 	return "
@@ -22,7 +22,7 @@ function display_login_form():string {
 	";
 }
 
-function display_admin_structure():string {
+function display_admin_structure(): string {
 	$structure = "<section class='admin-panel'>";
 		$structure .= "<span class='left-side'>";
 			$structure .= display_panel_title();
@@ -43,13 +43,13 @@ function display_admin_structure():string {
 	return $structure;
 }
 
-function display_panel_title():string {
+function display_panel_title(): string {
 	$structure = "<h1 class='admin-title aux-bg'><a href='" . get_site_root() . "'>Panel Admin</a></h1>";
 
 	return $structure;
 }
 
-function display_primary_functions():string {
+function display_primary_functions(): string {
 	$structure = "<span class='admin-primary-functions'>";
 
 		$structure .= "<span class='function-category'>";
@@ -128,7 +128,7 @@ function display_primary_functions():string {
 	return $structure;
 }
 
-function display_secondary_functions():string {
+function display_secondary_functions(): string {
 
 	$maintenance_mode = decode('utilities')['maintenance_mode'];
 	$maintenance_text = ($maintenance_mode) ? "Désactiver" : "Activer";
@@ -141,7 +141,7 @@ function display_secondary_functions():string {
 	return $structure;
 }
 
-function display_functions_panels():string {
+function display_functions_panels(): string {
 	// About me
 	$structure = display_add_simple_content_panel();
 	$structure .= display_add_complex_content_panel();
@@ -184,7 +184,7 @@ function display_functions_panels():string {
 	return $structure;
 }
 
-function display_add_simple_content_panel():string {
+function display_add_simple_content_panel(): string {
 	return "
 		<form method='POST' action='" . get_admin_panel_folder() . "functions/modify_aboutme_section.php?action=add-simple' class='hide functions-panel aux-bc' id='add-simple-content'>
 			<h4>Ajouter un contenu écrit</h4>
@@ -197,7 +197,7 @@ function display_add_simple_content_panel():string {
 	";
 }
 
-function display_add_complex_content_panel():string {
+function display_add_complex_content_panel(): string {
 	return "
 		<form method='POST' action='" . get_admin_panel_folder() . "functions/modify_aboutme_section.php?action=add-complex' enctype='multipart/form-data' class='hide functions-panel aux-bc' id='add-complex-content'>
 			<h4>Ajouter un sous-titre</h4>
@@ -356,7 +356,7 @@ function display_add_complex_content_panel():string {
 	";
 }
 
-function display_delete_simple_content_panel():string {
+function display_delete_simple_content_panel(): string {
 	$simple_contents = decode('aboutme')['simple-content'];
 	$simple_contents_count = count($simple_contents);
 	$simple_contents_list = "";
@@ -376,7 +376,7 @@ function display_delete_simple_content_panel():string {
 	";
 }
 
-function display_delete_complex_content_panel():string {
+function display_delete_complex_content_panel(): string {
 	$complex_contents = decode('aboutme')['complex-content'];
 	$complex_contents_count = count($complex_contents);
 	$complex_contents_list = "";
@@ -396,7 +396,7 @@ function display_delete_complex_content_panel():string {
 	";
 }
 
-function display_create_project_panel():string {
+function display_create_project_panel(): string {
 	$techs = decode('techs')['techs'];
 	$tech_count = count($techs);
 	$tech_choice = "";
@@ -470,7 +470,7 @@ function display_create_project_panel():string {
 	";
 }
 
-function display_update_project_panel():string {
+function display_update_project_panel(): string {
 	$projects = decode('projects');
 	$project_list = get_project_list();
 	$project_list = sort_in_radio($project_list, 'update');
@@ -495,7 +495,7 @@ function display_update_project_panel():string {
 	";
 }
 
-function display_project_info_panel(string $project_id, array $project):string {
+function display_project_info_panel(string $project_id, array $project): string {
 	extract($project);
 
 	$date = DateTime::createFromFormat('d/m/Y', $date);
@@ -554,7 +554,7 @@ function display_project_info_panel(string $project_id, array $project):string {
 	";
 }
 
-function display_show_project_panel():string {
+function display_show_project_panel(): string {
 
 	$project_list = get_hidden_projects_list();
 	$project_list = sort_in_radio($project_list, 'show');
@@ -574,7 +574,7 @@ function display_show_project_panel():string {
 	";
 }
 
-function display_hide_project_panel():string {
+function display_hide_project_panel(): string {
 
 	$project_list = get_shown_projects_list();
 	$project_list = sort_in_radio($project_list, 'hide');
@@ -594,7 +594,7 @@ function display_hide_project_panel():string {
 	";
 }
 
-function display_delete_project_panel():string {
+function display_delete_project_panel(): string {
 
 	$project_list = get_project_list();
 	$project_count = count($project_list);
@@ -611,7 +611,7 @@ function display_delete_project_panel():string {
 	";
 }
 
-function display_add_competence_panel():string {
+function display_add_competence_panel(): string {
 	$competences = decode('competences');
 
 	$category_count = count($competences);
@@ -644,7 +644,7 @@ function display_add_competence_panel():string {
 	";
 }
 
-function display_delete_competence_panel():string {
+function display_delete_competence_panel(): string {
 
 	$competences = decode('competences');
 	$competences_list = sort_competences_in_option($competences);
@@ -661,7 +661,7 @@ function display_delete_competence_panel():string {
 	";
 }
 
-function display_add_tech_panel():string {
+function display_add_tech_panel(): string {
 	return "
 		<form method='POST' action='" . get_admin_panel_folder() . "functions/modify_techs.php?action=add' class='hide functions-panel aux-bc' id='add-tech'>
 			<h4>Ajouter une tech</h4>
@@ -674,7 +674,7 @@ function display_add_tech_panel():string {
 	";
 }
 
-function display_delete_tech_panel():string {
+function display_delete_tech_panel(): string {
 	$techs = decode('techs');
 	$tech_list = sort_competences_in_option($techs);
 
@@ -690,7 +690,7 @@ function display_delete_tech_panel():string {
 	";
 }
 
-function display_add_work_exp_panel():string {
+function display_add_work_exp_panel(): string {
 	return "
 		<form method='POST' action='" . get_admin_panel_folder() . "functions/modify_work_exp.php?action=add' class='hide functions-panel aux-bc' id='add-work-exp'>
 			<h4>Ajouter une expérience professionnelle</h4>
@@ -719,7 +719,7 @@ function display_add_work_exp_panel():string {
 	";
 }
 
-function display_delete_work_exp_panel():string {
+function display_delete_work_exp_panel(): string {
 	$work_experiences = decode('work_experiences');
 	$work_experiences_count = count($work_experiences);
 	$work_experiences_list = sort_in_option($work_experiences);
@@ -735,7 +735,7 @@ function display_delete_work_exp_panel():string {
 	";
 }
 
-function display_add_formation_panel():string {
+function display_add_formation_panel(): string {
 	return "
 		<form method='POST' action='" . get_admin_panel_folder() . "functions/modify_formation.php?action=add' class='hide functions-panel aux-bc' id='add-formation'>
 			<h4>Ajouter une formation</h4>
@@ -764,7 +764,7 @@ function display_add_formation_panel():string {
 	";
 }
 
-function display_delete_formation_panel():string {
+function display_delete_formation_panel(): string {
 	$educations = decode('educations');
 	$educations_count = count($educations);
 	$educations_list = sort_in_option($educations);
@@ -780,7 +780,7 @@ function display_delete_formation_panel():string {
 	";
 }
 
-function display_add_contact_icon_panel():string {
+function display_add_contact_icon_panel(): string {
 	return "
 		<form method='POST' action='" . get_admin_panel_folder() . "functions/modify_contact_section.php?action=add-icon' enctype='multipart/form-data' class='hide functions-panel aux-bc' id='add-contact-icon'>
 			<h4>Ajouter une icône de contact</h4>
@@ -802,7 +802,7 @@ function display_add_contact_icon_panel():string {
 	";
 }
 
-function display_add_contact_text_panel():string {
+function display_add_contact_text_panel(): string {
 	return "
 		<form method='POST' action='" . get_admin_panel_folder() . "functions/modify_contact_section.php?action=add-text' class='hide functions-panel aux-bc' id='add-contact-text'>
 			<h4>Ajouter un texte de contact</h4>
@@ -819,7 +819,7 @@ function display_add_contact_text_panel():string {
 	";
 }
 
-function display_delete_contact_icon_panel():string {
+function display_delete_contact_icon_panel(): string {
 	$contact_icons = decode('contact')['contact-icon'];
 	$contact_icons_count = count($contact_icons);
 	$contact_icons_list = "";
@@ -840,7 +840,7 @@ function display_delete_contact_icon_panel():string {
 	";
 }
 
-function display_delete_contact_text_panel():string {
+function display_delete_contact_text_panel(): string {
 	$contact_texts = decode('contact')['contact-text'];
 	$contact_texts_count = count($contact_texts);
 	$contact_texts_list = "";
@@ -861,7 +861,7 @@ function display_delete_contact_text_panel():string {
 	";
 }
 
-function display_update_cv_fr_panel():string {
+function display_update_cv_fr_panel(): string {
 	return "
 	<form method='POST' action='" . get_admin_panel_folder() . "functions/update_cv.php?lang=fr' enctype='multipart/form-data' class='hide functions-panel aux-bc' id='update-cv-fr'>
 		<h4 class='panel-title'>Update CV (FR)</h4>
@@ -876,7 +876,7 @@ function display_update_cv_fr_panel():string {
 	";
 }
 
-function display_update_cv_en_panel():string {
+function display_update_cv_en_panel(): string {
 	return "
 	<form method='POST' action='" . get_admin_panel_folder() . "functions/update_cv.php?lang=en' enctype='multipart/form-data' class='hide functions-panel aux-bc' id='update-cv-en'>
 		<h4 class='panel-title'>Update CV (EN)</h4>
@@ -891,7 +891,7 @@ function display_update_cv_en_panel():string {
 	";
 }
 
-function display_update_todo_panel():string {
+function display_update_todo_panel(): string {
 	$todolist_path = get_site_root() . "medias/files/todo.txt";
 	$todolist_file = file_get_contents($todolist_path);
 
@@ -904,7 +904,7 @@ function display_update_todo_panel():string {
 	";
 }
 
-function display_popup(bool $success, string $message):string {
+function display_popup(bool $success, string $message): string {
 	$success_class = ($success) ? "success" : "error";
 
 	return "

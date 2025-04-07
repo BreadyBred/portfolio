@@ -1,6 +1,6 @@
 <?php
 
-function display_html_head(string $page_title, string $body_class = ''):string {
+function display_html_head(string $page_title, string $body_class = ''): string {
 	$palette = get_palette_id();
 
 	return "
@@ -26,7 +26,7 @@ function display_html_head(string $page_title, string $body_class = ''):string {
 	";
 }
 
-function display_header():string {
+function display_header(): string {
 	$palette = get_palette_id();
 
 	return "
@@ -72,7 +72,7 @@ function display_header():string {
 	";
 }
 
-function display_single_project(string $project_name):string {
+function display_single_project(string $project_name): string {
 	$projects = decode('projects');
 	extract($projects[$project_name]);
 
@@ -139,7 +139,7 @@ function display_single_project(string $project_name):string {
 	return $structure;
 }
 
-function display_error_structure(string $error_type):string {
+function display_error_structure(string $error_type): string {
 	$error_codes = array(
 		"fr" => array(
 			"403" => array(
@@ -194,7 +194,7 @@ function display_error_structure(string $error_type):string {
 	";
 }
 
-function display_footer():string {
+function display_footer(): string {
 	$palette_choice = display_palette_choice();
 
 	return "
@@ -203,7 +203,7 @@ function display_footer():string {
 	";
 }
 
-function display_html_footer():string {
+function display_html_footer(): string {
 	return "</body>
 	</html>";
 }
