@@ -59,14 +59,14 @@
         ],
         "to_show": true
     },
-    "poketeam_shuffle": {
-        "name": "Pok\u00e9Team Shuffle",
+    "pokegen": {
+        "name": "PokeGen",
         "synopsis": "Pok\u00e9mon Showdown Randomizer",
-        "description": "\"Pok\u00e9Team Shuffle\" est un g\u00e9n\u00e9rateur d'\u00e9quipes Pok\u00e9mon al\u00e9atoires con\u00e7u pour les joueurs de Pok\u00e9mon Showdown. Lass\u00e9(e) de composer des \u00e9quipes classiques ? Ce site web vous propose une exp\u00e9rience rafra\u00eechissante en g\u00e9n\u00e9rant une \u00e9quipe de six Pok\u00e9mon de mani\u00e8re al\u00e9atoire. Chaque Pok\u00e9mon est pr\u00e9sent\u00e9 avec sa carte d\u00e9taill\u00e9e : nom, sprite, types, num\u00e9ro de Pok\u00e9dex et statistiques. Vous pouvez relancer la g\u00e9n\u00e9ration d'\u00e9quipe compl\u00e8te avec le bouton \"Roll\" ou cibler un seul Pok\u00e9mon de votre \u00e9quipe pour le remplacer. Un s\u00e9lecteur de g\u00e9n\u00e9ration permet \u00e9galement de personnaliser davantage la g\u00e9n\u00e9ration al\u00e9atoire. Id\u00e9al pour des combats amicaux et pour d\u00e9couvrir des synergies inattendues !",
+        "description": "\"PokeGen\" est un g\u00e9n\u00e9rateur d'\u00e9quipes Pok\u00e9mon al\u00e9atoires con\u00e7u pour les joueurs de Pok\u00e9mon Showdown. Lass\u00e9(e) de composer des \u00e9quipes classiques ? Ce site web vous propose une exp\u00e9rience rafra\u00eechissante en g\u00e9n\u00e9rant une \u00e9quipe de six Pok\u00e9mon de mani\u00e8re al\u00e9atoire. Chaque Pok\u00e9mon est pr\u00e9sent\u00e9 avec sa carte d\u00e9taill\u00e9e : nom, sprite, types, num\u00e9ro de Pok\u00e9dex et statistiques. Vous pouvez relancer la g\u00e9n\u00e9ration d'\u00e9quipe compl\u00e8te avec le bouton \"Roll\" ou cibler un seul Pok\u00e9mon de votre \u00e9quipe pour le remplacer. Un s\u00e9lecteur de g\u00e9n\u00e9ration permet \u00e9galement de personnaliser davantage la g\u00e9n\u00e9ration al\u00e9atoire. Id\u00e9al pour des combats amicaux et pour d\u00e9couvrir des synergies inattendues !",
         "date": "16\/09\/2024",
-        "link": "https:\/\/pokeshuffle.freesite.online\/",
-        "image_url": "poketeam_shuffle",
-        "thumbnail_url": "poketeam_shuffle",
+        "link": "https:\/\/pokegen.42web.io\/",
+        "image_url": "pokegen",
+        "thumbnail_url": "pokegen",
         "important_techs": [
             "LESS",
             "JavaScript"
@@ -109,14 +109,16 @@
         "thumbnail_url": "stardew_dashboard",
         "important_techs": [
             "LESS",
-            "PHP"
+            "PHP",
+            "Typescript"
         ],
         "tech_used": [
             "HTML5",
             "LESS",
-            "JavaScript",
             "PHP",
-            "JSON"
+            "JSON",
+            "Figma",
+            "Typescript"
         ],
         "to_show": true
     },
