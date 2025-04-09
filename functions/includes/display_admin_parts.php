@@ -94,25 +94,6 @@ function display_primary_functions(): string {
 				$structure .= "<h3 class='function-title a-tdc-hv' data-id='delete-formation'>Supprimer une formation</h3>";
 			$structure .= "</span>";
 		$structure .= "</span>";
-
-		$structure .= "<span class='function-category'>";
-			$structure .= "<h2 class='underlined cat-title'>Contact</h2>";
-			$structure .= "<span class='functions'>";
-				$structure .= "<h3 class='function-title a-tdc-hv' data-id='add-contact-icon'>Ajouter une icône de contact</h3>";
-				$structure .= "<h3 class='function-title a-tdc-hv' data-id='add-contact-text'>Ajouter un texte de contact</h3>";
-				$structure .= "<h3 class='function-title a-tdc-hv' data-id='delete-contact-icon'>Supprimer une icône de contact</h3>";
-				$structure .= "<h3 class='function-title a-tdc-hv' data-id='delete-contact-text'>Supprimer un texte de contact</h3>";
-			$structure .= "</span>";
-		$structure .= "</span>";
-
-		// $structure .= "<span class='function-category'>";
-			// $structure .= "<h2 class='underlined cat-title'>Autres</h2>";
-			// $structure .= "<span class='functions'>";
-				// $structure .= "<h3 class='function-title a-tdc-hv' data-id='update-cv-fr'	>Update CV (FR)</h3>";
-				// $structure .= "<h3 class='function-title a-tdc-hv' data-id='update-cv-en'	>Update CV (EN)</h3>";
-				// $structure .= "<h3 class='function-title a-tdc-hv' data-id='update-todolist'	>Update la ToDoList</h3>";
-			// $structure .= "</span>";
-		// $structure .= "</span>";
 	$structure .= "</span>";
 
 	return $structure;
@@ -154,16 +135,6 @@ function display_functions_panels(): string {
 	// Formations
 	$structure .= display_add_formation_panel();
 	$structure .= display_delete_formation_panel();
-
-	// Contact
-	$structure .= display_add_contact_icon_panel();
-	$structure .= display_add_contact_text_panel();
-	$structure .= display_delete_contact_icon_panel();
-	$structure .= display_delete_contact_text_panel();
-
-	// $structure .= display_update_cv_fr_panel();
-	// $structure .= display_update_cv_en_panel();
-	// $structure .= display_update_todo_panel();
 
 	return $structure;
 }
@@ -549,130 +520,6 @@ function display_delete_formation_panel(): string {
 			</select>
 			<input type='submit' class='button button-md' value='Supprimer'>
 		</form>
-	";
-}
-
-function display_add_contact_icon_panel(): string {
-	return "
-		<form method='POST' action='" . get_admin_panel_folder() . "functions/modify_contact_section.php?action=add-icon' enctype='multipart/form-data' class='hide functions-panel aux-bc' id='add-contact-icon'>
-			<h4>Ajouter une icône de contact</h4>
-			<span class='double'>
-				<label for='contact-icon-link'>Lien de redirection</label>
-				<input type='text' id='contact-icon-link' name='link' placeholder='https://google.com ou fichier.pdf' required>
-			</span>
-			<span class='double'>
-				<label for='contact-icon-name'>Nom de l'Icône</label>
-				<input type='text' id='contact-icon-name' name='name' placeholder='icone' required>
-			</span>
-			<span class='double'>
-				<label for='contact-icon-image'>Icône</label>
-				<input type='file' name='image' id='contact-icon-image' class='input_file' accept='image/png' required>
-				<span class='fake-file-inputs italic underlined a-tdc' data-id='contact-icon-image'>Aucun fichier sélectionné</span>
-			</span>
-			<input type='submit' class='button button-md' value='Ajouter'>
-		</form>
-	";
-}
-
-function display_add_contact_text_panel(): string {
-	return "
-		<form method='POST' action='" . get_admin_panel_folder() . "functions/modify_contact_section.php?action=add-text' class='hide functions-panel aux-bc' id='add-contact-text'>
-			<h4>Ajouter un texte de contact</h4>
-			<span class='double'>
-				<label for='contact-text-link'>Lien de redirection</label>
-				<input type='text' id='contact-text-link' name='link' placeholder='https://google.com ou fichier.pdf' required>
-			</span>
-			<span class='double'>
-				<label for='contact-text-text'>Lien de redirection</label>
-				<input type='text' id='contact-text-text' name='text' placeholder='+33 7 77 70 26 99' required>
-			</span>
-			<input type='submit' class='button button-md' value='Ajouter'>
-		</form>
-	";
-}
-
-function display_delete_contact_icon_panel(): string {
-	$contact_icons = decode('contact')['contact-icon'];
-	$contact_icons_count = count($contact_icons);
-	$contact_icons_list = "";
-
-	foreach ($contact_icons as $id => $contact_icons) {
-		extract($contact_icons);
-		$contact_icons_list .= "<option class='aux-bg-hv' value='$link'>$link</option>";
-	}
-
-	return "
-		<form method='POST' action='" . get_admin_panel_folder() . "functions/modify_contact_section.php?action=delete-icon'class='hide functions-panel aux-bc' id='delete-contact-icon'>
-			<h4>Supprimer une icône de contact</h4>
-			<select class='aux-bc contact_icons_list' name='link' size=$contact_icons_count style='width:100%' required>
-				$contact_icons_list
-			</select>
-			<input type='submit' class='button button-md' value='Supprimer'>
-		</form>
-	";
-}
-
-function display_delete_contact_text_panel(): string {
-	$contact_texts = decode('contact')['contact-text'];
-	$contact_texts_count = count($contact_texts);
-	$contact_texts_list = "";
-
-	foreach ($contact_texts as $id => $contact_text) {
-		extract($contact_text);
-		$contact_texts_list .= "<option class='aux-bg-hv' value='$link'>$link</option>";
-	}
-
-	return "
-		<form method='POST' action='" . get_admin_panel_folder() . "functions/modify_contact_section.php?action=delete-text'class='hide functions-panel aux-bc' id='delete-contact-text'>
-			<h4>Supprimer un texte de contact</h4>
-			<select class='aux-bc contact_texts_list' name='link' size=$contact_texts_count style='width:100%' required>
-				$contact_texts_list
-			</select>
-			<input type='submit' class='button button-md' value='Supprimer'>
-		</form>
-	";
-}
-
-function display_update_cv_fr_panel(): string {
-	return "
-	<form method='POST' action='" . get_admin_panel_folder() . "functions/update_cv.php?lang=fr' enctype='multipart/form-data' class='hide functions-panel aux-bc' id='update-cv-fr'>
-		<h4 class='panel-title'>Update CV (FR)</h4>
-		<span>
-			<label for='cv-input-fr'>Insérez le nouveau CV <b class='a-fc'>*</b></label>
-			<input type='file' name='cv_input' id='cv-input-fr' class='input_file' accept='application/pdf' required>
-			<span class='fake-file-inputs italic underlined a-tdc' data-id='cv-input-fr'>Aucun fichier sélectionné</span>
-		</span>
-		<iframe title='CV Actuel' width='100%' src='" . get_files_folder() . "CV_FR_Romain-GERARD.pdf'></iframe>
-		<input type='submit' class='button button-md' value='Update'>
-	</form>
-	";
-}
-
-function display_update_cv_en_panel(): string {
-	return "
-	<form method='POST' action='" . get_admin_panel_folder() . "functions/update_cv.php?lang=en' enctype='multipart/form-data' class='hide functions-panel aux-bc' id='update-cv-en'>
-		<h4 class='panel-title'>Update CV (EN)</h4>
-		<span>
-			<label for='cv-input-en'>Insérez le nouveau CV <b class='a-fc'>*</b></label>
-			<input type='file' name='cv_input' id='cv-input-en' class='input_file' accept='application/pdf' required>
-			<span class='fake-file-inputs italic underlined a-tdc' data-id='cv-input-en'>Aucun fichier sélectionné</span>
-		</span>
-		<iframe title='CV Actuel' width='100%' src='" . get_files_folder() . "CV_EN_Romain-GERARD.pdf'></iframe>
-		<input type='submit' class='button button-md' value='Update'>
-	</form>
-	";
-}
-
-function display_update_todo_panel(): string {
-	$todolist_path = get_site_root() . "medias/files/todo.txt";
-	$todolist_file = file_get_contents($todolist_path);
-
-	return "
-	<form method='POST' action='" . get_admin_panel_folder() . "functions/update_todolist.php' class='hide functions-panel aux-bc' id='update-todolist'>
-		<h4 class='panel-title'>Update la ToDoList</h4>
-		<textarea name='todolist_text' id='todolist-text' rows='10' cols='50' required>$todolist_file</textarea>
-		<input type='submit' class='button button-md' value='Update'>
-	</form>
 	";
 }
 
