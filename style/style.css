@@ -8,11 +8,16 @@
   }
   .rotated-p90 {
     writing-mode: vertical-rl !important;
+    width: 20px !important;
   }
   .rotated-m90 {
-    writing-mode: vertical-rl !important;
     -webkit-transform: rotate(-180deg) !important;
     -moz-transform: rotate(-180deg) !important;
+    transform: rotate(180deg) !important;
+    transform-origin: center center !important;
+    white-space: nowrap !important;
+    writing-mode: vertical-lr !important;
+    width: 20px !important;
   }
   header nav {
     justify-content: space-between !important;
@@ -1263,11 +1268,16 @@ color_types:
   }
   .rotated-p90 {
     writing-mode: vertical-rl !important;
+    width: 20px !important;
   }
   .rotated-m90 {
-    writing-mode: vertical-rl !important;
     -webkit-transform: rotate(-180deg) !important;
     -moz-transform: rotate(-180deg) !important;
+    transform: rotate(180deg) !important;
+    transform-origin: center center !important;
+    white-space: nowrap !important;
+    writing-mode: vertical-lr !important;
+    width: 20px !important;
   }
   header nav {
     justify-content: space-between !important;
