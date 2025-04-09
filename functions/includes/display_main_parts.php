@@ -1,67 +1,6 @@
 <?php
 
 function display_aboutme(): string {
-	$aboutme_json = decode('aboutme');
-	$basic_lines = $aboutme_json['simple-content'];
-	$total_basic_lines = count($basic_lines); 
-	$basic_content = "";
-
-	$complex_lines = $aboutme_json['complex-content'];
-	$complex_content = "";
-
-	$current_index = 0;
-
-	foreach ($basic_lines as $basic_line) {
-		$basic_content .= $basic_line;
-		$current_index++;
-		if ($current_index < $total_basic_lines) {
-			$basic_content .= str_repeat("<br>", 2);
-		}
-	}
-
-	foreach ($complex_lines as $complex_line) {
-		extract($complex_line);
-
-		$complex_content .= "<span class='double'>";
-			$complex_content .= "<span class='subtitle underlined'>$title</span>";
-			$complex_content .= "<span>";
-
-			foreach ($lines as $line_array) {
-				extract($line_array);
-				$has_images = !empty($images_links);
-				$has_links = !empty($links);
-				$span_class = ($has_images || $has_links) ? "content-with-image-or-link" : "";
-
-				if ($has_images) {
-					foreach ($images_links as $images_link) {
-						$image_path = (str_contains($images_link, 'http')) ? "<img src='$images_link' alt='$images_alt'>" : "<img src='" . get_images_folder() . "aboutme-images/$images_link' alt='$images_alt'>";
-						$line = preg_replace('/#/', $image_path, $line, 1);
-					}
-				}
-
-				if ($has_links) {
-					foreach ($links as $link) {
-						$pattern = '/\*(.*?)\*/';
-						$is_local = true;
-						if (str_contains($link, 'http'))
-							$is_local = false;
-						
-						if (preg_match($pattern, $line, $words)) {
-							$placeholder = $words[1];
-						}
-
-						$direct_link = ($is_local) ? get_files_folder() . $link : $link;
-
-						$line = preg_replace($pattern, "<a href='$direct_link' target='_blank' class='underlined' aria-label='$links_text'>$placeholder</a>", $line, 1);
-					}
-				}
-
-				$complex_content .= "<span class='$span_class'>$line </span>";
-			}
-			$complex_content .= "</span>";
-		$complex_content .= "</span>";
-	}
-
 	return "
 		<section class='aboutme-section bottom-border aux-bc' id='aboutme-section'>
 			<span>
@@ -73,9 +12,59 @@ function display_aboutme(): string {
 					<h1 class='title'>Romain GERARD</h1>
 					<span class='written-content'>
 						<span>
-							$basic_content
+							Bienvenue sur mon portfolio !
+							<br><br>
+							Jeune développeur web de 23 ans, j'ai toujours été passionné par la programmation et l'informatique en général. Je me suis spécialisé dans le développement web lors de mon Bachelor Universitaire de Technologie, mais je bricole en HTML, CSS, JavaScript, PHP, etc... depuis que je suis sorti du lycée.
+							<br><br>
+							Toujours curieux concernant le développement web, je suis souvent à la recherche des nouvelles tendances du domaine afin de m'approcher de mon but : Combiner mon travail et ma passion !
 						</span>
-						$complex_content
+						<span class='double'>
+							<span class='subtitle underlined'>Un outil au service des autres</span>
+							<span>
+								<span>
+									Le web est une plateforme puissante, et j'aime l'idée que mes créations puissent simplifier la vie des utilisateurs.
+								</span>
+								<span>
+									Que ce soit un outil de gestion, une vitrine professionnelle ou une application ludique, chaque projet est une occasion de rendre quelque chose d'utile et d'intuitif.
+								</span>
+							</span>
+						</span>
+						<span class='double'>
+							<span class='subtitle underlined'>Un développeur en quête d'amélioration continue</span>
+							<span>
+								<span>
+									Je crois fermement que le domaine du développement web évolue constamment, et c'est ce qui me passionne !
+								</span>
+								<span>
+									J'apprécie particulièrement le travail collaboratif, où chaque échange et retour d'expérience contribue à créer des solutions toujours plus optimisées.
+								</span>
+							</span>
+						</span>
+						<span class='double'>
+							<span class='subtitle underlined'>Les technologies que je préfère</span>
+							<span>
+								<span>
+									Je suis très attaché à la conception « from scratch » et à l'utilisation de PHP pour les sites dynamiques.
+								</span>
+								<span>
+									J'ai expérimenté la conception de sites à l'aide de frameworks tels que CodeIgniter ou Symfony pour PHP, mais aussi ReactJS pour JavaScript
+								</span>
+							</span>
+						</span>
+						<span class='double'>
+							<span class='subtitle underlined'>Certificats</span>
+							<span>
+								<span class='content-with-image-or-link'>
+									- <a href='http://localhost/travail/portfolio/medias/files/IELTS.pdf' target='_blank' class='underlined' aria-label='Voir le certificat IELTS'>IELTS</a> : Score de 7.5, CEFR : C1 (2025)
+								</span>
+								<span class='content-with-image-or-link'>
+									- <a href='https://cert.efset.org/3xzcDP' target='_blank' class='underlined' aria-label='Voir le certificat EFSET'>EFSET</a> : Niveau C1/C2 (2025)
+								</span>
+								<span class='content-with-image-or-link'>
+									- <a href='http://localhost/travail/portfolio/medias/files/Certificat_Opquast.pdf' target='_blank' class='underlined' aria-label='Voir le certificat Opquast'>Opquast</a> : Certification obtenue, 825 sur 1000 (2024)
+								</span>
+							</span>
+						</span>
 					</span>
 					<span class='small italic desktop-only'>
 						Romain GERARD
