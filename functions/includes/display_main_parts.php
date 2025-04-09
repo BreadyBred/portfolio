@@ -55,13 +55,13 @@ function display_aboutme(): string {
 							<span class='subtitle underlined'>Certificats</span>
 							<span>
 								<span class='content-with-image-or-link'>
-									- <a href='http://localhost/travail/portfolio/medias/files/IELTS.pdf' target='_blank' class='underlined' aria-label='Voir le certificat IELTS'>IELTS</a> : Score de 7.5, CEFR : C1 (2025)
+									- <a href='" . get_files_folder() . "IELTS.pdf' target='_blank' class='underlined' aria-label='Voir le certificat IELTS'>IELTS</a> : Score de 7.5, CEFR : C1 (2025)
 								</span>
 								<span class='content-with-image-or-link'>
 									- <a href='https://cert.efset.org/3xzcDP' target='_blank' class='underlined' aria-label='Voir le certificat EFSET'>EFSET</a> : Niveau C1/C2 (2025)
 								</span>
 								<span class='content-with-image-or-link'>
-									- <a href='http://localhost/travail/portfolio/medias/files/Certificat_Opquast.pdf' target='_blank' class='underlined' aria-label='Voir le certificat Opquast'>Opquast</a> : Certification obtenue, 825 sur 1000 (2024)
+									- <a href='" . get_files_folder() . "Certificat_Opquast.pdf' target='_blank' class='underlined' aria-label='Voir le certificat Opquast'>Opquast</a> : Certification obtenue, 825 sur 1000 (2024)
 								</span>
 							</span>
 						</span>
@@ -281,67 +281,37 @@ function display_experiences(): string {
 }
 
 function display_contact(): string {
-	
-	$contact_json = decode('contact');
-
-	$contact_icons = $contact_json['contact-icon'];
-	$social_icons = "";
-
-	$contact_texts = $contact_json['contact-text'];
-	$social_texts = "";
-
 	$palette = get_palette_id();
-
-	$icon_counter = 1;
-
-	foreach ($contact_icons as $contact_icon) {
-		extract($contact_icon);
-
-		switch($icon_counter) {
-			case 1:
-				$social_icons .= "
-					<span class='w3'>
-				";
-				break;
-			case 4:
-				$social_icons .= "
-					</span>
-					<span class='w2'>
-				";
-				break;
-			case 6:
-				$social_icons .= "
-					</span>
-					<span class='w1'>
-				";
-				break;
-		}
-
-		$social_icons .= "<a class='img' target='_blank' href='$link' aria-label='Icône de contact'><img src='" . get_images_folder() . "contact-logos/$palette/$image' class='contact-logo' alt=''></a>";
-	
-		$icon_counter++;
-	}
-
-	$social_icons .= "</span>";
-
-	foreach ($contact_texts as $contact_text) {
-		extract($contact_text);
-		$social_texts .= "<a href='$link' class='italic underlined text'>$text</a>";
-	}
+	$images_path = get_images_folder() . "contact-logos/$palette";
 
 	return "
-	<section class='contact-section' id='contact-section'>
-		<span class='section-title'>
-			<h2 class='title'>Une idée ? Venez en discuter !</h2>
-			<span class='v-line a-bg'>&nbsp</span>
-		</span>
-		<span class='socials'>
-			<span class='socials-icons'>
-				$social_icons
+		<section class='contact-section' id='contact-section'>
+			<span class='section-title'>
+				<h2 class='title'>Une idée ? Venez en discuter !</h2>
+				<span class='v-line a-bg a-bg-0'>&nbsp;</span>
 			</span>
-			$social_texts
-		</span>
-	</section>
+			<span class='socials'>
+				<span class='socials-icons'>
+					<span class='w3'>
+						<a class='img' target='_blank' href='https://www.linkedin.com/in/romain-gerard/' aria-label='Icône de contact'>
+							<img src='$images_path/linkedin.png' class='contact-logo' alt='Linkedin icon'>
+						</a>
+						<a class='img' target='_blank' href='https://www.codewars.com/users/BreadyBred' aria-label='Icône de contact'>
+							<img src='$images_path/codewars.png' class='contact-logo' alt='Codewars icon'>
+						</a>
+						<a class='img' target='_blank' href='https://github.com/BreadyBred/' aria-label='Icône de contact'>
+							<img src='$images_path/github.png' class='contact-logo' alt='Github icon'>
+						</a>
+					</span>
+				</span>
+				<a href='tel:0777702699' class='italic underlined text'>
+					+33 7 77 70 26 99
+				</a>
+				<a href='mailto:gerarromain@gmail.com' class='italic underlined text'>
+					gerarromain@gmail.com
+				</a>
+			</span>
+		</section>
 	";
 }
 
