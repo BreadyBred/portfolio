@@ -4,7 +4,7 @@ include '../../../functions/functions.php';
 session_start();
 
 ob_start();
-extract($_POST);
+extract($_POST); //? $name, $date, $company_name, $status, $description
 
 $response = [
 	"success" => false,
@@ -33,11 +33,6 @@ switch($_GET['action']) {
 		);
 		array_unshift($work_experiences, $new_work_exp);
 		$action = 'ajoutée';
-		break;
-	case 'delete':
-		$name = $work_experiences[$work_experience]['name'];
-		unset($work_experiences[$work_experience]);
-		$action = 'supprimée';
 		break;
 }
 

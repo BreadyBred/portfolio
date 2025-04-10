@@ -4,7 +4,7 @@ include '../../../functions/functions.php';
 session_start();
 
 ob_start();
-extract($_POST);
+extract($_POST); //? $name, $synopsis, $description, $date, $link, $important_tech[], $tech[], ?$zip_file - $project
 
 $response = [
 	"success" => false,
@@ -72,16 +72,6 @@ switch($_GET['action']) {
 		unlink($illustration_path);
 		unset($projects[$project]);
 		$action = "supprimé";
-		break;
-
-	case 'show':
-		$projects[$project]['to_show'] = true;
-		$action = "activé";
-		break;
-
-	case 'hide':
-		$projects[$project]['to_show'] = false;
-		$action = "désactivé";
 		break;
 
 	case 'update':

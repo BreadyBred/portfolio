@@ -9,27 +9,12 @@ function get_project_full_name(string $formatted_name): string {
 function get_shown_projects_list(): array {
 	$projects = decode('projects');
 	$project_list = array();
-	foreach ($projects as $project_id => $project) {
-		extract($project);
-		
-		if ($to_show) {
+	foreach ($projects as $project_id => $project) {		
+		if ($project["to_show"]) {
 			$project_list[$project_id] = $project;
 		}
 	}
 
-	return $project_list;
-}
-
-function get_hidden_projects_list(): array {
-	$projects = decode('projects');
-	$project_list = array();
-	foreach ($projects as $project_id => $project) {
-		extract($project);
-
-		if (!$to_show) {
-			$project_list[$project_id] = $project;
-		}
-	}
 	return $project_list;
 }
 
@@ -52,14 +37,10 @@ function sort_in_radio(array $elements, string $prefix): string {
 	$structure = "";
 
 	foreach ($elements as $id => $element) {
-		extract($element);
-
-		$html_id = $prefix . "-" .$id;
-
 		$structure .= "
 		<span>
-			<label for='$html_id'>$name</label>
-			<input type='radio' id='$html_id' value='$id' name='project' class='input_radio a-bc a-ac' required>
+			<label for='$prefix-$id'>" . $element["name"] . "</label>
+			<input type='radio' id='$prefix-$id' value='$id' name='project' class='input_radio a-bc a-ac' required>
 		</span>
 		";
 	}

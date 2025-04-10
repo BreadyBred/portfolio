@@ -4,7 +4,7 @@ include '../../../functions/functions.php';
 session_start();
 
 ob_start();
-extract($_POST);
+extract($_POST); //? $name
 
 $response = [
 	"success" => false,

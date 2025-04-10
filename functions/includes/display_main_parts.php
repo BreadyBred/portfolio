@@ -141,7 +141,7 @@ function display_projects(): string {
 			$structure .= "<span class='project-line'>";
 		
 			for ($j = 0; $j < 2 && ($i + $j) < count($project_list); $j++) {
-				extract($project_list[$i + $j]);
+				extract($project_list[$i + $j]); //? $name, $synopsis, $description, $date, $link, $important_techs[], $tech_used[], $to_show
 
 				$link = get_formatted_name($name);
 				$position = ($j == 0) ? "first" : "last";
@@ -191,7 +191,7 @@ function display_work_exp(): string {
 		<span class='work-experiences'>";
 
 	foreach ($work_experiences as $work_experience) {
-		extract($work_experience);
+		extract($work_experience); //? $name, $date, $company_name, $status, $descriptions[]
 		$is_status_empty_class = ($status == "") ? "empty" : "";
 
 		$structure .= "
@@ -206,7 +206,7 @@ function display_work_exp(): string {
 			<span class='work-experience-description small italic'>";
 		
 		foreach ($descriptions as $description) {
-			extract($description);
+			extract($description); //? $line, $tabulations
 
 			$tabs = str_repeat("&emsp;", $tabulations);
 			$optional_class = ($tabulations > 1) ? "a-fc" : "";
@@ -241,7 +241,7 @@ function display_education(): string {
 	";
 
 	foreach ($educations as $education) {
-		extract($education);
+		extract($education); //? $name, $date, $specialty, $major, $location
 
 		$structure .= "
 			<span class='scholarship'>

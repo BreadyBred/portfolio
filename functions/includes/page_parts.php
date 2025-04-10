@@ -74,7 +74,7 @@ function display_header(): string {
 
 function display_single_project(string $project_name): string {
 	$projects = decode('projects');
-	extract($projects[$project_name]);
+	extract($projects[$project_name]); //? $name, $synopsis, $description, $date, $link, $important_techs[], $tech_used[], $to_show
 
 	$project_tech = "";
 	foreach ($tech_used as $tech) {

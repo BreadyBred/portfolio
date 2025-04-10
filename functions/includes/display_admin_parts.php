@@ -222,7 +222,7 @@ function display_update_project_panel(): string {
 }
 
 function display_project_info_panel(string $project_id, array $project): string {
-	extract($project);
+	extract($project); //? $name, $synopsis, $description, $date, $link, $important_techs[], $tech_used[], $to_show
 
 	$date = DateTime::createFromFormat('d/m/Y', $date);
     $date = $date->format('Y-m-d');
