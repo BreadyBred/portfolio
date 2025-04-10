@@ -53,3 +53,4 @@ jobs:
           echo "Connection to ${{ secrets.FTP_HOST }} with username ${{ secrets.FTP_USER }}"
           lftp -f deploy.lftp
           echo "Script finished."
+          
