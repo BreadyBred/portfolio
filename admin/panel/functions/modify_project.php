@@ -6,10 +6,7 @@ session_start();
 ob_start();
 extract($_POST); //? $name, $synopsis, $description, $date, $link, $important_tech[], $tech[], ?$zip_file - $project
 
-$response = [
-	"success" => false,
-	"message" => "&#9888; Une erreur est survenue. &#9888;"
-];
+$response = get_error_response();
 
 $projects = decode("projects");
 $url_depth = get_URL_depth(get_current_URL());

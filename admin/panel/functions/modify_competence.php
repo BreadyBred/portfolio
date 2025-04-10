@@ -6,10 +6,7 @@ session_start();
 ob_start();
 extract($_POST); //? $category, $name, $formatted_name - $competence
 
-$response = [
-	"success" => false,
-	"message" => "&#9888; Une erreur est survenue. &#9888;"
-];
+$response = get_error_response();
 
 $competences = decode("competences");
 

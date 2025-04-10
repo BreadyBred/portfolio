@@ -236,3 +236,10 @@ function load_env(): array {
     
     return $env_vars;
 }
+
+function get_error_response(): array {
+	return [
+		"success" => false,
+		"message" => "&#9888; Une erreur est survenue. &#9888;"
+	];
+}
