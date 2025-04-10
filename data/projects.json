@@ -2,9 +2,9 @@
     "minifier_tools": {
         "name": "Minifier Tools",
         "synopsis": "Utilitaire de minification de fichiers",
-        "description": "Minifier Tools est un utilitaire con\u00e7u pour faciliter la minification de fichiers, offrant une solution rapide et efficace pour r\u00e9duire leur taille sans effort. Que ce soit pour am\u00e9liorer les performances d\u2019un site web, optimiser l\u2019utilisation de la bande passante ou automatiser un processus de build, cet outil s\u2019adapte \u00e0 diff\u00e9rents besoins. Il propose deux modes d\u2019utilisation : un minificateur post-build qui s\u2019int\u00e8gre directement dans le processus de compilation et un minificateur autonome permettant de traiter manuellement des fichiers en les d\u00e9posant dans un dossier d\u00e9di\u00e9. Compatible avec plusieurs types de fichiers comme JavaScript, CSS, JSON, HTML et SVG, Minifier Tools assure une prise en charge fluide des d\u00e9pendances en v\u00e9rifiant et installant automatiquement les outils n\u00e9cessaires. Son fonctionnement intuitif permet de minifier des fichiers sans risque d\u2019\u00e9crasement, en g\u00e9n\u00e9rant des versions optimis\u00e9es avec un suffixe distinct. Gr\u00e2ce \u00e0 son approche flexible et automatis\u00e9e, Minifier Tools est un alli\u00e9 id\u00e9al pour tout d\u00e9veloppeur souhaitant simplifier la gestion de la minification et am\u00e9liorer la performance de ses projets.",
-        "date": "25\/12\/2024",
-        "link": "https:\/\/github.com\/BreadyBred\/minifier-tools\/",
+        "description": "Minifier Tools est un utilitaire conçu pour faciliter la minification de fichiers, offrant une solution rapide et efficace pour réduire leur taille sans effort. Que ce soit pour améliorer les performances d'un site web, optimiser l'utilisation de la bande passante ou automatiser un processus de build, cet outil s'adapte à différents besoins. Il propose deux modes d'utilisation : un minificateur post-build qui s'intègre directement dans le processus de compilation et un minificateur autonome permettant de traiter manuellement des fichiers en les déposant dans un dossier dédié. Compatible avec plusieurs types de fichiers comme JavaScript, CSS, JSON, HTML et SVG, Minifier Tools assure une prise en charge fluide des dépendances en vérifiant et installant automatiquement les outils nécessaires. Son fonctionnement intuitif permet de minifier des fichiers sans risque d'écrasement, en générant des versions optimisées avec un suffixe distinct. Grâce à son approche flexible et automatisée, Minifier Tools est un allié idéal pour tout développeur souhaitant simplifier la gestion de la minification et améliorer la performance de ses projets.",
+        "date": "25/12/2024",
+        "link": "https://github.com/BreadyBred/minifier-tools/",
         "image_url": "minifier_tools",
         "thumbnail_url": "minifier_tools",
         "important_techs": [
@@ -22,9 +22,9 @@
     "codewars_rank_fetcher": {
         "name": "Codewars Rank Fetcher",
         "synopsis": "Application de bureau",
-        "description": "Codewars Rank Fetcher est une application de bureau con\u00e7ue pour automatiser la r\u00e9cup\u00e9ration et le stockage de vos classements Codewars. Gr\u00e2ce \u00e0 une interface intuitive, elle permet aux utilisateurs de suivre leur progression en r\u00e9cup\u00e9rant leurs rangs directement depuis l\u2019API de Codewars. L\u2019application offre une personnalisation avanc\u00e9e, permettant de sp\u00e9cifier un nom d\u2019utilisateur, de s\u00e9lectionner les cat\u00e9gories \u00e0 suivre et d\u2019ordonner les classements du plus haut au plus bas. Les donn\u00e9es sont stock\u00e9es au format JSON, facilitant leur int\u00e9gration dans un portfolio, un CV ou un site personnel. Facile \u00e0 utiliser, il suffit d\u2019entrer son nom d\u2019utilisateur, de choisir ses pr\u00e9f\u00e9rences et de lancer la r\u00e9cup\u00e9ration des classements. Une fois le processus termin\u00e9, les r\u00e9sultats sont accessibles sous forme de fichier structur\u00e9, pr\u00eat \u00e0 \u00eatre consult\u00e9 ou r\u00e9utilis\u00e9. Que ce soit pour pr\u00e9parer un entretien, suivre ses progr\u00e8s ou mettre en valeur ses comp\u00e9tences, Codewars Rank Fetcher simplifie la gestion des classements en offrant une solution rapide et efficace pour centraliser ses performances en programmation.",
-        "date": "19\/01\/2025",
-        "link": "https:\/\/github.com\/BreadyBred\/codewars-rank-fetcher\/",
+        "description": "Codewars Rank Fetcher est une application de bureau conçue pour automatiser la récupération et le stockage de vos classements Codewars. Grâce à une interface intuitive, elle permet aux utilisateurs de suivre leur progression en récupérant leurs rangs directement depuis l'API de Codewars. L'application offre une personnalisation avancée, permettant de spécifier un nom d'utilisateur, de sélectionner les catégories à suivre et d'ordonner les classements du plus haut au plus bas. Les données sont stockées au format JSON, facilitant leur intégration dans un portfolio, un CV ou un site personnel. Facile à utiliser, il suffit d'entrer son nom d'utilisateur, de choisir ses préférences et de lancer la récupération des classements. Une fois le processus terminé, les résultats sont accessibles sous forme de fichier structuré, prêt à être consulté ou réutilisé. Que ce soit pour préparer un entretien, suivre ses progrès ou mettre en valeur ses compétences, Codewars Rank Fetcher simplifie la gestion des classements en offrant une solution rapide et efficace pour centraliser ses performances en programmation.",
+        "date": "19/01/2025",
+        "link": "https://github.com/BreadyBred/codewars-rank-fetcher/",
         "image_url": "codewars_rank_fetcher",
         "thumbnail_url": "codewars_rank_fetcher",
         "important_techs": [
@@ -43,9 +43,9 @@
     "codewars": {
         "name": "Codewars",
         "synopsis": "Exercices de programmation",
-        "description": "Dans ce d\u00e9p\u00f4t GitHub, je partage mes solutions aux exercices propos\u00e9s par CodeWars, une plateforme reconnue pour ses d\u00e9fis de programmation vari\u00e9s et stimulants. Mes solutions sont principalement \u00e9crites en PHP et JavaScript, deux langages que j'appr\u00e9cie particuli\u00e8rement, avec quelques incursions en Python pour diversifier mes comp\u00e9tences. Plus qu'un simple recueil de code, ce d\u00e9p\u00f4t t\u00e9moigne de mon \u00e9volution en tant que d\u00e9veloppeur, anim\u00e9 par la volont\u00e9 d'apprendre, de relever des d\u00e9fis et d'am\u00e9liorer continuellement mes connaissances. Que vous souhaitiez d\u00e9couvrir mes solutions ou envisager une collaboration, ce d\u00e9p\u00f4t vous offre un aper\u00e7u de mon univers de programmation.",
-        "date": "18\/03\/2024",
-        "link": "https:\/\/github.com\/BreadyBred\/codewars",
+        "description": "Dans ce dépôt GitHub, je partage mes solutions aux exercices proposés par CodeWars, une plateforme reconnue pour ses défis de programmation variés et stimulants. Mes solutions sont principalement écrites en PHP et JavaScript, deux langages que j'apprécie particulièrement, avec quelques incursions en Python pour diversifier mes compétences. Plus qu'un simple recueil de code, ce dépôt témoigne de mon évolution en tant que développeur, animé par la volonté d'apprendre, de relever des défis et d'améliorer continuellement mes connaissances. Que vous souhaitiez découvrir mes solutions ou envisager une collaboration, ce dépôt vous offre un aperçu de mon univers de programmation.",
+        "date": "18/03/2024",
+        "link": "https://github.com/BreadyBred/codewars",
         "image_url": "codewars",
         "thumbnail_url": "codewars",
         "important_techs": [
@@ -61,10 +61,10 @@
     },
     "pokegen": {
         "name": "PokeGen",
-        "synopsis": "Pok\u00e9mon Showdown Randomizer",
-        "description": "\"PokeGen\" est un g\u00e9n\u00e9rateur d'\u00e9quipes Pok\u00e9mon al\u00e9atoires con\u00e7u pour les joueurs de Pok\u00e9mon Showdown. Lass\u00e9(e) de composer des \u00e9quipes classiques ? Ce site web vous propose une exp\u00e9rience rafra\u00eechissante en g\u00e9n\u00e9rant une \u00e9quipe de six Pok\u00e9mon de mani\u00e8re al\u00e9atoire. Chaque Pok\u00e9mon est pr\u00e9sent\u00e9 avec sa carte d\u00e9taill\u00e9e : nom, sprite, types, num\u00e9ro de Pok\u00e9dex et statistiques. Vous pouvez relancer la g\u00e9n\u00e9ration d'\u00e9quipe compl\u00e8te avec le bouton \"Roll\" ou cibler un seul Pok\u00e9mon de votre \u00e9quipe pour le remplacer. Un s\u00e9lecteur de g\u00e9n\u00e9ration permet \u00e9galement de personnaliser davantage la g\u00e9n\u00e9ration al\u00e9atoire. Id\u00e9al pour des combats amicaux et pour d\u00e9couvrir des synergies inattendues !",
-        "date": "16\/09\/2024",
-        "link": "https:\/\/pokegen.42web.io\/",
+        "synopsis": "Pokémon Showdown Randomizer",
+        "description": "« PokeGen » est un générateur d'équipes Pokémon aléatoires conçu pour les joueurs de Pokémon Showdown. Lassé(e) de composer des équipes classiques ? Ce site web vous propose une expérience rafraîchissante en générant une équipe de six Pokémon de manière aléatoire. Chaque Pokémon est présenté avec sa carte détaillée : nom, sprite, types, numéro de Pokédex et statistiques. Vous pouvez relancer la génération d'équipe complète avec le bouton « Generate » ou cibler un seul Pokémon de votre équipe pour le remplacer. Un sélecteur de génération permet également de personnaliser davantage la génération aléatoire. Idéal pour des combats amicaux et pour découvrir des synergies inattendues !",
+        "date": "16/09/2024",
+        "link": "https://pokegen.42web.io/",
         "image_url": "pokegen",
         "thumbnail_url": "pokegen",
         "important_techs": [
@@ -80,11 +80,11 @@
         "to_show": true
     },
     "la_reconquete": {
-        "name": "La Reconqu\u00eate",
-        "synopsis": "Projet Universitaire de 1\u00e8re ann\u00e9e",
-        "description": "\"La Reconqu\u00eate\" est un projet ambitieux men\u00e9 lors de ma premi\u00e8re ann\u00e9e de DUT, constituant une premi\u00e8re exp\u00e9rience concr\u00e8te dans le d\u00e9veloppement web. Ce projet m'a permis d'acqu\u00e9rir des comp\u00e9tences en conception de sites web interactifs, en cr\u00e9ation de supports visuels et en gestion de projet. Il comprend la r\u00e9alisation d'un site web immersif sur l'\u00e9poque m\u00e9di\u00e9vale, ainsi que la conception de visuels pour la promotion de l'\u00e9v\u00e9nement.",
-        "date": "10\/07\/2020",
-        "link": "https:\/\/lareconquete.42web.io",
+        "name": "La Reconquête",
+        "synopsis": "Projet Universitaire de 1ère année",
+        "description": "« La Reconquête » est un projet ambitieux mené lors de ma première année de DUT, constituant une première expérience concrète dans le développement web. Ce projet m'a permis d'acquérir des compétences en conception de sites web interactifs, en création de supports visuels et en gestion de projet. Il comprend la réalisation d'un site web immersif sur l'époque médiévale, ainsi que la conception de visuels pour la promotion de l'événement.",
+        "date": "10/07/2020",
+        "link": "https://lareconquete.42web.io",
         "image_url": "la_reconquete",
         "thumbnail_url": "la_reconquete",
         "important_techs": [
@@ -102,9 +102,9 @@
     "stardew_dashboard": {
         "name": "Stardew Dashboard",
         "synopsis": "WebApp pour Stardew Valley",
-        "description": "\u00ab Stardew Dashboard \u00bb est le compagnon ultime des fermiers d\u00e9vou\u00e9s de Stardew Valley. T\u00e9l\u00e9chargez facilement votre fichier de sauvegarde de jeu et acc\u00e9dez \u00e0 une multitude d'informations sur votre ferme. De la ma\u00eetrise des recettes \u00e0 la d\u00e9couverte de nouveaux \u00e9l\u00e9ments de jeu, notre interface intuitive vous aide \u00e0 r\u00e9pondre aux besoins de votre ferme et \u00e0 explorer tout ce que Stardew Valley a \u00e0 offrir.",
-        "date": "10\/06\/2024",
-        "link": "https:\/\/stardew-dashboard.42web.io\/",
+        "description": "« Stardew Dashboard » est le compagnon ultime des fermiers dévoués de Stardew Valley. Téléchargez facilement votre fichier de sauvegarde de jeu et accédez à une multitude d'informations sur votre ferme. De la maîtrise des recettes à la découverte de nouveaux éléments de jeu, notre interface intuitive vous aide à répondre aux besoins de votre ferme et à explorer tout ce que Stardew Valley a à offrir.",
+        "date": "10/06/2024",
+        "link": "https://stardew-dashboard.42web.io/",
         "image_url": "stardew_dashboard",
         "thumbnail_url": "stardew_dashboard",
         "important_techs": [
@@ -123,11 +123,11 @@
         "to_show": true
     },
     "maichef": {
-        "name": "Ma\u00efChef",
+        "name": "MaïChef",
         "synopsis": "Maquettage d'une application",
-        "description": "\"Ma\u00efchef\" est le fruit d'un projet passionnant men\u00e9 lors d'un Hackathon ! En \u00e9quipe, nous avons d\u00e9velopp\u00e9 cette application de cuisine personnalis\u00e9e, permettant aux utilisateurs de cr\u00e9er des plats uniques avec leurs ingr\u00e9dients. Ce Hackathon a \u00e9t\u00e9 une exp\u00e9rience formatrice intense, nous permettant de mettre en pratique nos comp\u00e9tences en conception, d\u00e9veloppement et gestion de projet.",
-        "date": "17\/11\/2023",
-        "link": "https:\/\/maichef.42web.io",
+        "description": "« Maïchef » est le fruit d'un projet passionnant mené lors d'un Hackathon ! En équipe, nous avons développé cette application de cuisine personnalisée, permettant aux utilisateurs de créer des plats uniques avec leurs ingrédients. Ce Hackathon a été une expérience formatrice intense, nous permettant de mettre en pratique nos compétences en conception, développement et gestion de projet.",
+        "date": "17/11/2023",
+        "link": "https://maichef.42web.io",
         "image_url": "maichef",
         "thumbnail_url": "maichef",
         "important_techs": [
@@ -142,10 +142,10 @@
     },
     "monarchy_mayhem": {
         "name": "Monarchy Mayhem",
-        "synopsis": "Cr\u00e9ation d'un jeu vid\u00e9o",
-        "description": "\u00ab Monarchy Mayhem \u00bb est un jeu vid\u00e9o que nous avons d\u00e9velopp\u00e9 en \u00e9quipe au cours de notre troisi\u00e8me ann\u00e9e de BUT. \u00c0 partir de z\u00e9ro, nous avons con\u00e7u le jeu en utilisant Unity et le langage C#, d\u00e9velopp\u00e9 le site web en PHP, et orchestr\u00e9 une campagne de communication \u00e0 360 degr\u00e9s pour promouvoir l'ensemble du projet. Ce fut un succ\u00e8s total et le jeu est actuellement disponible sur Itch.io.",
-        "date": "20\/02\/2024",
-        "link": "https:\/\/monarchymayhem.top",
+        "synopsis": "Création d'un jeu vidéo",
+        "description": "« Monarchy Mayhem » est un jeu vidéo que nous avons développé en équipe au cours de notre troisième année de BUT. À partir de zéro, nous avons conçu le jeu en utilisant Unity et le langage C#, développé le site web en PHP, et orchestré une campagne de communication à 360 degrés pour promouvoir l'ensemble du projet. Ce fut un succès total et le jeu est actuellement disponible sur Itch.io.",
+        "date": "20/02/2024",
+        "link": "https://monarchymayhem.top",
         "image_url": "monarchy_mayhem",
         "thumbnail_url": "monarchy_mayhem",
         "important_techs": [

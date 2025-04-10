@@ -296,11 +296,11 @@ function display_contact(): string {
 						<a class='img' target='_blank' href='https://www.linkedin.com/in/romain-gerard/' aria-label='Icône de contact'>
 							<img src='$images_path/linkedin.png' class='contact-logo' alt='Linkedin icon'>
 						</a>
-						<a class='img' target='_blank' href='https://www.codewars.com/users/BreadyBred' aria-label='Icône de contact'>
-							<img src='$images_path/codewars.png' class='contact-logo' alt='Codewars icon'>
-						</a>
 						<a class='img' target='_blank' href='https://github.com/BreadyBred/' aria-label='Icône de contact'>
 							<img src='$images_path/github.png' class='contact-logo' alt='Github icon'>
+						</a>
+						<a class='img' target='_blank' href='https://www.codewars.com/users/BreadyBred' aria-label='Icône de contact'>
+							<img src='$images_path/codewars.png' class='contact-logo' alt='Codewars icon'>
 						</a>
 					</span>
 				</span>

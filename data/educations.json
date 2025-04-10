@@ -2,9 +2,9 @@
     {
         "name": "Master",
         "date": "2025 - 2028",
-        "specialty": "Software Engineering",
+        "specialty": "Génie Logiciel",
         "major": null,
-        "location": "University of Science and Technology of China, Hefei"
+        "location": "University of Science and Technology of China (USTC), Hefei"
     },
     {
         "name": "Piscine de Zone01",
@@ -17,35 +17,35 @@
         "name": "Piscine de 42",
         "date": "2024",
         "specialty": null,
-        "major": "La m\u00e9thode 42",
-        "location": "\u00c9cole 42, Paris"
+        "major": "La méthode 42",
+        "location": "École 42, Paris"
     },
     {
-        "name": "BUT",
+        "name": "B.U.T",
         "date": "2023 - 2024",
-        "specialty": "M\u00e9tiers du Multim\u00e9dia et de l'Internet",
-        "major": "Sp\u00e9cialit\u00e9 D\u00e9veloppement Web",
-        "location": "Universit\u00e9 de Rouen Normandie"
+        "specialty": "Métiers du Multimédia et de l'Internet",
+        "major": "Spécialité Développement Web",
+        "location": "Université de Rouen Normandie"
     },
     {
         "name": "Licence Professionnelle",
         "date": "2022 - 2023",
-        "specialty": "D\u00e9veloppement & Administration de Sites Internet",
+        "specialty": "Développement & Administration de Sites Internet",
         "major": null,
-        "location": "Universit\u00e9 Le Havre Normandie"
+        "location": "Université Le Havre Normandie"
     },
     {
-        "name": "DUT",
+        "name": "D.U.T",
         "date": "2020 - 2022",
-        "specialty": "M\u00e9tiers du Multim\u00e9dia et de l'Internet",
-        "major": "Sp\u00e9cialit\u00e9 D\u00e9veloppement Web",
-        "location": "Universit\u00e9 de Rouen Normandie"
+        "specialty": "Métiers du Multimédia et de l'Internet",
+        "major": "Spécialité Développement Web",
+        "location": "Université de Rouen Normandie"
     },
     {
-        "name": "Baccalaur\u00e9at",
+        "name": "Baccalauréat",
         "date": "2016 - 2020",
         "specialty": "Scientifique (Assez Bien)",
-        "major": "Sp\u00e9cialit\u00e9 Math\u00e9matiques",
-        "location": "Lyc\u00e9e Ferdinand Buisson"
+        "major": "Spécialité Mathématiques",
+        "location": "Lycée Ferdinand Buisson"
     }
 ]

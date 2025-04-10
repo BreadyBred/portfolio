@@ -24,13 +24,13 @@
         ]
     },
     {
-        "name": "Webmaster\/Infographiste",
+        "name": "Webmaster - Infographiste",
         "date": "Avr. 2024 - Juil. 2024",
         "company_name": "Prescott",
         "status": "Stage",
         "descriptions": [
             {
-                "line": "Gestion d'un site d\u00e9j\u00e0 existant (Wordpress)",
+                "line": "Gestion d'un site déjà existant (Wordpress)",
                 "tabulations": 1
             },
             {
@@ -38,23 +38,23 @@
                 "tabulations": 1
             },
             {
-                "line": "Cr\u00e9ation de maquettes de sites sur Figma",
+                "line": "Création de maquettes de sites sur Figma",
                 "tabulations": 1
             }
         ]
     },
     {
-        "name": "D\u00e9v. jeux-vid\u00e9os",
+        "name": "Dév. jeux-vidéos",
         "date": "Nov. 2023 - Feb. 2024",
         "company_name": "Monarchy Mayhem",
         "status": "Projet Professionnel",
         "descriptions": [
             {
-                "line": "A remport\u00e9 la 3\u00e8me place du festival MMI France",
+                "line": "A remporté la 3ème place du festival MMI France",
                 "tabulations": 1
             },
             {
-                "line": "D\u00e9velopper un jeu vid\u00e9o from scratch",
+                "line": "Développer un jeu vidéo from scratch",
                 "tabulations": 1
             },
             {
@@ -72,17 +72,17 @@
         ]
     },
     {
-        "name": "D\u00e9v. Front-End",
+        "name": "Dév. Front-End",
         "date": "Apr. 2022 - Juil. 2022",
         "company_name": "JKDS Renovation",
         "status": "Stage",
         "descriptions": [
             {
-                "line": "Cr\u00e9er l'identit\u00e9 graphique d'une entreprise nouvellement fond\u00e9e",
+                "line": "Créer l'identité graphique d'une entreprise nouvellement fondée",
                 "tabulations": 1
             },
             {
-                "line": "D\u00e9velopper un site internet (Wordpress)",
+                "line": "Développer un site internet (Wordpress)",
                 "tabulations": 1
             },
             {
@@ -92,21 +92,21 @@
         ]
     },
     {
-        "name": "D\u00e9v. Full-Stack",
+        "name": "Dév. Full-Stack",
         "date": "Dec. 2021 - Mar. 2022",
-        "company_name": "Entente Sportive de la vall\u00e9e de l'Oison",
+        "company_name": "Entente Sportive de la vallée de l'Oison",
         "status": "Projet Professionnel",
         "descriptions": [
             {
-                "line": "D\u00e9velopper un site internet from scratch",
+                "line": "Développer un site internet from scratch",
                 "tabulations": 1
             },
             {
-                "line": "Front-End (HTML5 \/ CSS3 \/ jQuery)",
+                "line": "Front-End (HTML5 / CSS3 / jQuery)",
                 "tabulations": 2
             },
             {
-                "line": "Back-End (PHP \/ MySQL)",
+                "line": "Back-End (PHP / MySQL)",
                 "tabulations": 2
             }
         ]
