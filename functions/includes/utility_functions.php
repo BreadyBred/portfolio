@@ -1,6 +1,6 @@
 <?php
 
-require __DIR__ . '/../../vendor/autoload.php';
+require __DIR__ . "/../../vendor/autoload.php";
 use PHPMailer\PHPMailer\PHPMailer;
 
 function log_(mixed $element): void {
@@ -8,7 +8,7 @@ function log_(mixed $element): void {
 }
 
 function is_maintenance_mode_on(): bool {
-	if (decode('utilities')['maintenance_mode']) {
+	if (decode("utilities")["maintenance_mode"]) {
 		return true;
 	}
 
@@ -16,30 +16,30 @@ function is_maintenance_mode_on(): bool {
 }
 
 function redirect_to_maintenance_screen(): void {
-	header('Location:' . get_maintenance_screen());
+	header("Location:" . get_maintenance_screen());
 }
 
 function redirect_to_site_root(): void {
-	header('Location:' . get_site_root());
+	header("Location:" . get_site_root());
 }
 
 function get_URL_depth(string $url): int {
 	$base_url = get_site_root();
-	$base_url = rtrim($base_url, '/');
+	$base_url = rtrim($base_url, "/");
 	
 	if (strpos($url, $base_url) === 0) {
 		$relative_path = substr($url, strlen($base_url));
-		$relative_path = ltrim($relative_path, '/');
+		$relative_path = ltrim($relative_path, "/");
 		
 		if (empty($relative_path)) {
 			return 0;
 		}
 		
-		$segments = explode('/', $relative_path);
+		$segments = explode("/", $relative_path);
 
 		$last_segment = end($segments);
 
-		if (strpos($last_segment, '.') !== false) {
+		if (strpos($last_segment, ".") !== false) {
 			array_pop($segments);
 		}
 		
@@ -50,63 +50,63 @@ function get_URL_depth(string $url): int {
 }
 
 function get_current_URL(): string {
-	$protocol = (!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] !== 'off' || $_SERVER['SERVER_PORT'] == 443) ? "https://" : "http://";
-	$host = $_SERVER['HTTP_HOST'];
-	$request_URI = $_SERVER['REQUEST_URI'];
+	$protocol = (!empty($_SERVER["HTTPS"]) && $_SERVER["HTTPS"] !== "off" || $_SERVER["SERVER_PORT"] == 443) ? "https://" : "http://";
+	$host = $_SERVER["HTTP_HOST"];
+	$request_URI = $_SERVER["REQUEST_URI"];
 	
 	return $protocol . $host . $request_URI;
 }
 
 function is_on_localhost(): bool {
-	return $_SERVER['HTTP_HOST'] === "localhost";
+	return $_SERVER["HTTP_HOST"] === "localhost";
 }
 
 function get_site_root(bool $secured = true): string {
 	if (is_on_localhost()) {
-		return 'http://localhost/travail/portfolio/';
+		return "http://localhost/travail/portfolio/";
 	}
 
 	if (!$secured) {
-		return 'http://romain-gerard.com/';
+		return "http://romain-gerard.com/";
 	}
 
-	return 'https://romain-gerard.com/';
+	return "https://romain-gerard.com/";
 }
 
 function get_maintenance_screen(): string {
-	return get_site_root() . 'error/?e=503';
+	return get_site_root() . "error/?e=503";
 }
 
 function get_images_folder(): string {
-	return get_site_root() . 'medias/images/';
+	return get_site_root() . "medias/images/";
 }
 
 function get_script_folder(): string {
-	return get_site_root() . 'script/';
+	return get_site_root() . "script/";
 }
 
 function get_projects_illustrations_folder(): string {
-	return get_images_folder() . 'projects/illustrations/';
+	return get_images_folder() . "projects/illustrations/";
 }
 
 function get_projects_thumbnails_folder(): string {
-	return get_images_folder() . 'projects/thumbnails/';
+	return get_images_folder() . "projects/thumbnails/";
 }
 
 function get_files_folder(): string {
-	return get_site_root() . 'medias/files/';
+	return get_site_root() . "medias/files/";
 }
 
 function get_admin_folder(): string {
-	return get_site_root() . 'admin/';
+	return get_site_root() . "admin/";
 }
 
 function get_admin_panel_folder(): string {
-	return get_site_root() . 'admin/panel/';
+	return get_site_root() . "admin/panel/";
 }
 
 function get_json_folder(): string {
-	return get_site_root(false) . 'data/';
+	return get_site_root(false) . "data/";
 }
 
 function send_login_notification(): void {
@@ -125,8 +125,8 @@ function send_login_notification(): void {
 	$mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
 	$mail->Port = 587;
 	
-	$mail->setFrom('gerarromain@gmail.com', 'Notification Portfolio');
-	$mail->addAddress('gerarromain@gmail.com');
+	$mail->setFrom("gerarromain@gmail.com", "Notification Portfolio");
+	$mail->addAddress("gerarromain@gmail.com");
 	
 	$date = date("d/m/Y");
 	$heure = date("H:i");
@@ -143,7 +143,7 @@ function add_in_log(): void {
 		return;
 	}
 
-    $log_file = __DIR__ . '/../../medias/files/log.txt';
+    $log_file = __DIR__ . "/../../medias/files/log.txt";
 
 	$date = date("d/m/Y");
 	$heure = date("H:i");
@@ -153,26 +153,26 @@ function add_in_log(): void {
 }
 
 function get_formatted_name(string $name): string {
-	$search =  [' ', '\'', '(', ')', ',', '.', ':'];
-	$replace = ['_', ''  , '' , '', '', '', ''    ];
+	$search =  [" ", "\"", "(", ")", ",", ".", ":"];
+	$replace = ["_", ""  , "" , "", "", "", ""    ];
 
 	$name = str_replace($search, $replace, $name);
 
 	$name = strtolower($name);
 
-	if (substr($name, -1) === '_') {
+	if (substr($name, -1) === "_") {
 		$name = substr($name, 0, -1);
 	}
 	
 	$regex = array(
-		'à' => 'a', 'á' => 'a', 'â' => 'a', 'ã' => 'a', 'ä' => 'a', 'å' => 'a', 'æ' => 'ae',
-		'ç' => 'c',
-		'è' => 'e', 'é' => 'e', 'ê' => 'e', 'ë' => 'e',
-		'ì' => 'i', 'í' => 'i', 'î' => 'i', 'ï' => 'i',
-		'ñ' => 'n',
-		'ò' => 'o', 'ó' => 'o', 'ô' => 'o', 'õ' => 'o', 'ö' => 'o', 'ø' => 'o',
-		'ù' => 'u', 'ú' => 'u', 'û' => 'u', 'ü' => 'u',
-		'ý' => 'y', 'ÿ' => 'y'
+		"à" => "a", "á" => "a", "â" => "a", "ã" => "a", "ä" => "a", "å" => "a", "æ" => "ae",
+		"ç" => "c",
+		"è" => "e", "é" => "e", "ê" => "e", "ë" => "e",
+		"ì" => "i", "í" => "i", "î" => "i", "ï" => "i",
+		"ñ" => "n",
+		"ò" => "o", "ó" => "o", "ô" => "o", "õ" => "o", "ö" => "o", "ø" => "o",
+		"ù" => "u", "ú" => "u", "û" => "u", "ü" => "u",
+		"ý" => "y", "ÿ" => "y"
 	);
 
 	return strtr($name, $regex);
@@ -197,7 +197,7 @@ function decode(string $filename): array {
 }
 
 function check_session(): void {
-	if (empty($_COOKIE['login'])) {
+	if (empty($_COOKIE["login"])) {
 		session_unset();
 		session_destroy();
 		header("Location: " . get_site_root() . "admin/");
@@ -206,12 +206,12 @@ function check_session(): void {
 }
 
 function get_browser_language(): string {
-	$lang = substr($_SERVER['HTTP_ACCEPT_LANGUAGE'], 0, 2);
-	return ($lang == 'fr') ? $lang : "en";
+	$lang = substr($_SERVER["HTTP_ACCEPT_LANGUAGE"], 0, 2);
+	return ($lang == "fr") ? $lang : "en";
 }
 
 function load_env(): array {
-    $env_file = ((is_on_localhost()) ? $_SERVER['DOCUMENT_ROOT'] . "/travail/portfolio" : $_SERVER['DOCUMENT_ROOT']) . "/.env";
+    $env_file = ((is_on_localhost()) ? $_SERVER["DOCUMENT_ROOT"] . "/travail/portfolio" : $_SERVER["DOCUMENT_ROOT"]) . "/.env";
     
     if (!file_exists($env_file) || !is_readable($env_file)) {
         return [];

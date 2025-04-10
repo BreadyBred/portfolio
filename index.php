@@ -1,6 +1,6 @@
 <?php
 
-include './functions/functions.php';
+include "./functions/functions.php";
 
 check_palette();
 

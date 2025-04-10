@@ -1,13 +1,13 @@
 <?php
 
 function get_project_full_name(string $formatted_name): string {
-	$projects = decode('projects');
+	$projects = decode("projects");
 
-	return $projects[$formatted_name]['name'];
+	return $projects[$formatted_name]["name"];
 }
 
 function get_shown_projects_list(): array {
-	$projects = decode('projects');
+	$projects = decode("projects");
 	$project_list = array();
 	foreach ($projects as $project_id => $project) {		
 		if ($project["to_show"]) {
@@ -19,12 +19,12 @@ function get_shown_projects_list(): array {
 }
 
 function get_project_list(): array {
-	$projects = decode('projects');
+	$projects = decode("projects");
 	return $projects;
 }
 
 function does_project_exist(string $project_name): bool {
-	$projects = decode('projects');
+	$projects = decode("projects");
 
 	if (array_key_exists($project_name, $projects)) {
 		return true;
@@ -72,20 +72,20 @@ function sort_in_option(array $items, bool $has_title = true): string {
 }
 
 function move_image(array $image, string $repository, string $image_name): void {
-	$extension = '.png';
-	$image_tmp = $image['tmp_name'];
+	$extension = ".png";
+	$image_tmp = $image["tmp_name"];
 
 	$url_depth = get_URL_depth(get_current_URL());
-	$image_path = str_repeat('../', $url_depth) . "medias/images/" . $repository . "/" . $image_name . $extension;
+	$image_path = str_repeat("../", $url_depth) . "medias/images/" . $repository . "/" . $image_name . $extension;
 	
 	move_uploaded_file($image_tmp, $image_path);
 }
 
 function move_multiple_images(string $image_tmp, string $repository, string $image_name): void {
-	$extension = '.png';
+	$extension = ".png";
 
 	$url_depth = get_URL_depth(get_current_URL());
-	$image_path = str_repeat('../', $url_depth) . "medias/images/" . $repository . "/" . $image_name . $extension;
+	$image_path = str_repeat("../", $url_depth) . "medias/images/" . $repository . "/" . $image_name . $extension;
 	
 	move_uploaded_file($image_tmp, $image_path);
 }

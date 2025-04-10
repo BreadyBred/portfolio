@@ -1,6 +1,6 @@
 <?php
 
-include '../../../functions/functions.php';
+include "../../../functions/functions.php";
 session_start();
 
 ob_start();
@@ -11,40 +11,40 @@ $response = [
 	"message" => "&#9888; Une erreur est survenue. &#9888;"
 ];
 
-$projects = decode('projects');
+$projects = decode("projects");
 $url_depth = get_URL_depth(get_current_URL());
 
-switch($_GET['action']) {
-	case 'add' :
+switch($_GET["action"]) {
+	case "add" :
 		$project_id = get_formatted_name($name);
 
 		$date = new DateTime($date);
-		$date = $date->format('d/m/Y');
+		$date = $date->format("d/m/Y");
 		
-		move_image($_FILES['illustration'], 'projects/illustrations', $project_id);
-		move_image($_FILES['thumbnail'], 'projects/thumbnails', $project_id);
+		move_image($_FILES["illustration"], "projects/illustrations", $project_id);
+		move_image($_FILES["thumbnail"], "projects/thumbnails", $project_id);
 		
 		$new_project = array(
-			'name' 			  => $name,
-			'synopsis'		  => $synopsis,
-			'description'	  => $description,
-			'date'			  => $date,
-			'link'			  => $link,
-			'image_url'		  => $project_id,
-			'thumbnail_url'	  => $project_id,
-			'important_techs' => $important_tech,
-			'tech_used' 	  => $tech,
-			'to_show'		  => true
+			"name" 			  => $name,
+			"synopsis"		  => $synopsis,
+			"description"	  => $description,
+			"date"			  => $date,
+			"link"			  => $link,
+			"image_url"		  => $project_id,
+			"thumbnail_url"	  => $project_id,
+			"important_techs" => $important_tech,
+			"tech_used" 	  => $tech,
+			"to_show"		  => true
 		);
 		
 		$project = $project_id;
 		$projects = array($project_id => $new_project) + $projects;
 		
-		if (isset($_FILES['zip_file'])) {
-			if ($_FILES['zip_file']['type'] == 'application/x-zip-compressed') {
-				$zip_tmp = $_FILES['zip_file']['tmp_name'];
-				$zip_path = str_repeat('../', $url_depth) . "projects/$project_id.zip";
-				$file_path = str_repeat('../', $url_depth) . "projects/$project_id/";
+		if (isset($_FILES["zip_file"])) {
+			if ($_FILES["zip_file"]["type"] == "application/x-zip-compressed") {
+				$zip_tmp = $_FILES["zip_file"]["tmp_name"];
+				$zip_path = str_repeat("../", $url_depth) . "projects/$project_id.zip";
+				$file_path = str_repeat("../", $url_depth) . "projects/$project_id/";
 		
 				move_uploaded_file($zip_tmp, $zip_path);
 				$zip = new ZipArchive;
@@ -56,17 +56,17 @@ switch($_GET['action']) {
 			}
 			else {
 				$response["message"] = "Le fichier de projet n'est pas un fichier ZIP";
-				$_SESSION['server_response'] = $response_json;
-				header("Location: {$_SERVER['HTTP_REFERER']}");
+				$_SESSION["server_response"] = $response_json;
+				header("Location: {$_SERVER["HTTP_REFERER"]}");
 			}
-			$action = 'créé';
+			$action = "créé";
 		}
 		break;
 
-	case 'delete':
-		$filename = $projects[$project]['image_url'];
-		$thumbnail_path = str_repeat('../', $url_depth) . "medias/images/projects/thumbnails/$filename.png";
-		$illustration_path = str_repeat('../', $url_depth) . "medias/images/projects/illustrations/$filename.png";
+	case "delete":
+		$filename = $projects[$project]["image_url"];
+		$thumbnail_path = str_repeat("../", $url_depth) . "medias/images/projects/thumbnails/$filename.png";
+		$illustration_path = str_repeat("../", $url_depth) . "medias/images/projects/illustrations/$filename.png";
 		
 		unlink($thumbnail_path);
 		unlink($illustration_path);
@@ -74,30 +74,30 @@ switch($_GET['action']) {
 		$action = "supprimé";
 		break;
 
-	case 'update':
+	case "update":
 		$project = $project_id;
 		$date = new DateTime($date);
-		$date = $date->format('d/m/Y');
+		$date = $date->format("d/m/Y");
 
 		$updated_project = array(
-			'name' 			  => $name,
-			'synopsis'		  => $synopsis,
-			'description'	  => $description,
-			'date'			  => $date,
-			'link'			  => $link,
-			'image_url'		  => $project_id,
-			'thumbnail_url'	  => $project_id,
-			'important_techs' => $important_tech,
-			'tech_used' 	  => $tech,
-			'to_show'		  => true
+			"name" 			  => $name,
+			"synopsis"		  => $synopsis,
+			"description"	  => $description,
+			"date"			  => $date,
+			"link"			  => $link,
+			"image_url"		  => $project_id,
+			"thumbnail_url"	  => $project_id,
+			"important_techs" => $important_tech,
+			"tech_used" 	  => $tech,
+			"to_show"		  => true
 		);
 		$projects[$project_id] = $updated_project;
-		$action = 'modifié';
+		$action = "modifié";
 		break;
 }
 
 $json_data = json_encode($projects, JSON_PRETTY_PRINT);
-$file_path = str_repeat('../', $url_depth) . "data/projects.json";
+$file_path = str_repeat("../", $url_depth) . "data/projects.json";
 $resultat = file_put_contents($file_path, $json_data);
 
 if ($resultat) {
@@ -107,6 +107,6 @@ if ($resultat) {
 
 $response_json = json_encode($response);
 
-$_SESSION['server_response'] = $response_json;
-header("Location: {$_SERVER['HTTP_REFERER']}");
+$_SESSION["server_response"] = $response_json;
+header("Location: {$_SERVER["HTTP_REFERER"]}");
 exit;

@@ -1,28 +1,28 @@
 <?php
 
-function display_html_head(string $page_title, string $body_class = ''): string {
+function display_html_head(string $page_title, string $body_class = ""): string {
 	$palette = get_palette_id();
 
 	return "
-	<!DOCTYPE html>
-	<html lang='fr' class='bg-bg'>
-	<head>
-		<meta charset='UTF-8'>
-		<meta name='viewport' content='width=device-width, initial-scale=1.0'>
+		<!DOCTYPE html>
+		<html lang='fr' class='bg-bg'>
+		<head>
+			<meta charset='UTF-8'>
+			<meta name='viewport' content='width=device-width, initial-scale=1.0'>
 
-		<meta name='robots' content='index'>
-		<meta name='description' content='Portfolio de Romain Gérard, développeur web spécialisé en HTML, CSS, JavaScript, PHP, et MySQL. Diplômé après 3 ans en Université de Rouen, en Normandie, avec une expertise en développement de sites internet et applications web.'>
-		<meta name='author' content='Romain GERARD'>
+			<meta name='robots' content='index'>
+			<meta name='description' content='Portfolio de Romain Gérard, développeur web spécialisé en HTML, CSS, JavaScript, PHP, et MySQL. Diplômé après 3 ans en Université de Rouen, en Normandie, avec une expertise en développement de sites internet et applications web.'>
+			<meta name='author' content='Romain GERARD'>
 
-		<link rel='shortcut icon' href='" . get_images_folder() . "logo/$palette/favicon.ico' type='image/x-icon'>
-		<link rel='stylesheet' href='" . get_site_root() . "style/style.css?v=" . time() . "'>
-		<script src='" . get_script_folder() . "minified/functions-min.js'></script>
-		<script src='" . get_script_folder() . "minified/palettes-min.js'></script>
-		<script src='" . get_script_folder() . "minified/admin_functions-min.js'></script>
-		<script src='" . get_script_folder() . "minified/script-min.js'></script>
-		<title>$page_title - Romain GERARD</title>
-	</head>
-	<body class='$body_class'>
+			<link rel='shortcut icon' href='" . get_images_folder() . "logo/$palette/favicon.ico' type='image/x-icon'>
+			<link rel='stylesheet' href='" . get_site_root() . "style/style.css?v=" . time() . "'>
+			<script src='" . get_script_folder() . "minified/functions-min.js'></script>
+			<script src='" . get_script_folder() . "minified/palettes-min.js'></script>
+			<script src='" . get_script_folder() . "minified/admin_functions-min.js'></script>
+			<script src='" . get_script_folder() . "minified/script-min.js'></script>
+			<title>$page_title - Romain GERARD</title>
+		</head>
+		<body class='$body_class'>
 	";
 }
 
@@ -30,50 +30,50 @@ function display_header(): string {
 	$palette = get_palette_id();
 
 	return "
-	<header class='bottom-border aux-bc'>
-		<nav>
-			<a href='" . get_site_root() . "' aria-label='Retour à l'accueil'>
-				<img src='" . get_images_folder() . "logo/$palette/logo_256.png' id='main-logo' alt=''>
-			</a>
-			<ul class='desktop-only'>
-				<li>
-					<a href='" . get_site_root() . "'>
-						Accueil
-						<span class='line a-bg'></span>
-					</a>
-				</li>
-				<li>
-					<a href='" . get_site_root() . "#competences-section'>
-						Compétences
-						<span class='line a-bg'></span>
-					</a>
-				</li>
-				<li>
-					<a href='" . get_site_root() . "#projects-section'>
-						Projets
-						<span class='line a-bg'></span>
-					</a>
-				</li>
-				<li>
-					<a href='" . get_site_root() . "#experiences-section'>
-						Parcours
-						<span class='line a-bg'></span>
-					</a>
-				</li>
-				<li>
-					<a href='" . get_site_root() . "#contact-section'>
-						Contact
-						<span class='line a-bg'></span>
-					</a>
-				</li>
-			</ul>
-		</nav>
-	</header>
+		<header class='bottom-border aux-bc'>
+			<nav>
+				<a href='" . get_site_root() . "' aria-label='Retour à l'accueil'>
+					<img src='" . get_images_folder() . "logo/$palette/logo_256.png' id='main-logo' alt=''>
+				</a>
+				<ul class='desktop-only'>
+					<li>
+						<a href='" . get_site_root() . "'>
+							Accueil
+							<span class='line a-bg'></span>
+						</a>
+					</li>
+					<li>
+						<a href='" . get_site_root() . "#competences-section'>
+							Compétences
+							<span class='line a-bg'></span>
+						</a>
+					</li>
+					<li>
+						<a href='" . get_site_root() . "#projects-section'>
+							Projets
+							<span class='line a-bg'></span>
+						</a>
+					</li>
+					<li>
+						<a href='" . get_site_root() . "#experiences-section'>
+							Parcours
+							<span class='line a-bg'></span>
+						</a>
+					</li>
+					<li>
+						<a href='" . get_site_root() . "#contact-section'>
+							Contact
+							<span class='line a-bg'></span>
+						</a>
+					</li>
+				</ul>
+			</nav>
+		</header>
 	";
 }
 
 function display_single_project(string $project_name): string {
-	$projects = decode('projects');
+	$projects = decode("projects");
 	extract($projects[$project_name]); //? $name, $synopsis, $description, $date, $link, $important_techs[], $tech_used[], $to_show
 
 	$project_tech = "";
@@ -81,7 +81,7 @@ function display_single_project(string $project_name): string {
 		$project_tech .= "<span class='tech a-bc'>$tech</span>";
 	}
 
-	$description_lines = explode('. ', $description);
+	$description_lines = explode(". ", $description);
 	$description = "";
 	foreach ($description_lines as $description_line) {
 		$point = (in_array(substr($description_line, -1), [".", "!", "?"])) ? "" : ".";

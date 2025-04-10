@@ -77,13 +77,10 @@ function display_aboutme(): string {
 			</span>
 		</section>
 	";
-	/* <span class='aboutme-footer'>
-	<a href='" . get_files_folder() . "$palette_id/CV_FR_Romain-GERARD.pdf' id='cv-file'target='_blank' class='button button-xl'>Mon CV</a>
-	</span> */
 }
 
 function display_competences(): string {
-	$categories = decode('competences');
+	$categories = decode("competences");
 
 	$competence_text = "";
 	foreach ($categories as $category_name => $category) {
@@ -122,8 +119,8 @@ function display_projects(): string {
 	$project_list = array_values($projects);
 
 	usort($project_list, function (array $a, array $b): int {
-		$date_a = DateTime::createFromFormat('d/m/Y', $a['date']);
-		$date_b = DateTime::createFromFormat('d/m/Y', $b['date']);
+		$date_a = DateTime::createFromFormat("d/m/Y", $a["date"]);
+		$date_b = DateTime::createFromFormat("d/m/Y", $b["date"]);
 		
 		return $date_b <=> $date_a;
 	});
@@ -180,7 +177,7 @@ function display_projects(): string {
 }
 
 function display_work_exp(): string {
-	$work_experiences = decode('work_experiences');
+	$work_experiences = decode("work_experiences");
 
 	$structure = "
 	<span class='work-exp'>
@@ -229,7 +226,7 @@ function display_work_exp(): string {
 }
 
 function display_education(): string {
-	$educations = decode('educations');
+	$educations = decode("educations");
 
 	$structure = "
 		<span class='scholar'>

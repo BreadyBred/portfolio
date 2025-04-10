@@ -1,7 +1,7 @@
 <?php
 
 function display_login_form(): string {
-	$error_message = (isset($_GET['error'])) ? "La combinaison Username/Password est erronée" : "";
+	$error_message = (isset($_GET["error"])) ? "La combinaison Username/Password est erronée" : "";
 
 	return "
 	<form action='" . get_site_root() . "functions/login.php' method='POST' class='admin-login'>
@@ -34,10 +34,10 @@ function display_admin_structure(): string {
 		$structure .= "</span>";
 	$structure .= "</section>";
 
-	if (isset($_SESSION['server_response'])) {
-		$server_response = json_decode($_SESSION['server_response'], JSON_PRETTY_PRINT);
-		$structure .= display_popup($server_response['success'], $server_response['message']);
-		unset($_SESSION['server_response']);
+	if (isset($_SESSION["server_response"])) {
+		$server_response = json_decode($_SESSION["server_response"], JSON_PRETTY_PRINT);
+		$structure .= display_popup($server_response["success"], $server_response["message"]);
+		unset($_SESSION["server_response"]);
 	}
 
 	return $structure;
@@ -91,7 +91,7 @@ function display_primary_functions(): string {
 
 function display_secondary_functions(): string {
 
-	$maintenance_mode = decode('utilities')['maintenance_mode'];
+	$maintenance_mode = decode("utilities")["maintenance_mode"];
 	$maintenance_text = ($maintenance_mode) ? "Désactiver" : "Activer";
 	
 	$structure = "<span class='admin-secondary-functions'>";
@@ -123,7 +123,7 @@ function display_functions_panels(): string {
 }
 
 function display_create_project_panel(): string {
-	$techs = decode('techs')['techs'];
+	$techs = decode("techs")["techs"];
 	$tech_count = count($techs);
 	$tech_choice = "";
 
@@ -197,9 +197,9 @@ function display_create_project_panel(): string {
 }
 
 function display_update_project_panel(): string {
-	$projects = decode('projects');
+	$projects = decode("projects");
 	$project_list = get_project_list();
-	$project_list = sort_in_radio($project_list, 'update');
+	$project_list = sort_in_radio($project_list, "update");
 
 	$projects_info = "";
 	foreach ($projects as $project_id => $project) {
@@ -224,10 +224,10 @@ function display_update_project_panel(): string {
 function display_project_info_panel(string $project_id, array $project): string {
 	extract($project); //? $name, $synopsis, $description, $date, $link, $important_techs[], $tech_used[], $to_show
 
-	$date = DateTime::createFromFormat('d/m/Y', $date);
-    $date = $date->format('Y-m-d');
+	$date = DateTime::createFromFormat("d/m/Y", $date);
+    $date = $date->format("Y-m-d");
 
-	$techs = decode('techs')['techs'];
+	$techs = decode("techs")["techs"];
 	$tech_count = count($techs);
 	$important_tech_choice = $tech_choice = "";
 
@@ -332,7 +332,7 @@ function display_add_competence_panel(): string {
 
 function display_delete_competence_panel(): string {
 
-	$competences = decode('competences');
+	$competences = decode("competences");
 	$competences_list = sort_in_option($competences);
 
 	return "
@@ -361,7 +361,7 @@ function display_add_tech_panel(): string {
 }
 
 function display_delete_tech_panel(): string {
-	$techs = decode('techs');
+	$techs = decode("techs");
 	$tech_list = sort_in_option($techs);
 
 	return "
