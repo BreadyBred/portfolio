@@ -73,8 +73,6 @@ function display_primary_functions(): string {
 			$structure .= "<span class='functions'>";
 				$structure .= "<h3 class='function-title a-tdc-hv' data-id='create-project'>Ajouter un projet</h3>";
 				$structure .= "<h3 class='function-title a-tdc-hv' data-id='update-project'>Modifier un projet</h3>";
-				$structure .= "<h3 class='function-title a-tdc-hv' data-id='show-project'>Montrer un projet</h3>";
-				$structure .= "<h3 class='function-title a-tdc-hv' data-id='hide-project'>Cacher un projet</h3>";
 				$structure .= "<h3 class='function-title a-tdc-hv' data-id='delete-project'>Supprimer un projet</h3>";
 			$structure .= "</span>";
 		$structure .= "</span>";
@@ -83,17 +81,9 @@ function display_primary_functions(): string {
 			$structure .= "<h2 class='underlined cat-title'>Expériences pro</h2>";
 			$structure .= "<span class='functions'>";
 				$structure .= "<h3 class='function-title a-tdc-hv' data-id='add-work-exp'>Ajouter une expérience pro</h3>";
-				$structure .= "<h3 class='function-title a-tdc-hv' data-id='delete-work-exp'>Supprimer une expérience pro</h3>";
 			$structure .= "</span>";
 		$structure .= "</span>";
 
-		$structure .= "<span class='function-category'>";
-			$structure .= "<h2 class='underlined cat-title'>Formations</h2>";
-			$structure .= "<span class='functions'>";
-				$structure .= "<h3 class='function-title a-tdc-hv' data-id='add-formation'>Ajouter une formation</h3>";
-				$structure .= "<h3 class='function-title a-tdc-hv' data-id='delete-formation'>Supprimer une formation</h3>";
-			$structure .= "</span>";
-		$structure .= "</span>";
 	$structure .= "</span>";
 
 	return $structure;
@@ -124,17 +114,10 @@ function display_functions_panels(): string {
 	// Projets
 	$structure .= display_create_project_panel();
 	$structure .= display_update_project_panel();
-	$structure .= display_show_project_panel();
-	$structure .= display_hide_project_panel();
 	$structure .= display_delete_project_panel();
 
 	// Expériences professionnelles
 	$structure .= display_add_work_exp_panel();
-	$structure .= display_delete_work_exp_panel();
-
-	// Formations
-	$structure .= display_add_formation_panel();
-	$structure .= display_delete_formation_panel();
 
 	return $structure;
 }
@@ -297,51 +280,11 @@ function display_project_info_panel(string $project_id, array $project): string 
 	";
 }
 
-function display_show_project_panel(): string {
-
-	$project_list = get_hidden_projects_list();
-	$project_list = sort_in_radio($project_list, 'show');
-
-	if (empty($project_list)) {
-		$project_list = "Aucun projet ne peut être affiché";
-	}
-
-	return "
-		<form method='POST' action='" . get_admin_panel_folder() . "functions/modify_project.php?action=show' class='hide functions-panel aux-bc' id='show-project'>
-			<h4>Montrer un projet</h4>
-			<span class='project_list'>
-				$project_list
-			</span>
-			<input type='submit' class='button button-md' value='Montrer'>
-		</form>
-	";
-}
-
-function display_hide_project_panel(): string {
-
-	$project_list = get_shown_projects_list();
-	$project_list = sort_in_radio($project_list, 'hide');
-
-	if (empty($project_list)) {
-		$project_list = "Aucun projet ne peut être affiché";
-	}
-
-	return "
-		<form method='POST' action='" . get_admin_panel_folder() . "functions/modify_project.php?action=hide' class='hide functions-panel aux-bc' id='hide-project'>
-			<h4>Cacher un projet</h4>
-			<span class='project_list'>
-				$project_list
-			</span>
-			<input type='submit' class='button button-md' value='Cacher'>
-		</form>
-	";
-}
-
 function display_delete_project_panel(): string {
 
 	$project_list = get_project_list();
 	$project_count = count($project_list);
-	$project_list = sort_in_option($project_list);
+	$project_list = sort_in_option($project_list, false);
 
 	return "
 		<form method='POST' action='" . get_admin_panel_folder() . "functions/modify_project.php?action=delete' class='hide functions-panel aux-bc' id='delete-project'>
@@ -390,7 +333,7 @@ function display_add_competence_panel(): string {
 function display_delete_competence_panel(): string {
 
 	$competences = decode('competences');
-	$competences_list = sort_competences_in_option($competences);
+	$competences_list = sort_in_option($competences);
 
 	return "
 		<form method='POST' action='" . get_admin_panel_folder() . "functions/modify_competence.php?action=delete' class='hide functions-panel aux-bc' id='delete-competence'>
@@ -419,7 +362,7 @@ function display_add_tech_panel(): string {
 
 function display_delete_tech_panel(): string {
 	$techs = decode('techs');
-	$tech_list = sort_competences_in_option($techs);
+	$tech_list = sort_in_option($techs);
 
 	return "
 		<form method='POST' action='" . get_admin_panel_folder() . "functions/modify_techs.php?action=delete' class='hide functions-panel aux-bc' id='delete-tech'>
@@ -458,67 +401,6 @@ function display_add_work_exp_panel(): string {
 				<textarea id='work-exp-description' name='description' placeholder='Blabla1-Blabla2' required></textarea>
 			</span>
 			<input type='submit' class='button button-md' value='Ajouter'>
-		</form>
-	";
-}
-
-function display_delete_work_exp_panel(): string {
-	$work_experiences = decode('work_experiences');
-	$work_experiences_count = count($work_experiences);
-	$work_experiences_list = sort_in_option($work_experiences);
-
-	return "
-		<form method='POST' action='" . get_admin_panel_folder() . "functions/modify_work_exp.php?action=delete' class='hide functions-panel aux-bc' id='delete-work-exp'>
-			<h4>Supprimer une expérience professionnelle</h4>
-			<select class='aux-bc work_experiences_list' name='work_experience' size=$work_experiences_count style='width:100%' required>
-				$work_experiences_list
-			</select>
-			<input type='submit' class='button button-md' value='Supprimer'>
-		</form>
-	";
-}
-
-function display_add_formation_panel(): string {
-	return "
-		<form method='POST' action='" . get_admin_panel_folder() . "functions/modify_formation.php?action=add' class='hide functions-panel aux-bc' id='add-formation'>
-			<h4>Ajouter une formation</h4>
-			<span class='double'>
-				<label for='formation-name'>Nom de la formation</label>
-				<input type='text' id='formation-name' name='name' placeholder='BUT, DUT' required>
-			</span>
-			<span class='double'>
-				<label for='formation-date'>Dates</label>
-				<input type='text' id='formation-date' name='date' placeholder='2023 - 2024' required>
-			</span>
-			<span class='double'>
-				<label for='formation-specialty'>Filière</label>
-				<input type='text' id='formation-specialty' name='specialty' placeholder='Métiers du Multimédia et de l'Internet'>
-			</span>
-			<span class='double'>
-				<label for='formation-major'>Spécialité</label>
-				<input type='text' id='formation-major' name='major' placeholder='Spécialité Développement Web'>
-			</span>
-			<span class='double'>
-				<label for='formation-location'>Établissement</label>
-				<input type='text' id='formation-location' name='location' placeholder='Université de Rouen Normandie' required>
-			</span>
-			<input type='submit' class='button button-md' value='Ajouter'>
-		</form>
-	";
-}
-
-function display_delete_formation_panel(): string {
-	$educations = decode('educations');
-	$educations_count = count($educations);
-	$educations_list = sort_in_option($educations);
-
-	return "
-		<form method='POST' action='" . get_admin_panel_folder() . "functions/modify_formation.php?action=delete' class='hide functions-panel aux-bc' id='delete-formation'>
-			<h4>Supprimer une formation</h4>
-			<select class='aux-bc scholarships_list' name='scholarship' size=$educations_count style='width:100%' required>
-				$educations_list
-			</select>
-			<input type='submit' class='button button-md' value='Supprimer'>
 		</form>
 	";
 }

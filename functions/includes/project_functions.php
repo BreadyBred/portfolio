@@ -67,37 +67,26 @@ function sort_in_radio(array $elements, string $prefix): string {
 	return $structure;
 }
 
-function sort_in_option(array $elements): string {
+function sort_in_option(array $items, bool $has_title = true): string {
 	$structure = "";
+	if($has_title) {
+		foreach ($items as $category => $elements) {
+			$structure .= "<optgroup label='$category'>";
 
-	foreach ($elements as $id => $element) {
-		extract($element);
+			foreach ($elements as $formatted_competence => $competence) {
+				$structure .= "<option class='aux-bg-hv' value='$formatted_competence'>$competence</option> ";
+			}
 
-		$structure .= "
-			<option class='aux-bg-hv' value='$id'>$name</option>
-		";
-	}
-
-	return $structure;
-}
-
-function sort_competences_in_option(array $competences): string {
-	$structure = "";
-
-	foreach ($competences as $category => $elements) {
-		$structure .= "
-			<optgroup label='$category'>
-		";
-		foreach ($elements as $formatted_competence => $competence) {
-			$structure .= "
-				<option class='aux-bg-hv' value='$formatted_competence'>$competence</option>
-			";
+			$structure .= "</optgroup>";
 		}
-		$structure .= "
-			</optgroup>
-		";
-	}
+	} else {
+		foreach ($items as $id => $element) {
+			extract($element); //? $id, $name
 
+			$structure .= "<option class='aux-bg-hv' value='$id'>$name</option>";
+		}
+	}
+	
 	return $structure;
 }
 

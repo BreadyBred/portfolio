@@ -110,6 +110,10 @@ function get_json_folder(): string {
 }
 
 function send_login_notification(): void {
+	if(is_on_localhost()) {
+		return;
+	}
+	
 	require_once "load_environment.php";
 	$mail = new PHPMailer(true);
 
@@ -135,6 +139,10 @@ function send_login_notification(): void {
 }
 
 function add_in_log(): void {
+	if(is_on_localhost()) {
+		return;
+	}
+
     $log_file = __DIR__ . '/../../medias/files/log.txt';
 
 	$date = date("d/m/Y");
