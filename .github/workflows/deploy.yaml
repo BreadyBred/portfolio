@@ -26,10 +26,17 @@ jobs:
           set mirror:parallel-transfer-count 5
           
           # Individual files
+          echo -e "\033[1;34mTransfering individual files...\033[0m"
           put index.php -o www/index.php
           put .htaccess -o www/.htaccess
           
+          # Individual file in subdirectory
+          mkdir -f -p www/style/
+          put style/style.css -o www/style/style.css
+          echo -e "\033[1;32mTransfered individual files successfully.\033[0m"
+          
           # Recursive directories
+          echo -e "\033[1;34mTransfering directories files...\033[0m"
           mirror -R admin/ www/admin/
           mirror -R data/ www/data/
           mirror -R error/ www/error/
@@ -39,10 +46,7 @@ jobs:
           
           # Mirror specific directories
           mirror -R script/minified/ www/script/minified/
-          
-          # Individual file in subdirectory
-          mkdir -f -p www/style/
-          put style/style.css -o www/style/style.css
+          echo -e "\033[1;32mTransfered individual files successfully.\033[0m"
           
           bye
           EOF
@@ -50,7 +54,7 @@ jobs:
       - name: Deployment script execution
         run: |
           echo "Script beginning..."
-          echo "Connection to ${{ secrets.FTP_HOST }} with username ${{ secrets.FTP_USER }}"
+          echo -e "\033[1;32mConnected to ${{ secrets.FTP_HOST }} with username ${{ secrets.FTP_USER }}\033[0m"
           lftp -f deploy.lftp
           echo "Script finished."
           
