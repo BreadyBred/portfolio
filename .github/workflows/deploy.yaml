@@ -36,7 +36,7 @@ jobs:
           echo "Transferred individual files successfully."
           
           # Recursive directories
-          echo "Transferring directories files..."
+          echo "Transferring directories..."
           mirror -R admin/ www/admin/
           mirror -R data/ www/data/
           mirror -R error/ www/error/
@@ -46,7 +46,7 @@ jobs:
           
           # Mirror specific directories
           mirror -R script/minified/ www/script/minified/
-          echo "Transferred individual files successfully."
+          echo "Transferred directories successfully."
           
           bye
           EOF
