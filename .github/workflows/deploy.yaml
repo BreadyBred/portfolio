@@ -26,17 +26,17 @@ jobs:
           set mirror:parallel-transfer-count 5
           
           # Individual files
-          echo -e "\033[1;34mTransfering individual files...\033[0m"
+          echo "Transferring individual files..."
           put index.php -o www/index.php
           put .htaccess -o www/.htaccess
           
           # Individual file in subdirectory
           mkdir -f -p www/style/
           put style/style.css -o www/style/style.css
-          echo -e "\033[1;32mTransfered individual files successfully.\033[0m"
+          echo "Transferred individual files successfully."
           
           # Recursive directories
-          echo -e "\033[1;34mTransfering directories files...\033[0m"
+          echo "Transferring directories files..."
           mirror -R admin/ www/admin/
           mirror -R data/ www/data/
           mirror -R error/ www/error/
@@ -46,7 +46,7 @@ jobs:
           
           # Mirror specific directories
           mirror -R script/minified/ www/script/minified/
-          echo -e "\033[1;32mTransfered individual files successfully.\033[0m"
+          echo "Transferred individual files successfully."
           
           bye
           EOF
