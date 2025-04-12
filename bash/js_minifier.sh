@@ -33,7 +33,7 @@ ROOT_DIR="$(cd "$(dirname "$0")" && cd .. && pwd)"
 source ${ROOT_DIR}/bash/functions.sh
 
 #!--- Your path to the JS file to minify ---!#
-FILE_NAME="${ROOT_DIR}/script/script-min.js"
+FILE_NAME="${ROOT_DIR}/script/script.js"
 FILE_BASE=$(basename "$FILE_NAME")
 
 # File status check
