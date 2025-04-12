@@ -1,4 +1,4 @@
-function get_site_root(secured = true) {
+function get_site_root(secured: boolean = true): string {
     if (window.location.hostname === 'localhost') {
         return 'http://localhost/travail/portfolio/';
     }
@@ -10,6 +10,6 @@ function get_site_root(secured = true) {
     return 'https://romain-gerard.com/';
 }
 
-function get_images_folder() {
+function get_images_folder(): string {
     return `${get_site_root()}medias/images/`;
 }
