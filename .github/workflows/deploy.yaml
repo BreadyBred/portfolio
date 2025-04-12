@@ -33,6 +33,9 @@ jobs:
           # Individual file in subdirectory
           mkdir -f -p www/style/
           put style/style.css -o www/style/style.css
+          
+          mkdir -f -p www/style/
+          put script/script.js -o www/script/script.js
           echo "Transferred individual files successfully."
           
           # Recursive directories
@@ -44,8 +47,6 @@ jobs:
           mirror -R medias/ www/medias/
           mirror -R projects/ www/projects/
           
-          # Mirror specific directories
-          mirror -R script/minified/ www/script/minified/
           echo "Transferred directories successfully."
           
           bye
