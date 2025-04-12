@@ -4,12 +4,15 @@
 	"description": "This website is my personal portfolio, built using PHP, LESS, and JavaScript.",
 	"main": "index.js",
 	"scripts": {
+		"build": "tsc",
+		"postbuild": "bash ./bash/js_minifier.sh",
 		"deploy": "bash ./bash/deploy_to_website.sh"
 	},
 	"keywords": [],
 	"author": "Romain GERARD",
 	"license": "ISC",
 	"devDependencies": {
-		"@types/node": "^22.9.3"
+		"@types/node": "^22.14.1",
+		"typescript": "^5.8.3"
 	}
 }
