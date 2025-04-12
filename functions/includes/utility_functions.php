@@ -196,13 +196,15 @@ function decode(string $filename): array {
     return json_decode($response, true);
 }
 
-function check_session(): void {
-	if (empty($_COOKIE["login"])) {
-		session_unset();
-		session_destroy();
-		header("Location: " . get_site_root() . "admin/");
-		exit;
-	}
+function is_login_active(): bool {
+	return (!empty($_COOKIE["login"])) ? true : false;
+}
+
+function deactivate_session(): void {
+	session_unset();
+	session_destroy();
+	header("Location: " . get_site_root() . "admin/");
+	exit;
 }
 
 function get_browser_language(): string {

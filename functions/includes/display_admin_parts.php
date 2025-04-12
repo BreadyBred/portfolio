@@ -18,21 +18,21 @@ function display_login_form(): string {
 			<input type='submit' class='button button-md' value='Login'>
 		</span>
 	</form>
-	<span class='error-message small a-fc italic'>$error_message</span>
-	";
+	<span class='error-message small a-fc italic'>$error_message</span>";
 }
 
 function display_admin_structure(): string {
-	$structure = "<section class='admin-panel'>";
-		$structure .= "<span class='left-side'>";
-			$structure .= display_panel_title();
-			$structure .= display_primary_functions();
-			$structure .= display_secondary_functions();
-		$structure .= "</span>";
-		$structure .= "<span class='right-side'>";
-			$structure .= display_functions_panels();
-		$structure .= "</span>";
-	$structure .= "</section>";
+	$structure = "
+		<section class='admin-panel'>
+			<span class='left-side'>
+				" . display_panel_title() . "
+				" . display_primary_functions() . "
+				" . display_secondary_functions() . "
+			</span>
+			<span class='right-side'>
+				" . display_functions_panels() . "
+			</span>
+		</section>";
 
 	if (isset($_SESSION["server_response"])) {
 		$server_response = json_decode($_SESSION["server_response"], JSON_PRETTY_PRINT);
@@ -45,81 +45,74 @@ function display_admin_structure(): string {
 
 function display_panel_title(): string {
 	$structure = "<h1 class='admin-title aux-bg'><a href='" . get_site_root() . "'>Panel Admin</a></h1>";
-
 	return $structure;
 }
 
 function display_primary_functions(): string {
-	$structure = "<span class='admin-primary-functions'>";
+	return "
+		<span class='admin-primary-functions'>
+			<span class='function-category'>
+				<h2 class='underlined cat-title'>Compétences</h2>
+				<span class='functions'>
+					<h3 class='function-title a-tdc-hv' data-id='add-competence'>Ajouter une compétence</h3>
+					<h3 class='function-title a-tdc-hv' data-id='delete-competence'>Supprimer une compétence</h3>
+				</span>
+			</span>
 
-		$structure .= "<span class='function-category'>";
-			$structure .= "<h2 class='underlined cat-title'>Compétences</h2>";
-			$structure .= "<span class='functions'>";
-				$structure .= "<h3 class='function-title a-tdc-hv' data-id='add-competence'>Ajouter une compétence</h3>";
-				$structure .= "<h3 class='function-title a-tdc-hv' data-id='delete-competence'>Supprimer une compétence</h3>";
-			$structure .= "</span>";
-		$structure .= "</span>";
+			<span class='function-category'>
+				<h2 class='underlined cat-title'>Techs</h2>
+				<span class='functions'>
+					<h3 class='function-title a-tdc-hv' data-id='add-tech'>Ajouter une technologie</h3>
+					<h3 class='function-title a-tdc-hv' data-id='delete-tech'>Supprimer une technologie</h3>
+				</span>
+			</span>
 
-		$structure .= "<span class='function-category'>";
-			$structure .= "<h2 class='underlined cat-title'>Techs</h2>";
-			$structure .= "<span class='functions'>";
-				$structure .= "<h3 class='function-title a-tdc-hv' data-id='add-tech'>Ajouter une technologie</h3>";
-				$structure .= "<h3 class='function-title a-tdc-hv' data-id='delete-tech'>Supprimer une technologie</h3>";
-			$structure .= "</span>";
-		$structure .= "</span>";
+			<span class='function-category'>
+				<h2 class='underlined cat-title'>Projets</h2>
+				<span class='functions'>
+					<h3 class='function-title a-tdc-hv' data-id='create-project'>Ajouter un projet</h3>
+					<h3 class='function-title a-tdc-hv' data-id='update-project'>Modifier un projet</h3>
+					<h3 class='function-title a-tdc-hv' data-id='delete-project'>Supprimer un projet</h3>
+				</span>
+			</span>
 
-		$structure .= "<span class='function-category'>";
-			$structure .= "<h2 class='underlined cat-title'>Projets</h2>";
-			$structure .= "<span class='functions'>";
-				$structure .= "<h3 class='function-title a-tdc-hv' data-id='create-project'>Ajouter un projet</h3>";
-				$structure .= "<h3 class='function-title a-tdc-hv' data-id='update-project'>Modifier un projet</h3>";
-				$structure .= "<h3 class='function-title a-tdc-hv' data-id='delete-project'>Supprimer un projet</h3>";
-			$structure .= "</span>";
-		$structure .= "</span>";
-
-		$structure .= "<span class='function-category'>";
-			$structure .= "<h2 class='underlined cat-title'>Expériences pro</h2>";
-			$structure .= "<span class='functions'>";
-				$structure .= "<h3 class='function-title a-tdc-hv' data-id='add-work-exp'>Ajouter une expérience pro</h3>";
-			$structure .= "</span>";
-		$structure .= "</span>";
-
-	$structure .= "</span>";
-
-	return $structure;
+			<span class='function-category'>
+				<h2 class='underlined cat-title'>Expériences pro</h2>
+				<span class='functions'>
+					<h3 class='function-title a-tdc-hv' data-id='add-work-exp'>Ajouter une expérience pro</h3>
+				</span>
+			</span>
+		</span>";
 }
 
 function display_secondary_functions(): string {
-
 	$maintenance_mode = decode("utilities")["maintenance_mode"];
 	$maintenance_text = ($maintenance_mode) ? "Désactiver" : "Activer";
 	
-	$structure = "<span class='admin-secondary-functions'>";
-		$structure .= "<a href='https://trello.com/b/MMGrSbhQ/to-do-list' target='_blank'class='function-title'>Accéder à la todo</a>";
-		$structure .= "<a href='" . get_admin_panel_folder() . "functions/toggle_maintenance_mode.php' class='function-title'>$maintenance_text le mode maintenance</a>";
-	$structure .= "</span>";
+	return "
+		<span class='admin-secondary-functions'>
+			<a href='https://trello.com/b/MMGrSbhQ/to-do-list' target='_blank'class='function-title'>
+				Accéder à la todo
+			</a>
+			<a href='" . get_admin_panel_folder() . "functions/toggle_maintenance_mode.php' class='function-title'>
+				$maintenance_text le mode maintenance
+			</a>
+		</span>";
 
-	return $structure;
 }
 
 function display_functions_panels(): string {
-	// Compétences
-	$structure = display_add_competence_panel();
-	$structure .= display_delete_competence_panel();
+	return display_add_competence_panel()
+	. display_delete_competence_panel()
 
-	// Techs
-	$structure .= display_add_tech_panel();
-	$structure .= display_delete_tech_panel();
+	. display_add_tech_panel()
+	. display_delete_tech_panel()
 
-	// Projets
-	$structure .= display_create_project_panel();
-	$structure .= display_update_project_panel();
-	$structure .= display_delete_project_panel();
+	. display_create_project_panel()
+	. display_update_project_panel()
+	. display_delete_project_panel()
 
-	// Expériences professionnelles
-	$structure .= display_add_work_exp_panel();
-
-	return $structure;
+	. display_add_work_exp_panel();
 }
 
 function display_create_project_panel(): string {
@@ -132,68 +125,67 @@ function display_create_project_panel(): string {
 	}
 
 	return "
-	<form method='POST' action='" . get_admin_panel_folder() . "functions/modify_project.php?action=add' enctype='multipart/form-data' class='hide functions-panel aux-bc' id='create-project'>
-		<h4>Ajouter un projet</h4>	
-		<span class='separate'>
-			<span class='side'>
-				<span class='double'>
-					<label for='create-name'>Nom du projet</label>
-					<input type='text' id='create-name' name='name' required>
+		<form method='POST' action='" . get_admin_panel_folder() . "functions/modify_project.php?action=add' enctype='multipart/form-data' class='hide functions-panel aux-bc' id='create-project'>
+			<h4>Ajouter un projet</h4>	
+			<span class='separate'>
+				<span class='side'>
+					<span class='double'>
+						<label for='create-name'>Nom du projet</label>
+						<input type='text' id='create-name' name='name' required>
+					</span>
+					<span class='double'>
+						<label for='create-synopsis'>Synopsis</label>
+						<textarea id='create-synopsis' name='synopsis' required></textarea>
+					</span>
+					<span class='double'>
+						<label for='create-description'>Description</label>
+						<textarea id='create-description' rows='10' name='description' required></textarea>
+					</span>
+					<span class='double'>
+						<label for='create-date'>Date de conception</label>
+						<input type='date' id='create-date' name='date' required>
+					</span>
+					<span class='double'>
+						<label for='create-link'>Lien</label>
+						<input type='text' id='create-link' name='link' required>
+					</span>
+					<span class='double'>
+						<label for='create-illustration'>Illustration</label>
+						<input type='file' name='illustration' id='create-illustration' class='input_file' accept='image/png' required>
+						<span class='fake-file-inputs italic underlined a-tdc' data-id='create-illustration'>Aucun fichier sélectionné</span>
+					</span>
+					<span class='double'>
+						<label for='create-thumbnail'>Thumbnail</label>
+						<input type='file' name='thumbnail' id='create-thumbnail' class='input_file' accept='image/png' required>
+						<span class='fake-file-inputs italic underlined a-tdc' data-id='create-thumbnail'>Aucun fichier sélectionné</span>
+					</span>
 				</span>
-				<span class='double'>
-					<label for='create-synopsis'>Synopsis</label>
-					<textarea id='create-synopsis' name='synopsis' required></textarea>
-				</span>
-				<span class='double'>
-					<label for='create-description'>Description</label>
-					<textarea id='create-description' rows='10' name='description' required></textarea>
-				</span>
-				<span class='double'>
-					<label for='create-date'>Date de conception</label>
-					<input type='date' id='create-date' name='date' required>
-				</span>
-				<span class='double'>
-					<label for='create-link'>Lien</label>
-					<input type='text' id='create-link' name='link' required>
-				</span>
-				<span class='double'>
-					<label for='create-illustration'>Illustration</label>
-					<input type='file' name='illustration' id='create-illustration' class='input_file' accept='image/png' required>
-					<span class='fake-file-inputs italic underlined a-tdc' data-id='create-illustration'>Aucun fichier sélectionné</span>
-				</span>
-				<span class='double'>
-					<label for='create-thumbnail'>Thumbnail</label>
-					<input type='file' name='thumbnail' id='create-thumbnail' class='input_file' accept='image/png' required>
-					<span class='fake-file-inputs italic underlined a-tdc' data-id='create-thumbnail'>Aucun fichier sélectionné</span>
+				<span class='side'>
+					<span class='double'>
+						<label for='create-important-tech'>Techs importantes (2 max)</label>
+						<select class='aux-bc checkbox-container' name='important_tech[]' id='create-important-tech' size=$tech_count multiple required>
+							$tech_choice
+						</select>
+					</span>
+					<span class='double'>
+						<label for='create-tech'>Techs utilisées</label>
+						<select class='aux-bc checkbox-container' name='tech[]' id='create-tech' size=$tech_count multiple required>
+							$tech_choice
+						</select>
+					</span>
 				</span>
 			</span>
-			<span class='side'>
-				<span class='double'>
-					<label for='create-important-tech'>Techs importantes (2 max)</label>
-					<select class='aux-bc checkbox-container' name='important_tech[]' id='create-important-tech' size=$tech_count multiple required>
-						$tech_choice
-					</select>
-				</span>
-				<span class='double'>
-					<label for='create-tech'>Techs utilisées</label>
-					<select class='aux-bc checkbox-container' name='tech[]' id='create-tech' size=$tech_count multiple required>
-						$tech_choice
-					</select>
-				</span>
+			<span>
+				<label for='create-local-project'>Le projet est-il local ?</label>
+				<input type='checkbox' name='local_project' id='create-local-project' class='input_checkbox a-bc a-ac optional-checkbox'>
 			</span>
-		</span>
-		<span>
-			<label for='create-local-project'>Le projet est-il local ?</label>
-			<input type='checkbox' name='local_project' id='create-local-project' class='input_checkbox a-bc a-ac optional-checkbox'>
-		</span>
-		<span class='double optional hide'>
-			<label for='create-zip-file'>Déposer le zip du projet</label>
-			<input type='file' name='zip_file' id='create-zip-file' class='input_file' accept='zip, application/octet-stream, application/zip, application/x-zip, application/x-zip-compressed'>
-			<span class='fake-file-inputs italic underlined a-tdc' data-id='create-zip-file'>Aucun fichier sélectionné</span>
-		</span>
-		<input type='submit' class='button button-md' value='Créer'>
-	</form>
-	";
+			<span class='double optional hide'>
+				<label for='create-zip-file'>Déposer le zip du projet</label>
+				<input type='file' name='zip_file' id='create-zip-file' class='input_file' accept='zip, application/octet-stream, application/zip, application/x-zip, application/x-zip-compressed'>
+				<span class='fake-file-inputs italic underlined a-tdc' data-id='create-zip-file'>Aucun fichier sélectionné</span>
+			</span>
+			<input type='submit' class='button button-md' value='Créer'>
+		</form>";
 }
 
 function display_update_project_panel(): string {
@@ -217,8 +209,7 @@ function display_update_project_panel(): string {
 				$project_list
 			</span>
 		</form>
-		$projects_info
-	";
+		$projects_info";
 }
 
 function display_project_info_panel(string $project_id, array $project): string {
@@ -241,47 +232,45 @@ function display_project_info_panel(string $project_id, array $project): string 
 	}
 
 	return "
-	<form method='POST' action='" . get_admin_panel_folder() . "functions/modify_project.php?action=update' data-id='update-$project_id' class='hide functions-panel aux-bc secondary-functions-panel aux-bc project-infos'>
-		<span class='double'>
-			<label for='update-name'>Nom du projet</label>
-			<input type='text' id='update-name' name='name' value='$name' required>
-		</span>
-		<span class='double'>
-			<label for='update-synopsis'>Synopsis</label>
-			<textarea id='update-synopsis' name='synopsis' required>$synopsis</textarea>
-		</span>
-		<span class='double'>
-			<label for='update-description'>Description</label>
-			<textarea id='update-description' rows='10' name='description' required>$description</textarea>
-		</span>
-		<span class='double'>
-			<label for='update-date'>Date de conception</label>
-			<input type='date' id='update-date' name='date' value='$date' required>
-		</span>
-		<span class='double'>
-			<label for='update-link'>Lien</label>
-			<input type='text' id='update-link' name='link' value='$link' required>
-		</span>
-		<span class='double'>
-			<label for='update-important-tech'>Techs importantes (2 max)</label>
-			<select class='aux-bc checkbox-container' name='important_tech[]' id='update-important-tech' size=$tech_count multiple required>
-				$important_tech_choice
-			</select>
-		</span>
-		<span class='double'>
-			<label for='update-tech'>Techs utilisées</label>
-			<select class='aux-bc checkbox-container' name='tech[]' id='update-tech' size=$tech_count multiple required>
-				$tech_choice
-			</select>
-		</span>
-		<input type='hidden' name='project_id' value='$project_id'>
-		<input type='submit' class='button button-md' value='Update'>
-	</form>
-	";
+		<form method='POST' action='" . get_admin_panel_folder() . "functions/modify_project.php?action=update' data-id='update-$project_id' class='hide functions-panel aux-bc secondary-functions-panel aux-bc project-infos'>
+			<span class='double'>
+				<label for='update-name'>Nom du projet</label>
+				<input type='text' id='update-name' name='name' value='$name' required>
+			</span>
+			<span class='double'>
+				<label for='update-synopsis'>Synopsis</label>
+				<textarea id='update-synopsis' name='synopsis' required>$synopsis</textarea>
+			</span>
+			<span class='double'>
+				<label for='update-description'>Description</label>
+				<textarea id='update-description' rows='10' name='description' required>$description</textarea>
+			</span>
+			<span class='double'>
+				<label for='update-date'>Date de conception</label>
+				<input type='date' id='update-date' name='date' value='$date' required>
+			</span>
+			<span class='double'>
+				<label for='update-link'>Lien</label>
+				<input type='text' id='update-link' name='link' value='$link' required>
+			</span>
+			<span class='double'>
+				<label for='update-important-tech'>Techs importantes (2 max)</label>
+				<select class='aux-bc checkbox-container' name='important_tech[]' id='update-important-tech' size=$tech_count multiple required>
+					$important_tech_choice
+				</select>
+			</span>
+			<span class='double'>
+				<label for='update-tech'>Techs utilisées</label>
+				<select class='aux-bc checkbox-container' name='tech[]' id='update-tech' size=$tech_count multiple required>
+					$tech_choice
+				</select>
+			</span>
+			<input type='hidden' name='project_id' value='$project_id'>
+			<input type='submit' class='button button-md' value='Update'>
+		</form>";
 }
 
 function display_delete_project_panel(): string {
-
 	$project_list = get_project_list();
 	$project_count = count($project_list);
 	$project_list = sort_in_option($project_list, false);
@@ -293,20 +282,20 @@ function display_delete_project_panel(): string {
 				$project_list
 			</select>
 			<input type='submit' class='button button-md' value='Supprimer'>
-		</form>
-	";
+		</form>";
 }
 
 function display_add_competence_panel(): string {
 	$competences = decode('competences');
-
 	$category_count = count($competences);
+
 	$category_text = "";
 	foreach ($competences as $category => $competence) {
 		$category_text .= "
 			<option class='aux-bg-hv' value='$category'>$category</option>
 		";
 	}
+
 	return "
 		<form method='POST' action='" . get_admin_panel_folder() . "functions/modify_competence.php?action=add' class='hide functions-panel aux-bc' id='add-competence'>
 			<h4>Ajouter une compétence</h4>
@@ -331,7 +320,6 @@ function display_add_competence_panel(): string {
 }
 
 function display_delete_competence_panel(): string {
-
 	$competences = decode("competences");
 	$competences_list = sort_in_option($competences);
 
@@ -343,8 +331,7 @@ function display_delete_competence_panel(): string {
 			</select>
 			<input type='hidden' name='category' id='category'>
 			<input type='submit' class='button button-md' value='Supprimer'>
-		</form>
-	";
+		</form>";
 }
 
 function display_add_tech_panel(): string {
@@ -356,8 +343,7 @@ function display_add_tech_panel(): string {
 				<input type='text' id='tech-name' name='name' placeholder='Python' required>
 			</span>
 			<input type='submit' class='button button-md' value='Ajouter'>
-		</form>
-	";
+		</form>";
 }
 
 function display_delete_tech_panel(): string {
@@ -372,8 +358,7 @@ function display_delete_tech_panel(): string {
 			</select>
 			<input type='hidden' name='category' id='category'>
 			<input type='submit' class='button button-md' value='Supprimer'>
-		</form>
-	";
+		</form>";
 }
 
 function display_add_work_exp_panel(): string {
@@ -401,16 +386,14 @@ function display_add_work_exp_panel(): string {
 				<textarea id='work-exp-description' name='description' placeholder='Blabla1-Blabla2' required></textarea>
 			</span>
 			<input type='submit' class='button button-md' value='Ajouter'>
-		</form>
-	";
+		</form>";
 }
 
 function display_popup(bool $success, string $message): string {
 	$success_class = ($success) ? "success" : "error";
 
 	return "
-	<span class='popup aux-bc out-of-frame $success_class'>
-		$message
-	</span>
-	";
+		<span class='popup aux-bc out-of-frame $success_class'>
+			$message
+		</span>";
 }

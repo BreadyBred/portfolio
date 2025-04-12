@@ -85,10 +85,9 @@ function display_competences(): string {
 	$competence_text = "";
 	foreach ($categories as $category_name => $category) {
 		$competence_text .= "
-		<span class='category'>
-			<span class='category-title'>$category_name</span>
-			<span class='categorised-competences'>
-		";
+			<span class='category'>
+				<span class='category-title'>$category_name</span>
+				<span class='categorised-competences'>";
 
 		foreach ($category as $formatted_competence => $competence) {
 			$competence_link = get_competence_link($formatted_competence, $competence);
@@ -97,20 +96,19 @@ function display_competences(): string {
 
 		$competence_text .= "
 			</span>
-		</span>
-		";
+		</span>";
 	}
 
 	return "
-	<section class='competences-section' id='competences-section'>
-		<span class='section-title'>
-			<h2 class='title'>Mes compétences</h2>
-			<span class='v-line a-bg'>&nbsp</span>
-		</span>
-		<span class='competences'>
-			$competence_text
-		</span>
-	</section>
+		<section class='competences-section' id='competences-section'>
+			<span class='section-title'>
+				<h2 class='title'>Mes compétences</h2>
+				<span class='v-line a-bg'>&nbsp</span>
+			</span>
+			<span class='competences'>
+				$competence_text
+			</span>
+		</section>
 	";
 }
 
@@ -131,8 +129,7 @@ function display_projects(): string {
 				<h2 class='title'>Mes réalisations</h2>
 				<span class='v-line a-bg'>&nbsp</span>
 			</span>
-			<span class='projects'>
-	";
+			<span class='projects'>";
 		
 		for ($i = 0; $i < count($project_list); $i += 2) {
 			$structure .= "<span class='project-line'>";
@@ -161,8 +158,7 @@ function display_projects(): string {
 							</span>
 							<a href='" . get_site_root() . "projects?name=$link' class='button'>Découvrir</a>
 						</span>
-					</span>
-				";
+					</span>";
 			}
 		
 			$structure .= "</span>";
@@ -170,8 +166,7 @@ function display_projects(): string {
 
 	$structure .= "
 		</span>
-	</section>
-	";
+	</section>";
 
 	return $structure;
 }
@@ -180,27 +175,27 @@ function display_work_exp(): string {
 	$work_experiences = decode("work_experiences");
 
 	$structure = "
-	<span class='work-exp'>
-		<span class='section-title'>
-			<h2 class='title'>Mes expériences professionnelles</h2>
-			<span class='v-line a-bg'>&nbsp</span>
-		</span>
-		<span class='work-experiences'>";
+		<span class='work-exp'>
+			<span class='section-title'>
+				<h2 class='title'>Mes expériences professionnelles</h2>
+				<span class='v-line a-bg'>&nbsp</span>
+			</span>
+			<span class='work-experiences'>";
 
 	foreach ($work_experiences as $work_experience) {
 		extract($work_experience); //? $name, $date, $company_name, $status, $descriptions[]
 		$is_status_empty_class = ($status == "") ? "empty" : "";
 
 		$structure .= "
-		<span class='work-experience'>
-			<span class='work-experience-details bold'>
-				<span class='work-experience-date'>$date</span>
-				<span class='work-experience-hashtag'>#</span>
-				<span class='work-experience-name'>$name</span>
-			</span>
-			<span class='work-experience-job italic'>$company_name</span>
-			<span class='work-experience-state italic a-fc $is_status_empty_class'>($status)</span>
-			<span class='work-experience-description small italic'>";
+			<span class='work-experience'>
+				<span class='work-experience-details bold'>
+					<span class='work-experience-date'>$date</span>
+					<span class='work-experience-hashtag'>#</span>
+					<span class='work-experience-name'>$name</span>
+				</span>
+				<span class='work-experience-job italic'>$company_name</span>
+				<span class='work-experience-state italic a-fc $is_status_empty_class'>($status)</span>
+				<span class='work-experience-description small italic'>";
 		
 		foreach ($descriptions as $description) {
 			extract($description); //? $line, $tabulations
@@ -209,18 +204,19 @@ function display_work_exp(): string {
 			$optional_class = ($tabulations > 1) ? "a-fc" : "";
 
 			$structure .= "
-			<span class='work-experience-line $optional_class'>
-				$tabs> $line
-			</span>
-			";
+				<span class='work-experience-line $optional_class'>
+					$tabs> $line
+				</span>";
 		}
 		
-		$structure .= "</span>
-		</span>";
+		$structure .= "
+				</span>
+			</span>";
 	}
 
-	$structure .= "</span>
-	</span>";
+	$structure .= "
+			</span>
+		</span>";
 
 	return $structure;
 }
@@ -234,8 +230,7 @@ function display_education(): string {
 				<h2 class='title'>Mes formations</h2>
 				<span class='v-line a-bg'>&nbsp</span>
 			</span>
-			<span class='scholarships'>
-	";
+			<span class='scholarships'>";
 
 	foreach ($educations as $education) {
 		extract($education); //? $name, $date, $specialty, $major, $location
@@ -246,19 +241,19 @@ function display_education(): string {
 					<span class='scholar-name'>$name</span>
 					<span class='scholar-hashtag'>#</span>
 					<span class='scholar-date'>$date</span>
-				</span>
-		";
+				</span>";
 
 		if ($specialty) {
 			$structure .= "<span class='scholar-speciality italic'>$specialty</span>";
 		}
+
 		if ($major) {
 			$structure .= "<span class='scholar-major italic a-fc'>$major</span>";
 		}
 		
-		$structure .= "<span class='scholar-location'>$location</span>
-		</span>
-		";
+		$structure .= "
+				<span class='scholar-location'>$location</span>
+			</span>";
 	}
 
 	$structure .= "
@@ -308,8 +303,7 @@ function display_contact(): string {
 					gerarromain@gmail.com
 				</a>
 			</span>
-		</section>
-	";
+		</section>";
 }
 
 function display_palette_choice(): string {

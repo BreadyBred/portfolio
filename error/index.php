@@ -10,6 +10,8 @@ if ($_GET["e"] == 503 && !is_maintenance_mode_on()) {
 	redirect_to_site_root();
 }
 
-check_palette();
+if (is_palette_active()) {
+	set_primary_palette();
+}
 
 echo display_error_page($_GET["e"]);

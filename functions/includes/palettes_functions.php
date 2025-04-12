@@ -12,14 +12,12 @@ function get_palette_id(): int {
 	return $_COOKIE["color_palette"];
 }
 
-function set_basic_palette(): void {
+function set_primary_palette(): void {
 	setcookie("color_palette", 0, time() + get_ten_years(), "/");
 	header("Location: " . $_SERVER["PHP_SELF"]);
 	exit();
 }
 
-function check_palette(): void {
-	if (!isset($_COOKIE["color_palette"])) {
-		set_basic_palette();
-	}
+function is_palette_active(): bool {
+	return (isset($_COOKIE["color_palette"])) ? true : false;
 }

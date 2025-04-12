@@ -7,5 +7,8 @@ if (isset($_SESSION["username"])) {
 	header("Location: " . get_site_root() . "admin/panel/");
 }
 
-check_palette();
+if (is_palette_active()) {
+	set_primary_palette();
+}
+
 echo display_login_page();
