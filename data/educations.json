@@ -4,48 +4,55 @@
         "date": "2025 - 2028",
         "specialty": "Génie Logiciel",
         "major": null,
-        "location": "University of Science and Technology of China (USTC), Hefei"
+        "location": "University of Science and Technology of China (USTC), Hefei",
+        "is_relevant": true
     },
     {
         "name": "Piscine de Zone01",
         "date": "2025",
         "specialty": null,
         "major": "La méthode 42, édition discount",
-        "location": "Zone01, Rouen"
+        "location": "Zone01, Rouen",
+        "is_relevant": false
     },
     {
         "name": "Piscine de 42",
         "date": "2024",
         "specialty": null,
         "major": "La méthode 42",
-        "location": "École 42, Paris"
+        "location": "École 42, Paris",
+        "is_relevant": false
     },
     {
         "name": "B.U.T",
         "date": "2023 - 2024",
         "specialty": "Métiers du Multimédia et de l'Internet",
         "major": "Spécialité Développement Web",
-        "location": "Université de Rouen Normandie"
+        "location": "Université de Rouen Normandie",
+        "is_relevant": true
     },
     {
         "name": "Licence Professionnelle",
         "date": "2022 - 2023",
         "specialty": "Développement & Administration de Sites Internet",
         "major": null,
-        "location": "Université Le Havre Normandie"
+        "location": "Université Le Havre Normandie",
+        "is_relevant": true
     },
     {
         "name": "D.U.T",
         "date": "2020 - 2022",
         "specialty": "Métiers du Multimédia et de l'Internet",
         "major": "Spécialité Développement Web",
-        "location": "Université de Rouen Normandie"
+        "location": "Université de Rouen Normandie",
+        "is_relevant": true
     },
     {
         "name": "Baccalauréat",
         "date": "2016 - 2020",
         "specialty": "Scientifique (Assez Bien)",
         "major": "Spécialité Mathématiques",
-        "location": "Lycée Ferdinand Buisson"
+        "location": "Lycée Ferdinand Buisson",
+        "is_relevant": true
     }
 ]

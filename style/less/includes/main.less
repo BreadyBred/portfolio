@@ -4,6 +4,16 @@ section {
 
 	.section-title {
 		width: fit-content;
+
+		&.has-relevant-content {
+			display: flex;
+			flex-direction: column;
+			margin-bottom: @s-gap;
+
+			& > .relevance-button {
+				margin-top: @xs-gap;
+			}
+		}
 	}
 
 	&.aboutme-section {
@@ -154,7 +164,7 @@ section {
 			}
 		}
 
-		.scholar {
+		.formations {
 			display: flex;
 			flex-direction: column;
 
@@ -162,17 +172,17 @@ section {
 				width: fit-content;
 			}
 
-			.scholarships {
+			.formations-list {
 				display: flex;
 				flex-direction: column;
 				gap: @md-gap;
 
-				.scholarship {
+				.formation {
 					display: flex;
 					flex-direction: column;
 					gap: @xs-gap;
 
-					.scholar-details {
+					.formation-details {
 						display: flex;
 						gap: @s-gap;
 					}

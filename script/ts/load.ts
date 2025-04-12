@@ -11,6 +11,10 @@ document.addEventListener("DOMContentLoaded", (): void => {
     });
     
     document.addEventListener("click", hide_panels);
+
+    document.querySelectorAll('.relevance-button').forEach((button: HTMLElement) => {
+        button.addEventListener('click', toggle_irrelevant_content);
+    });
     
     document.querySelectorAll(".palette").forEach((palette: Element) => {
         palette.addEventListener("click", () => {

@@ -176,9 +176,10 @@ function display_work_exp(): string {
 
 	$structure = "
 		<span class='work-exp'>
-			<span class='section-title'>
+			<span class='section-title has-relevant-content'>
 				<h2 class='title'>Mes expériences professionnelles</h2>
 				<span class='v-line a-bg'>&nbsp</span>
+				<span class='relevance-button work-experience small underlined'>Voir tout</span>
 			</span>
 			<span class='work-experiences'>";
 
@@ -186,9 +187,10 @@ function display_work_exp(): string {
 		extract($work_experience); //? $name, $date, $company_name, ?$status, ?$is_relevant, $descriptions[]
 		$is_status_empty_class = ($status === null) ? "empty" : "";
 		$is_relevant_class = ($is_relevant) ? "" : "irrelevant";
+		$relevance_display = ($is_relevant) ? "flex" : "none";
 
 		$structure .= "
-			<span class='work-experience $is_relevant_class'>
+			<span class='work-experience $is_relevant_class' style='display: $relevance_display;'>
 				<span class='work-experience-details bold'>
 					<span class='work-experience-date'>$date</span>
 					<span class='work-experience-hashtag'>#</span>
@@ -226,34 +228,38 @@ function display_education(): string {
 	$educations = decode("educations");
 
 	$structure = "
-		<span class='scholar'>
-			<span class='section-title'>
+		<span class='formations'>
+			<span class='section-title has-relevant-content'>
 				<h2 class='title'>Mes formations</h2>
 				<span class='v-line a-bg'>&nbsp</span>
+				<span class='relevance-button formation small underlined'>Voir tout</span>
 			</span>
-			<span class='scholarships'>";
+			<span class='formations-list'>";
 
 	foreach ($educations as $education) {
-		extract($education); //? $name, $date, $specialty, $major, $location
+		extract($education); //? $name, $date, $specialty, $major, $location, $is_relevant
+
+		$is_relevant_class = ($is_relevant) ? "" : "irrelevant";
+		$relevance_display = ($is_relevant) ? "flex" : "none";
 
 		$structure .= "
-			<span class='scholarship'>
-				<span class='scholar-details bold'>
-					<span class='scholar-name'>$name</span>
-					<span class='scholar-hashtag'>#</span>
-					<span class='scholar-date'>$date</span>
+			<span class='formation $is_relevant_class' style='display: $relevance_display;'>
+				<span class='formation-details bold'>
+					<span class='formation-name'>$name</span>
+					<span class='formation-hashtag'>#</span>
+					<span class='formation-date'>$date</span>
 				</span>";
 
 		if ($specialty) {
-			$structure .= "<span class='scholar-speciality italic'>$specialty</span>";
+			$structure .= "<span class='formation-speciality italic'>$specialty</span>";
 		}
 
 		if ($major) {
-			$structure .= "<span class='scholar-major italic a-fc'>$major</span>";
+			$structure .= "<span class='formation-major italic a-fc'>$major</span>";
 		}
 		
 		$structure .= "
-				<span class='scholar-location'>$location</span>
+				<span class='formation-location'>$location</span>
 			</span>";
 	}
 
