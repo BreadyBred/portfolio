@@ -75,13 +75,6 @@ function display_primary_functions(): string {
 					<h3 class='function-title a-tdc-hv' data-id='delete-project'>Supprimer un projet</h3>
 				</span>
 			</span>
-
-			<span class='function-category'>
-				<h2 class='underlined cat-title'>Expériences pro</h2>
-				<span class='functions'>
-					<h3 class='function-title a-tdc-hv' data-id='add-work-exp'>Ajouter une expérience pro</h3>
-				</span>
-			</span>
 		</span>";
 }
 
