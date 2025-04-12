@@ -1,14 +1,12 @@
 function initialize_option_checkbox(): void {
     const optional_checkbox: HTMLInputElement | null = document.querySelector(".optional-checkbox");
     const optional_content: HTMLInputElement | null = document.querySelector(".optional");
-
     if (!optional_checkbox || !optional_content) {
         return;
     }
 
     optional_checkbox.addEventListener("change", () => {
         const input_file: HTMLInputElement | null = optional_content.querySelector(".input_file");
-        
         if (!input_file) {
             return;
         }
@@ -26,7 +24,6 @@ function initialize_option_checkbox(): void {
 function attribute_titles_to_panels(): void {
     const functions_titles: NodeListOf<Element> = document.querySelectorAll(".function-title");
     const functions_panels: NodeListOf<Element> = document.querySelectorAll(".functions-panel");
-
     if (!functions_titles.length) {
         return;
     }
@@ -61,7 +58,6 @@ function attribute_titles_to_panels(): void {
 
 function attribute_update_inputs_to_panels(): void {
     const update_panel: HTMLElement | null = document.querySelector(".open-update-panel");
-
     if (!update_panel) {
         return;
     }
@@ -85,7 +81,6 @@ function attribute_update_inputs_to_panels(): void {
 
 function activate_popup_fade_out(): void {
     const popup: HTMLElement | null = document.querySelector(".popup");
-
     if (!popup) {
         return;
     }
@@ -97,7 +92,6 @@ function activate_popup_fade_out(): void {
 
 function initialize_customs_input_file(): void {
     const inputs_file: NodeListOf<HTMLInputElement> = document.querySelectorAll(".input_file");
-
     if (!inputs_file.length) {
         return;
     }
@@ -120,7 +114,6 @@ function initialize_customs_input_file(): void {
 
 function update_competence_category_on_delete(): void {
     const competence_choice: HTMLSelectElement | null = document.querySelector(".competence_list");
-
     if (!competence_choice) {
         return;
     }
@@ -129,7 +122,6 @@ function update_competence_category_on_delete(): void {
         const selected_option: HTMLOptionElement = competence_choice.options[competence_choice.selectedIndex];
         const optgroup = selected_option.parentElement as HTMLOptGroupElement | null;
         const category_input = document.getElementById("category") as HTMLInputElement | null;
-        
         if (!category_input || !optgroup) {
 			return;
 		}
