@@ -1,7 +1,7 @@
 {
 	"name": "portfolio",
 	"version": "1.0.0",
-	"description": "This website is my personal portfolio, built using PHP, LESS, and JavaScript.",
+	"description": "This website is my personal portfolio, built using PHP, LESS, and TypeScript.",
 	"main": "index.js",
 	"scripts": {
 		"build": "tsc",

@@ -1,6 +1,6 @@
 # My Portfolio Website
 
-This repository contains the source code for my personal portfolio website. It's built with PHP, LESS, and JavaScript, and features a custom back-end for easy content management. A key architectural decision was to use JSON files for data storage instead of a traditional database like MySQL. This choice simplifies deployment and reduces server-side dependencies for this particular project.
+This repository contains the source code for my personal portfolio website. It's built with PHP, LESS, and TypeScript, and features a custom back-end for easy content management. A key architectural decision was to use JSON files for data storage instead of a traditional database like MySQL. This choice simplifies deployment and reduces server-side dependencies for this particular project.
 
 ## Key Features
 
@@ -19,7 +19,7 @@ This repository contains the source code for my personal portfolio website. It's
 
 *   PHP
 *   LESS
-*   JavaScript
+*   TypeScript
 *   JSON
 
 ## Why JSON instead of a Database?
