@@ -264,12 +264,11 @@ function display_education(): string {
 }
 
 function display_experiences(): string {
-	$structure = "<section class='experiences-section' id='experiences-section'>";
-	$structure .= display_work_exp();
-	$structure .= display_education();
-	$structure .= "</section>";
-
-	return $structure;
+	return "
+		<section class='experiences-section' id='experiences-section'>"
+			. display_work_exp()
+			. display_education() .
+		"</section>";
 }
 
 function display_contact(): string {

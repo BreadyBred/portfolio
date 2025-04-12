@@ -110,9 +110,7 @@ function display_functions_panels(): string {
 
 	. display_create_project_panel()
 	. display_update_project_panel()
-	. display_delete_project_panel()
-
-	. display_add_work_exp_panel();
+	. display_delete_project_panel();
 }
 
 function display_create_project_panel(): string {
@@ -358,34 +356,6 @@ function display_delete_tech_panel(): string {
 			</select>
 			<input type='hidden' name='category' id='category'>
 			<input type='submit' class='button button-md' value='Supprimer'>
-		</form>";
-}
-
-function display_add_work_exp_panel(): string {
-	return "
-		<form method='POST' action='" . get_admin_panel_folder() . "functions/modify_work_exp.php?action=add' class='hide functions-panel aux-bc' id='add-work-exp'>
-			<h4>Ajouter une expérience professionnelle</h4>
-			<span class='double'>
-				<label for='work-exp-name'>Nom du poste</label>
-				<input type='text' id='work-exp-name' name='name' placeholder='Dév. jeux-vidéos' required>
-			</span>
-			<span class='double'>
-				<label for='work-exp-date'>Dates</label>
-				<input type='text' id='work-exp-date' name='date' placeholder='Nov. 2023 - Feb. 2024' required>
-			</span>
-			<span class='double'>
-				<label for='work-exp-company-name'>Entreprise (ou Groupe)</label>
-				<input type='text' id='work-exp-company-name' name='company_name' placeholder='Monarchy Mayhem' required>
-			</span>
-			<span class='double'>
-				<label for='work-exp-status'>Type de contrat</label>
-				<input type='text' id='work-exp-status' name='status' placeholder='Stage, Projet Professionnel' required>
-			</span>
-			<span class='double'>
-				<label for='work-exp-description'>Description</label>
-				<textarea id='work-exp-description' name='description' placeholder='Blabla1-Blabla2' required></textarea>
-			</span>
-			<input type='submit' class='button button-md' value='Ajouter'>
 		</form>";
 }
 

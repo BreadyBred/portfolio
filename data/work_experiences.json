@@ -1,9 +1,35 @@
 [
     {
+        "name": "Chauffeur livreur",
+        "date": "Mar. 2025 - Juil. 2025",
+        "company_name": "Asuka sushi",
+        "status": null,
+        "is_relevant": false,
+        "descriptions": [
+            {
+                "line": "Assurer la livraison ponctuelle des commandes clients",
+                "tabulations": 1
+            },
+            {
+                "line": "Préparer les commandes en cuisine ou en réserve",
+                "tabulations": 1
+            },
+            {
+                "line": "Effectuer le service à table et accueillir les clients",
+                "tabulations": 1
+            },
+            {
+                "line": "Maintenir la propreté et l'organisation de l'espace de travail",
+                "tabulations": 1
+            }
+        ]
+    },
+    {
         "name": "Développeur Web",
         "date": "Juil. 2024 - Aujourd'hui",
         "company_name": "Freelance",
-        "status": "",
+        "status": null,
+        "is_relevant": true,
         "descriptions": [
             {
                 "line": "Création de sites web sur mesure",
@@ -28,6 +54,7 @@
         "date": "Avr. 2024 - Juil. 2024",
         "company_name": "Prescott",
         "status": "Stage",
+        "is_relevant": true,
         "descriptions": [
             {
                 "line": "Gestion d'un site déjà existant (Wordpress)",
@@ -48,6 +75,7 @@
         "date": "Nov. 2023 - Feb. 2024",
         "company_name": "Monarchy Mayhem",
         "status": "Projet Professionnel",
+        "is_relevant": true,
         "descriptions": [
             {
                 "line": "A remporté la 3ème place du festival MMI France",
@@ -72,10 +100,32 @@
         ]
     },
     {
+        "name": "Préparateur de commandes",
+        "date": "Juil. 2023 - Sep. 2023",
+        "company_name": "MIA Profex",
+        "status": null,
+        "is_relevant": false,
+        "descriptions": [
+            {
+                "line": "Gérer la réception et le stockage des marchandises",
+                "tabulations": 1
+            },
+            {
+                "line": "Préparer et emballer les commandes clients",
+                "tabulations": 1
+            },
+            {
+                "line": "Assurer le suivi des stocks et l'inventaire",
+                "tabulations": 1
+            }
+        ]
+    },
+    {
         "name": "Dév. Front-End",
         "date": "Apr. 2022 - Juil. 2022",
         "company_name": "JKDS Renovation",
         "status": "Stage",
+        "is_relevant": true,
         "descriptions": [
             {
                 "line": "Créer l'identité graphique d'une entreprise nouvellement fondée",
@@ -96,6 +146,7 @@
         "date": "Dec. 2021 - Mar. 2022",
         "company_name": "Entente Sportive de la vallée de l'Oison",
         "status": "Projet Professionnel",
+        "is_relevant": true,
         "descriptions": [
             {
                 "line": "Développer un site internet from scratch",
