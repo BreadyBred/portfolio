@@ -14,10 +14,7 @@ function display_html_head(string $page_title, string $body_class = ""): string 
 
 			<link rel='shortcut icon' href='" . get_images_folder() . "logo/" . get_palette_id() . "/favicon.ico' type='image/x-icon'>
 			<link rel='stylesheet' href='" . get_site_root() . "style/style.css?v=" . time() . "'>
-			<script src='" . get_script_folder() . "minified/functions-min.js'></script>
-			<script src='" . get_script_folder() . "minified/palettes-min.js'></script>
-			<script src='" . get_script_folder() . "minified/admin_functions-min.js'></script>
-			<script src='" . get_script_folder() . "minified/script-min.js'></script>
+			<script src='" . get_script_folder() . "script.js'></script>
 			<title>$page_title - Romain GERARD</title>
 		</head>
 		<body class='$body_class'>
