@@ -7,7 +7,7 @@ if (!is_login_active()) {
 	deactivate_session();
 }
 
-if (is_palette_active()) {
+if (!is_palette_active()) {
 	set_primary_palette();
 }
 

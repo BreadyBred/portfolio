@@ -10,7 +10,7 @@ if ($_GET["e"] == 503 && !is_maintenance_mode_on()) {
 	redirect_to_site_root();
 }
 
-if (is_palette_active()) {
+if (!is_palette_active()) {
 	set_primary_palette();
 }
 

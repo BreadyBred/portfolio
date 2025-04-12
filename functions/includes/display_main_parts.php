@@ -47,7 +47,7 @@ function display_aboutme(): string {
 									Je suis très attaché à la conception « from scratch » et à l'utilisation de PHP pour les sites dynamiques.
 								</span>
 								<span>
-									J'ai expérimenté la conception de sites à l'aide de frameworks tels que CodeIgniter ou Symfony pour PHP, mais aussi ReactJS pour JavaScript
+									J'ai expérimenté la conception de sites à l'aide de frameworks tels que CodeIgniter ou Symfony pour PHP, mais aussi ReactJS pour JavaScript.
 								</span>
 							</span>
 						</span>

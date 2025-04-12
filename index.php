@@ -2,7 +2,7 @@
 
 include "./functions/functions.php";
 
-if (is_palette_active()) {
+if (!is_palette_active()) {
 	set_primary_palette();
 }
 
