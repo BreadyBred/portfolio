@@ -12,9 +12,9 @@ function display_html_head(string $page_title, string $body_class = ""): string 
 			<meta name='description' content='Portfolio de Romain Gérard, développeur web spécialisé en HTML, CSS, JavaScript, PHP, et MySQL. Diplômé après 3 ans en Université de Rouen, en Normandie, avec une expertise en développement de sites internet et applications web.'>
 			<meta name='author' content='Romain GERARD'>
 
-			<link rel='shortcut icon' href='" . get_images_folder() . "logo/" . get_palette_id() . "/favicon.ico' type='image/x-icon'>
-			<link rel='stylesheet' href='" . get_site_root() . "style/style.css?v=" . time() . "'>
-			<script src='" . get_script_folder() . "script.js'></script>
+			<link rel='shortcut icon' href='" . get_images_folder() . "/logo/" . get_palette_id() . "/favicon.ico' type='image/x-icon'>
+			<link rel='stylesheet' href='" . get_site_root() . "/style/style.css?v=" . time() . "'>
+			<script src='" . get_script_folder() . "/script.js'></script>
 			<title>$page_title - Romain GERARD</title>
 		</head>
 		<body class='$body_class'>
@@ -26,7 +26,7 @@ function display_header(): string {
 		<header class='bottom-border aux-bc'>
 			<nav>
 				<a href='" . get_site_root() . "' aria-label='Retour à l'accueil'>
-					<img src='" . get_images_folder() . "logo/" . get_palette_id() . "/logo_256.png' id='main-logo' alt=''>
+					<img src='" . get_images_folder() . "/logo/" . get_palette_id() . "/logo_256.png' id='main-logo' alt=''>
 				</a>
 				<ul class='desktop-only'>
 					<li>
@@ -102,7 +102,7 @@ function display_single_project(string $project_name): string {
 						</span>
 					</span>
 					<span class='project-details'>
-						<img src='" . get_projects_illustrations_folder() . "$image_url.png' alt='$name Illustration'>
+						<img src='" . get_projects_illustrations_folder() . "/$image_url.png' alt='$name Illustration'>
 						<span class='project-overall'>
 							<span class='tech-used'>
 								$project_tech

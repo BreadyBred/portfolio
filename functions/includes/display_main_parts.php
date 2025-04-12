@@ -55,13 +55,13 @@ function display_aboutme(): string {
 							<span class='subtitle underlined'>Certificats</span>
 							<span>
 								<span class='content-with-image-or-link'>
-									- <a href='" . get_files_folder() . "IELTS.pdf' target='_blank' class='underlined' aria-label='Voir le certificat IELTS'>IELTS</a> : Score de 7.5, CEFR : C1 (2025)
+									- <a href='" . get_files_folder() . "/IELTS.pdf' target='_blank' class='underlined' aria-label='Voir le certificat IELTS'>IELTS</a> : Score de 7.5, CEFR : C1 (2025)
 								</span>
 								<span class='content-with-image-or-link'>
 									- <a href='https://cert.efset.org/3xzcDP' target='_blank' class='underlined' aria-label='Voir le certificat EFSET'>EFSET</a> : Niveau C1/C2 (2025)
 								</span>
 								<span class='content-with-image-or-link'>
-									- <a href='" . get_files_folder() . "Certificat_Opquast.pdf' target='_blank' class='underlined' aria-label='Voir le certificat Opquast'>Opquast</a> : Certification obtenue, 825 sur 1000 (2024)
+									- <a href='" . get_files_folder() . "/Certificat_Opquast.pdf' target='_blank' class='underlined' aria-label='Voir le certificat Opquast'>Opquast</a> : Certification obtenue, 825 sur 1000 (2024)
 								</span>
 							</span>
 						</span>
@@ -147,7 +147,7 @@ function display_projects(): string {
 
 				$structure .= "
 					<span class='project $position $name'>
-						<img src='" . get_projects_thumbnails_folder() . "$thumbnail_url.png' alt='Projet: $name'>
+						<img src='" . get_projects_thumbnails_folder() . "/$thumbnail_url.png' alt='Projet: $name'>
 						<span class='project-infos'>
 							<span class='tech-used'>
 								$project_tech
@@ -156,7 +156,7 @@ function display_projects(): string {
 								<h3 class='project-title'>$name</h3>
 								<span class='project-description small'>$synopsis</span>
 							</span>
-							<a href='" . get_site_root() . "projects?name=$link' class='button'>Découvrir</a>
+							<a href='" . get_site_root() . "/projects?name=$link' class='button'>Découvrir</a>
 						</span>
 					</span>";
 			}
@@ -185,7 +185,7 @@ function display_work_exp(): string {
 	foreach ($work_experiences as $work_experience) {
 		extract($work_experience); //? $name, $date, $company_name, ?$status, ?$is_relevant, $descriptions[]
 		$is_status_empty_class = ($status === null) ? "empty" : "";
-		$is_relevant_class = ($is_relevant) ? "" : "not-relevant";
+		$is_relevant_class = ($is_relevant) ? "" : "irrelevant";
 
 		$structure .= "
 			<span class='work-experience $is_relevant_class'>
@@ -274,7 +274,7 @@ function display_experiences(): string {
 
 function display_contact(): string {
 	$palette = get_palette_id();
-	$images_path = get_images_folder() . "contact-logos/$palette";
+	$images_path = get_images_folder() . "/contact-logos/$palette";
 
 	return "
 		<section class='contact-section' id='contact-section'>
@@ -308,10 +308,10 @@ function display_contact(): string {
 
 function display_palette_choice(): string {
 	$structure = "<span class='palette-item'>";
-	$structure .= "<img class='palette-option palette-trigger' src='" . get_images_folder() . "palette-icons/palette_plus.png' alt='Palette picker'>";
+	$structure .= "<img class='palette-option palette-trigger' src='" . get_images_folder() . "/palette-icons/palette_plus.png' alt='Palette picker'>";
 	
 	for ($i = 0; $i < count(get_active_palettes()); $i++) {
-		$structure .= "<img class='palette-option palette' src='" . get_images_folder() . "palette-icons/$i.png' data-id='$i' alt='Palette $i'>";
+		$structure .= "<img class='palette-option palette' src='" . get_images_folder() . "/palette-icons/$i.png' data-id='$i' alt='Palette $i'>";
 	}
 	
 	$structure .= "</span>";

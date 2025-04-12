@@ -63,50 +63,50 @@ function is_on_localhost(): bool {
 
 function get_site_root(bool $secured = true): string {
 	if (is_on_localhost()) {
-		return "http://localhost/travail/portfolio/";
+		return "http://localhost/travail/portfolio";
 	}
 
 	if (!$secured) {
-		return "http://romain-gerard.com/";
+		return "http://romain-gerard.com";
 	}
 
-	return "https://romain-gerard.com/";
+	return "https://romain-gerard.com";
 }
 
 function get_maintenance_screen(): string {
-	return get_site_root() . "error/?e=503";
+	return get_site_root() . "/error/?e=503";
 }
 
 function get_images_folder(): string {
-	return get_site_root() . "medias/images/";
+	return get_site_root() . "/medias/images/";
 }
 
 function get_script_folder(): string {
-	return get_site_root() . "script/";
+	return get_site_root() . "/script/";
 }
 
 function get_projects_illustrations_folder(): string {
-	return get_images_folder() . "projects/illustrations/";
+	return get_images_folder() . "/projects/illustrations/";
 }
 
 function get_projects_thumbnails_folder(): string {
-	return get_images_folder() . "projects/thumbnails/";
+	return get_images_folder() . "/projects/thumbnails/";
 }
 
 function get_files_folder(): string {
-	return get_site_root() . "medias/files/";
+	return get_site_root() . "/medias/files/";
 }
 
 function get_admin_folder(): string {
-	return get_site_root() . "admin/";
+	return get_site_root() . "/admin/";
 }
 
 function get_admin_panel_folder(): string {
-	return get_site_root() . "admin/panel/";
+	return get_site_root() . "/admin/panel/";
 }
 
 function get_json_folder(): string {
-	return get_site_root(false) . "data/";
+	return get_site_root(false) . "/data/";
 }
 
 function send_login_notification(): void {
@@ -183,7 +183,7 @@ function get_ten_years(): int {
 }
 
 function decode(string $filename): array {
-    $url = get_json_folder() . "$filename.json";
+    $url = get_json_folder() . "/$filename.json";
     $ch = curl_init($url);
     
     curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
@@ -203,7 +203,7 @@ function is_login_active(): bool {
 function deactivate_session(): void {
 	session_unset();
 	session_destroy();
-	header("Location: " . get_site_root() . "admin/");
+	header("Location: " . get_site_root() . "/admin/");
 	exit;
 }
 

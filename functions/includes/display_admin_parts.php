@@ -4,7 +4,7 @@ function display_login_form(): string {
 	$error_message = (isset($_GET["error"])) ? "La combinaison Username/Password est erronée" : "";
 
 	return "
-	<form action='" . get_site_root() . "functions/login.php' method='POST' class='admin-login'>
+	<form action='" . get_site_root() . "/functions/login.php' method='POST' class='admin-login'>
 		<span class='column'>
 			<label for='username'>Username</label>
 			<input type='text' id='username' name='username' placeholder='Username' required>
@@ -87,7 +87,7 @@ function display_secondary_functions(): string {
 			<a href='https://trello.com/b/MMGrSbhQ/to-do-list' target='_blank'class='function-title'>
 				Accéder à la todo
 			</a>
-			<a href='" . get_admin_panel_folder() . "functions/toggle_maintenance_mode.php' class='function-title'>
+			<a href='" . get_admin_panel_folder() . "/functions/toggle_maintenance_mode.php' class='function-title'>
 				$maintenance_text le mode maintenance
 			</a>
 		</span>";
@@ -116,7 +116,7 @@ function display_create_project_panel(): string {
 	}
 
 	return "
-		<form method='POST' action='" . get_admin_panel_folder() . "functions/modify_project.php?action=add' enctype='multipart/form-data' class='hide functions-panel aux-bc' id='create-project'>
+		<form method='POST' action='" . get_admin_panel_folder() . "/functions/modify_project.php?action=add' enctype='multipart/form-data' class='hide functions-panel aux-bc' id='create-project'>
 			<h4>Ajouter un projet</h4>	
 			<span class='separate'>
 				<span class='side'>
@@ -223,7 +223,7 @@ function display_project_info_panel(string $project_id, array $project): string 
 	}
 
 	return "
-		<form method='POST' action='" . get_admin_panel_folder() . "functions/modify_project.php?action=update' data-id='update-$project_id' class='hide functions-panel aux-bc secondary-functions-panel aux-bc project-infos'>
+		<form method='POST' action='" . get_admin_panel_folder() . "/functions/modify_project.php?action=update' data-id='update-$project_id' class='hide functions-panel aux-bc secondary-functions-panel aux-bc project-infos'>
 			<span class='double'>
 				<label for='update-name'>Nom du projet</label>
 				<input type='text' id='update-name' name='name' value='$name' required>
@@ -267,7 +267,7 @@ function display_delete_project_panel(): string {
 	$project_list = sort_in_option($project_list, false);
 
 	return "
-		<form method='POST' action='" . get_admin_panel_folder() . "functions/modify_project.php?action=delete' class='hide functions-panel aux-bc' id='delete-project'>
+		<form method='POST' action='" . get_admin_panel_folder() . "/functions/modify_project.php?action=delete' class='hide functions-panel aux-bc' id='delete-project'>
 			<h4>Supprimer un projet</h4>
 			<select class='aux-bc project_list' name='project' size=$project_count required>
 				$project_list
@@ -288,7 +288,7 @@ function display_add_competence_panel(): string {
 	}
 
 	return "
-		<form method='POST' action='" . get_admin_panel_folder() . "functions/modify_competence.php?action=add' class='hide functions-panel aux-bc' id='add-competence'>
+		<form method='POST' action='" . get_admin_panel_folder() . "/functions/modify_competence.php?action=add' class='hide functions-panel aux-bc' id='add-competence'>
 			<h4>Ajouter une compétence</h4>
 			<span class='double'>
 				<label for='competence-category'>Catégorie</label>
@@ -315,7 +315,7 @@ function display_delete_competence_panel(): string {
 	$competences_list = sort_in_option($competences);
 
 	return "
-		<form method='POST' action='" . get_admin_panel_folder() . "functions/modify_competence.php?action=delete' class='hide functions-panel aux-bc' id='delete-competence'>
+		<form method='POST' action='" . get_admin_panel_folder() . "/functions/modify_competence.php?action=delete' class='hide functions-panel aux-bc' id='delete-competence'>
 			<h4>Supprimer une compétences</h4>
 			<select class='aux-bc competence_list' name='competence' size=10 style='width:100%' required>
 				$competences_list
@@ -327,7 +327,7 @@ function display_delete_competence_panel(): string {
 
 function display_add_tech_panel(): string {
 	return "
-		<form method='POST' action='" . get_admin_panel_folder() . "functions/modify_techs.php?action=add' class='hide functions-panel aux-bc' id='add-tech'>
+		<form method='POST' action='" . get_admin_panel_folder() . "/functions/modify_techs.php?action=add' class='hide functions-panel aux-bc' id='add-tech'>
 			<h4>Ajouter une tech</h4>
 			<span class='double'>
 				<label for='tech-name'>Nom de la technologie</label>
@@ -342,7 +342,7 @@ function display_delete_tech_panel(): string {
 	$tech_list = sort_in_option($techs);
 
 	return "
-		<form method='POST' action='" . get_admin_panel_folder() . "functions/modify_techs.php?action=delete' class='hide functions-panel aux-bc' id='delete-tech'>
+		<form method='POST' action='" . get_admin_panel_folder() . "/functions/modify_techs.php?action=delete' class='hide functions-panel aux-bc' id='delete-tech'>
 			<h4>Supprimer une technologie</h4>
 			<select class='aux-bc tech_list' name='name' size=10 style='width:100%' required>
 				$tech_list

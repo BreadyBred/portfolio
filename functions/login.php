@@ -22,10 +22,10 @@ if ($submitted_username == $admin_username) {
 		$_SESSION["username"] = $admin_username;
 		add_in_log();
 		send_login_notification();
-		header("Location: " . get_site_root() . "admin/panel/");
+		header("Location: " . get_site_root() . "/admin/panel/");
 		exit;
 	}
 }
 
-header("Location: " . get_site_root() . "admin?error=true");
+header("Location: " . get_site_root() . "/admin?error=true");
 exit;

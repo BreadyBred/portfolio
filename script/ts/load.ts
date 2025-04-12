@@ -1,4 +1,4 @@
-document.addEventListener('DOMContentLoaded', (): void => {
+document.addEventListener("DOMContentLoaded", (): void => {
     initialize_option_checkbox();
     attribute_titles_to_panels();
     attribute_update_inputs_to_panels();
@@ -12,9 +12,9 @@ document.addEventListener('DOMContentLoaded', (): void => {
     
     document.addEventListener("click", hide_panels);
     
-    document.querySelectorAll('.palette').forEach((palette: Element) => {
-        palette.addEventListener('click', () => {
-            const palette_id: string | null = palette.getAttribute('data-id');
+    document.querySelectorAll(".palette").forEach((palette: Element) => {
+        palette.addEventListener("click", () => {
+            const palette_id: string | null = palette.getAttribute("data-id");
             if (palette_id) {
                 choose_palette(palette_id);
             }
