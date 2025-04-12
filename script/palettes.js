@@ -16,12 +16,10 @@ function get_active_palettes_amount() {
 }
 
 function choose_palette(palette_id) {
-	let current_date = new Date();
-	current_date.setFullYear(current_date.getFullYear() + 10);
-	let expires = current_date.toUTCString();
+	let expiring_time = new Date(new Date().setFullYear(new Date().getFullYear() + 10)).toUTCString();
 
 	document.cookie = "color_palette=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/; SameSite=None; Secure";
-	document.cookie = `color_palette=${palette_id}; expires=${expires}; path=/; SameSite=None; Secure`;
+	document.cookie = `color_palette=${palette_id}; expires=${expiring_time}; path=/; SameSite=None; Secure`;
 	initialize_palette(get_palette(), false);
 }
 
@@ -79,15 +77,12 @@ function initialize_palette(set_palette, landing = true) {
 	});
 
 	// Changement dynamique de palette
-	if(!landing) {
+	if (!landing) {
 		// Favicon
 		change_source(document.querySelector('link[rel="shortcut icon"]'), 'href', set_palette);
 
 		// Logo
 		document.getElementById('main-logo').src = `${get_images_folder()}logo/${set_palette}/logo_256.png`;
-
-		// CV
-		// change_source(document.querySelector('#cv-file'), 'href', set_palette);
 
 		// Compétences
 		document.querySelectorAll('.competence').forEach(competence => {
@@ -112,12 +107,17 @@ function initialize_palette(set_palette, landing = true) {
 
 function change_source(target, type, new_palette) {
 	let previous_source = (type == 'href') ? target.href : target.src;
-	for (let i = 0; i <= get_active_palettes_amount(); i++)
-		if(previous_source.includes(i.toString()))
-			if(type == 'href')
+
+	for (let i = 0; i <= get_active_palettes_amount(); i++) {
+		if (previous_source.includes(i.toString())) {
+			if (type == 'href') {
 				target.href = previous_source.split(i.toString()).join(new_palette);
-			else
-			target.src = previous_source.split(i.toString()).join(new_palette);
+			} else {
+				target.src = previous_source.split(i.toString()).join(new_palette);
+			}
+		}
+	}
+	
 }
 
 function remove_classes_from_element(element, class_name, type = null) {
@@ -131,8 +131,9 @@ function remove_classes_from_element(element, class_name, type = null) {
 			break;
 	}
 
-	for(let i = 0; i < get_active_palettes_amount(); i++)
+	for (let i = 0; i < get_active_palettes_amount(); i++) {
 		element.classList.remove(class_name + additional_parameter + i);
+	}
 }
 
 function hide_panels(event = {}) {

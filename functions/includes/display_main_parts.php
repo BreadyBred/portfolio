@@ -183,11 +183,12 @@ function display_work_exp(): string {
 			<span class='work-experiences'>";
 
 	foreach ($work_experiences as $work_experience) {
-		extract($work_experience); //? $name, $date, $company_name, $status, $descriptions[]
-		$is_status_empty_class = ($status == "") ? "empty" : "";
+		extract($work_experience); //? $name, $date, $company_name, ?$status, ?$is_relevant, $descriptions[]
+		$is_status_empty_class = ($status === null) ? "empty" : "";
+		$is_relevant_class = ($is_relevant) ? "" : "not-relevant";
 
 		$structure .= "
-			<span class='work-experience'>
+			<span class='work-experience $is_relevant_class'>
 				<span class='work-experience-details bold'>
 					<span class='work-experience-date'>$date</span>
 					<span class='work-experience-hashtag'>#</span>

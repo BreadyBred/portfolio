@@ -2,17 +2,17 @@ function initialize_option_checkbox() {
 	const optional_checkbox = document.querySelector('.optional-checkbox');
 	const optional_content = document.querySelector('.optional');
 
-	if(!optional_checkbox)
+	if (!optional_checkbox) {
 		return;
+	}
 
 	optional_checkbox.addEventListener('change', () => {
 		const input_file = optional_content.querySelector('.input_file');
 
-		if(optional_checkbox.checked) {
+		if (optional_checkbox.checked) {
 			optional_content.classList.remove('hide');
 			input_file.setAttribute('required', true);
-		}
-		else {
+		} else {
 			optional_content.classList.add('hide');
 			input_file.removeAttribute('required');
 		}
@@ -23,12 +23,12 @@ function attribute_titles_to_panels() {
 	const functions_titles = document.querySelectorAll('.function-title');
 	const functions_panels = document.querySelectorAll('.functions-panel');
 
-	if(!functions_titles)
+	if (!functions_titles) {
 		return;
+	}
 
 	functions_titles.forEach(functions_title => {
 		functions_title.addEventListener('click', () => {
-
 			// Reset style
 			functions_titles.forEach(functions_title => {
 				functions_title.classList.remove('selected');
@@ -49,8 +49,9 @@ function attribute_titles_to_panels() {
 function attribute_update_inputs_to_panels() {
 	const update_panel = document.querySelector('.open-update-panel');
 
-	if(!update_panel)
+	if (!update_panel) {
 		return;
+	}
 
 	const radio_inputs = update_panel.querySelectorAll('.input_radio');
 	const project_infos_panels = document.querySelectorAll('.project-infos');
@@ -60,18 +61,20 @@ function attribute_update_inputs_to_panels() {
 			project_infos_panels.forEach(project_infos_panel => {
 				project_infos_panel.classList.add('hide');
 
-				if(project_infos_panel.attributes['data-id'].nodeValue == radio_input.id)
+				if (project_infos_panel.attributes['data-id'].nodeValue == radio_input.id) {
 					project_infos_panel.classList.remove('hide');
+				}
 			});
 		});
 	});
 }
 
 function activate_popup_fade_out() {
-	var popup = document.querySelector('.popup');
+	let popup = document.querySelector('.popup');
 
-	if(!popup)
+	if (!popup) {
 		return;
+	}
 
 	setTimeout(function() {
 		popup.classList.add('fade-out');
@@ -81,8 +84,9 @@ function activate_popup_fade_out() {
 function initialize_customs_input_file() {
     const inputs_file = document.querySelectorAll('.input_file');
 
-	if(!inputs_file)
+	if (!inputs_file) {
 		return;
+	}
 
 	inputs_file.forEach(input_file => {
 		input_file.addEventListener('change', (event) => {
@@ -97,8 +101,9 @@ function initialize_customs_input_file() {
 function update_competence_category_on_delete() {
 	const competence_choice = document.querySelector('.competence_list');
 
-	if(!competence_choice)
+	if (!competence_choice) {
 		return;
+	}
 
 	competence_choice.addEventListener('change', () => {
 		const selected_option = competence_choice.options[competence_choice.selectedIndex];
