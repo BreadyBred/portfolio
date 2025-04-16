@@ -185,7 +185,7 @@ function display_error_structure(string $error_type): string {
 
 function display_footer(): string {
 	return display_palette_choice()
-		. "<footer class='top-border aux-bc'><span>Romain GERARD <a href='" . get_admin_folder() . "'>©</a> 2025</span></footer>";
+		. "<footer class='top-border aux-bc'><span>Romain GERARD <a href='" . get_admin_folder() . "'>©</a> " . get_current_year() . "</span></footer>";
 }
 
 function display_html_footer(): string {

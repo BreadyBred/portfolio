@@ -245,3 +245,11 @@ function get_error_response(): array {
 		"message" => "&#9888; Une erreur est survenue. &#9888;"
 	];
 }
+
+function get_real_age(): int {
+    return (new DateTime('now'))->diff(new DateTime('2001-08-15'))->y;
+}
+
+function get_current_year(): int {
+	return (int) date("Y");
+}

@@ -14,7 +14,7 @@ function display_aboutme(): string {
 						<span>
 							Bienvenue sur mon portfolio !
 							<br><br>
-							Jeune développeur web de 23 ans, j'ai toujours été passionné par la programmation et l'informatique en général. Je me suis spécialisé dans le développement web lors de mon Bachelor Universitaire de Technologie, mais je bricole en HTML, CSS, JavaScript, PHP, etc... depuis que je suis sorti du lycée.
+							Jeune développeur web de " . get_real_age() ." ans, j'ai toujours été passionné par la programmation et l'informatique en général. Je me suis spécialisé dans le développement web lors de mon Bachelor Universitaire de Technologie, mais je bricole en HTML, CSS, JavaScript, PHP, etc... depuis que je suis sorti du lycée.
 							<br><br>
 							Toujours curieux concernant le développement web, je suis souvent à la recherche des nouvelles tendances du domaine afin de m'approcher de mon but : Combiner mon travail et ma passion !
 						</span>
