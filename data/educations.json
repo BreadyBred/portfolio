@@ -1,14 +1,16 @@
 [
     {
-        "name": "Master",
+        "diploma": "Master",
+        "full_diploma": null,
         "date": "2025 - 2028",
         "specialty": "Génie Logiciel",
         "major": null,
-        "location": "University of Science and Technology of China (USTC), Hefei",
+        "location": "University of Science and Technology of China, Hefei",
         "is_relevant": true
     },
     {
-        "name": "Piscine de Zone01",
+        "diploma": "Piscine de Zone01",
+        "full_diploma": null,
         "date": "2025",
         "specialty": null,
         "major": "La méthode 42, édition discount",
@@ -16,7 +18,8 @@
         "is_relevant": false
     },
     {
-        "name": "Piscine de 42",
+        "diploma": "Piscine de 42",
+        "full_diploma": null,
         "date": "2024",
         "specialty": null,
         "major": "La méthode 42",
@@ -24,7 +27,8 @@
         "is_relevant": false
     },
     {
-        "name": "B.U.T",
+        "diploma": "B.U.T",
+        "full_diploma": "Bachelor universitaire de technologie",
         "date": "2023 - 2024",
         "specialty": "Métiers du Multimédia et de l'Internet",
         "major": "Spécialité Développement Web",
@@ -32,7 +36,8 @@
         "is_relevant": true
     },
     {
-        "name": "Licence Professionnelle",
+        "diploma": "Licence Professionnelle",
+        "full_diploma": null,
         "date": "2022 - 2023",
         "specialty": "Développement & Administration de Sites Internet",
         "major": null,
@@ -40,7 +45,8 @@
         "is_relevant": true
     },
     {
-        "name": "D.U.T",
+        "diploma": "D.U.T",
+        "full_diploma": "Diplôme universitaire de technologie",
         "date": "2020 - 2022",
         "specialty": "Métiers du Multimédia et de l'Internet",
         "major": "Spécialité Développement Web",
@@ -48,7 +54,8 @@
         "is_relevant": true
     },
     {
-        "name": "Baccalauréat",
+        "diploma": "Baccalauréat",
+        "full_diploma": null,
         "date": "2016 - 2020",
         "specialty": "Scientifique (Assez Bien)",
         "major": "Spécialité Mathématiques",

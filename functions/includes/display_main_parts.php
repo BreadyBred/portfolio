@@ -237,15 +237,16 @@ function display_education(): string {
 			<span class='formations-list'>";
 
 	foreach ($educations as $education) {
-		extract($education); //? $name, $date, $specialty, $major, $location, $is_relevant
+		extract($education); //? $diploma, $full_diploma, $date, $specialty, $major, $location, $is_relevant
 
 		$is_relevant_class = ($is_relevant) ? "" : "irrelevant";
 		$relevance_display = ($is_relevant) ? "flex" : "none";
+		$diploma = ($full_diploma === null) ? $diploma : "<abbr title='$full_diploma'>$diploma</abbr>";
 
 		$structure .= "
 			<span class='formation $is_relevant_class' style='display: $relevance_display;'>
 				<span class='formation-details bold'>
-					<span class='formation-name'>$name</span>
+					<span class='formation-name'>$diploma</span>
 					<span class='formation-hashtag'>#</span>
 					<span class='formation-date'>$date</span>
 				</span>";
