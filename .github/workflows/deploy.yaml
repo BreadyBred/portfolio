@@ -46,6 +46,8 @@ jobs:
           mirror -R functions/ www/functions/
           mirror -R medias/ www/medias/
           mirror -R projects/ www/projects/
+          mirror -R en/ www/en/
+          mirror -R locales/ www/locales/
           
           echo "Transferred directories successfully."
           
