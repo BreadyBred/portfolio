@@ -32,7 +32,7 @@
         "is_relevant": true,
         "descriptions": [
             {
-                "line": "Création de sites web sur mesure",
+                "line": "Créer des sites web sur mesure",
                 "tabulations": 1
             },
             {
@@ -44,7 +44,7 @@
                 "tabulations": 1
             },
             {
-                "line": "Gestion de l'hébergement et maintenance technique",
+                "line": "Gérer l'hébergement et la maintenance technique",
                 "tabulations": 1
             }
         ]
@@ -57,7 +57,7 @@
         "is_relevant": true,
         "descriptions": [
             {
-                "line": "Gestion d'un site déjà existant (Wordpress)",
+                "line": "Gérer un site déjà existant (Wordpress)",
                 "tabulations": 1
             },
             {
@@ -65,14 +65,14 @@
                 "tabulations": 1
             },
             {
-                "line": "Création de maquettes de sites sur Figma",
+                "line": "Créer des maquettes de sites sur Figma",
                 "tabulations": 1
             }
         ]
     },
     {
         "name": "Dév. jeux-vidéos",
-        "date": "Nov. 2023 - Feb. 2024",
+        "date": "Nov. 2023 - Fev. 2024",
         "company_name": "Monarchy Mayhem",
         "status": "Projet Professionnel",
         "is_relevant": true,
@@ -122,7 +122,7 @@
     },
     {
         "name": "Dév. Front-End",
-        "date": "Apr. 2022 - Juil. 2022",
+        "date": "Avr. 2022 - Juil. 2022",
         "company_name": "JKDS Renovation",
         "status": "Stage",
         "is_relevant": true,

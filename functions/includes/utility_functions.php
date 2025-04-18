@@ -207,6 +207,12 @@ function deactivate_session(): void {
 	exit;
 }
 
+// Renvoie "fr" si non initialisé
+function get_website_language(): string {
+    return (strpos($_SERVER['REQUEST_URI'], "/en") !== false) ? "en" : "fr";
+}
+
+// Renvoie "en" si non initialisé car cas rare
 function get_browser_language(): string {
 	$lang = substr($_SERVER["HTTP_ACCEPT_LANGUAGE"], 0, 2);
 	return ($lang == "fr") ? $lang : "en";
@@ -252,4 +258,30 @@ function get_real_age(): int {
 
 function get_current_year(): int {
 	return (int) date("Y");
+}
+
+function t(string $str, bool $is_url_accessible = true): string {
+	static $dictionary = null;
+
+	if(!$is_url_accessible) {
+		$lang = get_website_language();
+	} else {
+		$lang = get_browser_language();
+	}
+
+	if ($dictionary === null) {
+		$dictionary = load_dictionary($lang);
+	}
+
+	return $dictionary[$str] ?? $str;
+}
+
+function load_dictionary(string $lang): array | null {
+	$dictionary_path = __DIR__ . "/../../locales/$lang.php";
+
+	if (!file_exists($dictionary_path)) {
+		return [];
+	}
+
+	return require $dictionary_path;
 }

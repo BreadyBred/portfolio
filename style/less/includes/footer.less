@@ -1,11 +1,6 @@
 // out: false
 
 .palette-item {
-	position: fixed;
-	display: flex;
-	flex-direction: column-reverse;
-	gap: @xs-gap;
-
 	left: @s-gap;
 	bottom: @s-gap;
 
@@ -13,9 +8,27 @@
 		&.palette {
 			display: none;
 		}
-		width: @s-icon;
+
 		cursor: pointer;
+		width: @s-icon;
 	}
+}
+
+.language-item {
+	right: @s-gap;
+	bottom: @s-gap;
+
+	.language-option {
+		cursor: pointer;
+		width: @s-icon;
+	}
+}
+
+.palette-item, .language-item {
+	display: flex;
+	flex-direction: column-reverse;
+	gap: @xs-gap;
+	position: fixed;
 }
 
 footer {

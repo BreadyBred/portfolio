@@ -21,41 +21,41 @@ function display_html_head(string $page_title, string $body_class = ""): string 
 	";
 }
 
-function display_header(): string {
+function display_header(bool $is_error_page = false): string {
 	return "
 		<header class='bottom-border aux-bc'>
 			<nav>
-				<a href='" . get_site_root() . "' aria-label='Retour à l'accueil'>
+				<a href='" . get_site_root() . "' aria-label='" . t("Retour à l'accueil", $is_error_page) . "'>
 					<img src='" . get_images_folder() . "/logo/" . get_palette_id() . "/logo_256.png' id='main-logo' alt=''>
 				</a>
 				<ul class='desktop-only'>
 					<li>
 						<a href='" . get_site_root() . "'>
-							Accueil
+							" . t("Accueil", $is_error_page) . "
 							<span class='line a-bg'></span>
 						</a>
 					</li>
 					<li>
 						<a href='" . get_site_root() . "#competences-section'>
-							Compétences
+							" . t("Compétences", $is_error_page) . "
 							<span class='line a-bg'></span>
 						</a>
 					</li>
 					<li>
 						<a href='" . get_site_root() . "#projects-section'>
-							Projets
+							" . t("Projets", $is_error_page) . "
 							<span class='line a-bg'></span>
 						</a>
 					</li>
 					<li>
 						<a href='" . get_site_root() . "#experiences-section'>
-							Parcours
+							" . t("Parcours", $is_error_page) . "
 							<span class='line a-bg'></span>
 						</a>
 					</li>
 					<li>
 						<a href='" . get_site_root() . "#contact-section'>
-							Contact
+							" . t("Contact", $is_error_page) . "
 							<span class='line a-bg'></span>
 						</a>
 					</li>
@@ -74,7 +74,7 @@ function display_single_project(string $project_name): string {
 		$project_tech .= "<span class='tech a-bc'>$tech</span>";
 	}
 
-	$description_lines = explode(". ", $description);
+	$description_lines = explode(". ", t("$description"));
 	$description = "";
 	foreach ($description_lines as $description_line) {
 		$point = (in_array(substr($description_line, -1), [".", "!", "?"])) ? "" : ".";
@@ -111,7 +111,7 @@ function display_single_project(string $project_name): string {
 								$description
 							</span>
 							<span class='project-details-footer'>
-								<a href='$link' target='_blank' class='button button-l'>Découvrir</a>
+								<a href='$link' target='_blank' class='button button-l'>" . t("Découvrir") . "</a>
 								<span class='small'>$date</span>
 							</span>
 						</span>
@@ -119,7 +119,7 @@ function display_single_project(string $project_name): string {
 				</span>
 				<span class='project-footer'>
 					<span class='small italic desktop-only'>Romain GERARD</span>
-					<a href='" . get_site_root() . "' class='underlined'>Retour à l'index</a>
+					<a href='" . get_site_root() . "' class='underlined'>" . t("Retour à l'index") . "</a>
 				</span>
 			</span>
 			<span class='side desktop-only'>
@@ -133,36 +133,66 @@ function display_error_structure(string $error_type): string {
 	$error_codes = array(
 		"fr" => array(
 			"403" => array(
-				"page_title" 	=> "403",
-				"main_message" 	=> "On dirait que tu n'as pas le droit d'être ici",
-				"sub_message" 	=> "Larry le malicieux va s'occuper de ton cas",
-				"image_link"    => "https://i.ibb.co/ZW9Sk14/larry.png",
+				"page_title" => "403",
+				"main_message" => "On dirait que tu n'as pas le droit d'être ici",
+				"sub_message" => "Larry le malicieux va s'occuper de ton cas",
+				"image_link" => "https://i.ibb.co/ZW9Sk14/larry.png",
 				"home_link_text"=> "Échappe-toi vite...",
-				"show_link"     => true,
+				"show_link" => true,
 				"additional_class" => null
 			),
 			"404" => array(
-				"page_title" 	=> "404",
-				"main_message" 	=> "La page n'existe pas.",
-				"sub_message" 	=> "On dirait que tu t'es perdu...",
-				"image_link"    => "https://i.ibb.co/4FZVV2g/cat.gif",
+				"page_title" => "404",
+				"main_message" => "La page n'existe pas.",
+				"sub_message" => "On dirait que tu t'es perdu...",
+				"image_link" => "https://i.ibb.co/4FZVV2g/cat.gif",
 				"home_link_text" => "Retrouve la voie...",
-				"show_link"     => true,
+				"show_link" => true,
 				"additional_class" => "big"
 			),
 			"503" => array(
-				"page_title" 	=> "503",
-				"main_message" 	=> "Ce site est en cours de maintenance.",
-				"sub_message" 	=> "Veuillez revenir plus tard !",
-				"image_link"     => "https://i.ibb.co/4FZVV2g/cat.gif",
-				"home_link_text"     => null,
-				"show_link"     => false,
+				"page_title" => "503",
+				"main_message" => "Ce site est en cours de maintenance.",
+				"sub_message" => "Veuillez revenir plus tard !",
+				"image_link" => "https://i.ibb.co/4FZVV2g/cat.gif",
+				"home_link_text" => null,
+				"show_link" => false,
+				"additional_class" => "big"
+			)
+		),
+		"en" => array(
+			"403" => array(
+				"page_title" => "403",
+				"main_message" => "Looks like you're not allowed to be here",
+				"sub_message" => "Mischievous Larry will take care of you",
+				"image_link" => "https://i.ibb.co/ZW9Sk14/larry.png",
+				"home_link_text"=> "Escape quickly...",
+				"show_link" => true,
+				"additional_class" => null
+			),
+			"404" => array(
+				"page_title" => "404",
+				"main_message" => "This page doesn't exist.",
+				"sub_message" => "Looks like you're lost...",
+				"image_link" => "https://i.ibb.co/4FZVV2g/cat.gif",
+				"home_link_text" => "Find your way back...",
+				"show_link" => true,
+				"additional_class" => "big"
+			),
+			"503" => array(
+				"page_title" => "503",
+				"main_message" => "This site is under maintenance.",
+				"sub_message" => "Please come back later!",
+				"image_link" => "https://i.ibb.co/4FZVV2g/cat.gif",
+				"home_link_text" => null,
+				"show_link" => false,
 				"additional_class" => "big"
 			)
 		)
+
 	);
 
-	$error_infos = $error_codes["fr"][$error_type];
+	$error_infos = $error_codes[get_browser_language()][$error_type];
 	
 	extract($error_infos); //? $page_title, $main_message, $sub_message, $image_link, $home_link_text, $show_link, $additional_class
 
@@ -183,10 +213,14 @@ function display_error_structure(string $error_type): string {
 		</span>";
 }
 
-function display_footer(): string {
-	return display_palette_choice()
-		. "<footer class='top-border aux-bc'><span>Romain GERARD <a href='" . get_admin_folder() . "'>©</a> " . get_current_year() . "</span></footer>";
+function display_floating_options(): string {
+	return display_palette_choice() . display_language_choice();
 }
+
+function display_footer(): string {
+	return "<footer class='top-border aux-bc'><span>Romain GERARD <a href='" . get_admin_folder() . "'>©</a> " . get_current_year() . "</span></footer>";
+}
+
 
 function display_html_footer(): string {
 	return "</body>

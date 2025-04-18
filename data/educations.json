@@ -28,7 +28,7 @@
     },
     {
         "diploma": "B.U.T",
-        "full_diploma": "Bachelor universitaire de technologie",
+        "full_diploma": "Bachelor Universitaire de Technologie",
         "date": "2023 - 2024",
         "specialty": "Métiers du Multimédia et de l'Internet",
         "major": "Spécialité Développement Web",
@@ -46,7 +46,7 @@
     },
     {
         "diploma": "D.U.T",
-        "full_diploma": "Diplôme universitaire de technologie",
+        "full_diploma": "Diplôme Universitaire de Technologie",
         "date": "2020 - 2022",
         "specialty": "Métiers du Multimédia et de l'Internet",
         "major": "Spécialité Développement Web",
@@ -59,7 +59,7 @@
         "date": "2016 - 2020",
         "specialty": "Scientifique (Assez Bien)",
         "major": "Spécialité Mathématiques",
-        "location": "Lycée Ferdinand Buisson",
+        "location": "Lycée Ferdinand Buisson, Elbeuf",
         "is_relevant": true
     }
 ]

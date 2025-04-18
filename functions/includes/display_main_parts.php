@@ -11,57 +11,58 @@ function display_aboutme(): string {
 				<span class='main-content'>
 					<h1 class='title'>Romain GERARD</h1>
 					<span class='written-content'>
-						<span>
-							Bienvenue sur mon portfolio !
-							<br><br>
-							Jeune développeur web de " . get_real_age() ." ans, j'ai toujours été passionné par la programmation et l'informatique en général. Je me suis spécialisé dans le développement web lors de mon Bachelor Universitaire de Technologie, mais je bricole en HTML, CSS, JavaScript, PHP, etc... depuis que je suis sorti du lycée.
-							<br><br>
-							Toujours curieux concernant le développement web, je suis souvent à la recherche des nouvelles tendances du domaine afin de m'approcher de mon but : Combiner mon travail et ma passion !
+						<span class='single'>
+							<span>
+								" . t("Bienvenue sur mon portfolio !") . "</span>
+							<span>
+								" . t("Jeune développeur web de 23 ans, j'ai toujours été passionné par la programmation et l'informatique en général. Je me suis spécialisé dans le développement web lors de mon Bachelor Universitaire de Technologie, mais je bricole en HTML, CSS, JavaScript, PHP, etc... depuis que je suis sorti du lycée.") . "</span>
+							<span>
+								" . t("Toujours curieux concernant le développement web, je suis souvent à la recherche des nouvelles tendances du domaine afin de m'approcher de mon but : Combiner mon travail et ma passion !") . "</span>
 						</span>
 						<span class='double'>
-							<span class='subtitle underlined'>Un outil au service des autres</span>
+							<span class='subtitle underlined'>" . t("Un outil au service des autres") . "</span>
 							<span>
 								<span>
-									Le web est une plateforme puissante, et j'aime l'idée que mes créations puissent simplifier la vie des utilisateurs.
+									" . t("Le web est une plateforme puissante, et j'aime l'idée que mes créations puissent simplifier la vie des utilisateurs.") . "
 								</span>
 								<span>
-									Que ce soit un outil de gestion, une vitrine professionnelle ou une application ludique, chaque projet est une occasion de rendre quelque chose d'utile et d'intuitif.
+									" . t("Que ce soit un outil de gestion, une vitrine professionnelle ou une application ludique, chaque projet est une occasion de rendre quelque chose d'utile et d'intuitif.") . "
 								</span>
 							</span>
 						</span>
 						<span class='double'>
-							<span class='subtitle underlined'>Un développeur en quête d'amélioration continue</span>
+							<span class='subtitle underlined'>" . t("Un développeur en quête d'amélioration continue") . "</span>
 							<span>
 								<span>
-									Je crois fermement que le domaine du développement web évolue constamment, et c'est ce qui me passionne !
+									" . t("Je crois fermement que le domaine du développement web évolue constamment, et c'est ce qui me passionne !") . "
 								</span>
 								<span>
-									J'apprécie particulièrement le travail collaboratif, où chaque échange et retour d'expérience contribue à créer des solutions toujours plus optimisées.
+									" . t("J'apprécie particulièrement le travail collaboratif, où chaque échange et retour d'expérience contribue à créer des solutions toujours plus optimisées.") . "
 								</span>
 							</span>
 						</span>
 						<span class='double'>
-							<span class='subtitle underlined'>Les technologies que je préfère</span>
+							<span class='subtitle underlined'>" . t("Les technologies que je préfère") . "</span>
 							<span>
 								<span>
-									Je suis très attaché à la conception « from scratch » et à l'utilisation de PHP pour les sites dynamiques.
+									" . t("Je suis très attaché à la conception « from scratch » et à l'utilisation de PHP pour les sites dynamiques.") . "
 								</span>
 								<span>
-									J'ai expérimenté la conception de sites à l'aide de frameworks tels que CodeIgniter ou Symfony pour PHP, mais aussi ReactJS pour JavaScript.
+									" . t("J'ai expérimenté la conception de sites à l'aide de frameworks tels que CodeIgniter ou Symfony pour PHP, mais aussi ReactJS pour JavaScript.") . "
 								</span>
 							</span>
 						</span>
 						<span class='double'>
-							<span class='subtitle underlined'>Certificats</span>
+							<span class='subtitle underlined'>" . t("Certificats") . "</span>
 							<span>
 								<span class='content-with-image-or-link'>
-									- <a href='" . get_files_folder() . "/IELTS.pdf' target='_blank' class='underlined' aria-label='Voir le certificat IELTS'>IELTS</a> : Score de 7.5, CEFR : C1 (2025)
+									- <a href='" . get_files_folder() . "/IELTS.pdf' target='_blank' class='underlined' aria-label='" . t("Voir le certificat IELTS") . "'>IELTS</a> : " . t("Score de 7.5") . ", CEFR : C1 (2025)
 								</span>
 								<span class='content-with-image-or-link'>
-									- <a href='https://cert.efset.org/3xzcDP' target='_blank' class='underlined' aria-label='Voir le certificat EFSET'>EFSET</a> : Niveau C1/C2 (2025)
+									- <a href='https://cert.efset.org/3xzcDP' target='_blank' class='underlined' aria-label='" . t("Voir le certificat EFSET") . "'>EFSET</a> : " . t("Niveau C1/C2") . " (2025)
 								</span>
 								<span class='content-with-image-or-link'>
-									- <a href='" . get_files_folder() . "/Certificat_Opquast.pdf' target='_blank' class='underlined' aria-label='Voir le certificat Opquast'>Opquast</a> : Certification obtenue, 825 sur 1000 (2024)
+									- <a href='" . get_files_folder() . "/Certificat_Opquast.pdf' target='_blank' class='underlined' aria-label='" . t("Voir le certificat Opquast") . "'>Opquast</a> : " . t("Certification obtenue, 825 sur 1000") . " (2024)
 								</span>
 							</span>
 						</span>
@@ -86,7 +87,7 @@ function display_competences(): string {
 	foreach ($categories as $category_name => $category) {
 		$competence_text .= "
 			<span class='category'>
-				<span class='category-title'>$category_name</span>
+				<span class='category-title'>" . t($category_name) . "</span>
 				<span class='categorised-competences'>";
 
 		foreach ($category as $formatted_competence => $competence) {
@@ -102,7 +103,7 @@ function display_competences(): string {
 	return "
 		<section class='competences-section' id='competences-section'>
 			<span class='section-title'>
-				<h2 class='title'>Mes compétences</h2>
+				<h2 class='title'>" . t("Mes compétences") . "</h2>
 				<span class='v-line a-bg'>&nbsp</span>
 			</span>
 			<span class='competences'>
@@ -126,7 +127,7 @@ function display_projects(): string {
 	$structure = "
 		<section class='projects-section' id='projects-section'>
 			<span class='section-title'>
-				<h2 class='title'>Mes réalisations</h2>
+				<h2 class='title'>" . t("Mes réalisations") . "</h2>
 				<span class='v-line a-bg'>&nbsp</span>
 			</span>
 			<span class='projects'>";
@@ -154,9 +155,9 @@ function display_projects(): string {
 							</span>
 							<span class='project-text'>
 								<h3 class='project-title'>$name</h3>
-								<span class='project-description small'>$synopsis</span>
+								<span class='project-description small'>" . t("$synopsis") . "</span>
 							</span>
-							<a href='" . get_site_root() . "/projects?name=$link' class='button'>Découvrir</a>
+							<a href='" . get_site_root() . "/projects?name=$link' class='button'>" . t("Découvrir") . "</a>
 						</span>
 					</span>";
 			}
@@ -177,9 +178,9 @@ function display_work_exp(): string {
 	$structure = "
 		<span class='work-exp'>
 			<span class='section-title has-relevant-content'>
-				<h2 class='title'>Mes expériences professionnelles</h2>
+				<h2 class='title'>" . t("Mes expériences professionnelles") . "</h2>
 				<span class='v-line a-bg'>&nbsp</span>
-				<span class='relevance-button work-experience small underlined'>Voir tout</span>
+				<span class='relevance-button work-experience small underlined'>" . t("Voir tout") . "</span>
 			</span>
 			<span class='work-experiences'>";
 
@@ -192,12 +193,12 @@ function display_work_exp(): string {
 		$structure .= "
 			<span class='work-experience $is_relevant_class' style='display: $relevance_display;'>
 				<span class='work-experience-details bold'>
-					<span class='work-experience-date'>$date</span>
+					<span class='work-experience-date'>" . t("$date") . "</span>
 					<span class='work-experience-hashtag'>#</span>
-					<span class='work-experience-name'>$name</span>
+					<span class='work-experience-name'>" . t("$name") . "</span>
 				</span>
 				<span class='work-experience-job italic'>$company_name</span>
-				<span class='work-experience-state italic a-fc $is_status_empty_class'>($status)</span>
+				<span class='work-experience-state italic a-fc $is_status_empty_class'>(" . t("$status") . ")</span>
 				<span class='work-experience-description small italic'>";
 		
 		foreach ($descriptions as $description) {
@@ -208,7 +209,7 @@ function display_work_exp(): string {
 
 			$structure .= "
 				<span class='work-experience-line $optional_class'>
-					$tabs> $line
+					$tabs> " . t("$line") . "
 				</span>";
 		}
 		
@@ -230,9 +231,9 @@ function display_education(): string {
 	$structure = "
 		<span class='formations'>
 			<span class='section-title has-relevant-content'>
-				<h2 class='title'>Mes formations</h2>
+				<h2 class='title'>" . t("Mes formations") . "</h2>
 				<span class='v-line a-bg'>&nbsp</span>
-				<span class='relevance-button formation small underlined'>Voir tout</span>
+				<span class='relevance-button formation small underlined'>" . t("Voir tout") . "</span>
 			</span>
 			<span class='formations-list'>";
 
@@ -241,7 +242,7 @@ function display_education(): string {
 
 		$is_relevant_class = ($is_relevant) ? "" : "irrelevant";
 		$relevance_display = ($is_relevant) ? "flex" : "none";
-		$diploma = ($full_diploma === null) ? $diploma : "<abbr title='$full_diploma'>$diploma</abbr>";
+		$diploma = ($full_diploma === null) ? t("$diploma") : "<abbr title='" . t("$full_diploma") . "'>" . t("$diploma") . "</abbr>";
 
 		$structure .= "
 			<span class='formation $is_relevant_class' style='display: $relevance_display;'>
@@ -252,11 +253,11 @@ function display_education(): string {
 				</span>";
 
 		if ($specialty) {
-			$structure .= "<span class='formation-speciality italic'>$specialty</span>";
+			$structure .= "<span class='formation-speciality italic'>" . t("$specialty") . "</span>";
 		}
 
 		if ($major) {
-			$structure .= "<span class='formation-major italic a-fc'>$major</span>";
+			$structure .= "<span class='formation-major italic a-fc'>" . t("$major") . "</span>";
 		}
 		
 		$structure .= "
@@ -286,7 +287,7 @@ function display_contact(): string {
 	return "
 		<section class='contact-section' id='contact-section'>
 			<span class='section-title'>
-				<h2 class='title'>Une idée ? Venez en discuter !</h2>
+				<h2 class='title'>" . t("Une idée ? Venez en discuter !") . "</h2>
 				<span class='v-line a-bg a-bg-0'>&nbsp;</span>
 			</span>
 			<span class='socials'>
@@ -324,4 +325,14 @@ function display_palette_choice(): string {
 	$structure .= "</span>";
 	
 	return $structure;
+}
+
+function display_language_choice(): string {
+	$flag_icon = (get_website_language() === "fr") ? "en" : "fr";
+	$index_url = ($flag_icon === "fr") ? get_site_root() : get_site_root() . "/en";
+
+	return "
+		<span class='language-item'>
+			<a href='$index_url' target='_blank'><img class='language-option' src='" . get_images_folder() . "/language-icons/flag_$flag_icon.png' alt='$flag_icon option'></a>
+		</span>";
 }
