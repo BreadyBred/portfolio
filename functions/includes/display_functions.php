@@ -45,7 +45,7 @@ function display_admin_panel(): string {
 function display_error_page(string $error_code): string {
 
 	$structure = display_html_head($error_code, "body-full-height body-space-between")
-	. display_header()
+	. display_header(true)
 	. display_error_structure($error_code)
 	. display_footer()
 	. display_html_footer();

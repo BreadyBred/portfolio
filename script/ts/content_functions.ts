@@ -18,5 +18,23 @@ function toggle_irrelevant_content(event: Event): void {
         element.style.display = are_currently_visible ? "none" : "flex";
     });
 
-    target.textContent = are_currently_visible ? "Voir tout" : "Réduire";
+    target.textContent = are_currently_visible ? t("Voir tout") : t("Réduire");
+}
+
+function get_current_language() {
+	const path = window.location.pathname;
+	return path.startsWith("/en") ? "en" : "fr";
+}
+
+function t(str: string): string {
+    const translations = {
+		"Voir tout": "See all",
+		"Réduire": "Reduce"
+	};
+
+	if (get_current_language() === "fr") {
+        return str;
+    }
+
+	return translations[str] || str;
 }
