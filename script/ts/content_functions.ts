@@ -23,7 +23,7 @@ function toggle_irrelevant_content(event: Event): void {
 
 function get_current_language() {
 	const path = window.location.pathname;
-	return path.startsWith("/en") ? "en" : "fr";
+	return path.includes("/en") ? "en" : "fr";
 }
 
 function t(str: string): string {
