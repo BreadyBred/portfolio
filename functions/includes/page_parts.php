@@ -213,10 +213,14 @@ function display_error_structure(string $error_type): string {
 		</span>";
 }
 
-function display_footer(): string {
-	return display_palette_choice()
-		. "<footer class='top-border aux-bc'><span>Romain GERARD <a href='" . get_admin_folder() . "'>©</a> " . get_current_year() . "</span></footer>";
+function display_floating_options(): string {
+	return display_palette_choice() . display_language_choice();
 }
+
+function display_footer(): string {
+	return "<footer class='top-border aux-bc'><span>Romain GERARD <a href='" . get_admin_folder() . "'>©</a> " . get_current_year() . "</span></footer>";
+}
+
 
 function display_html_footer(): string {
 	return "</body>
