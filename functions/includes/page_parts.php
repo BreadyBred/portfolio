@@ -25,36 +25,36 @@ function display_header(bool $is_error_page = false): string {
 	return "
 		<header class='bottom-border aux-bc'>
 			<nav>
-				<a href='" . get_site_root() . "' aria-label='" . t("Retour à l'accueil", $is_error_page) . "'>
+				<a href='' aria-label='" . t("Retour à l'accueil", $is_error_page) . "'>
 					<img src='" . get_images_folder() . "/logo/" . get_palette_id() . "/logo_256.png' id='main-logo' alt=''>
 				</a>
 				<ul class='desktop-only'>
 					<li>
-						<a href='" . get_site_root() . "'>
+						<a href=''>
 							" . t("Accueil", $is_error_page) . "
 							<span class='line a-bg'></span>
 						</a>
 					</li>
 					<li>
-						<a href='" . get_site_root() . "#competences-section'>
+						<a href='#competences-section'>
 							" . t("Compétences", $is_error_page) . "
 							<span class='line a-bg'></span>
 						</a>
 					</li>
 					<li>
-						<a href='" . get_site_root() . "#projects-section'>
+						<a href='#projects-section'>
 							" . t("Projets", $is_error_page) . "
 							<span class='line a-bg'></span>
 						</a>
 					</li>
 					<li>
-						<a href='" . get_site_root() . "#experiences-section'>
+						<a href='#experiences-section'>
 							" . t("Parcours", $is_error_page) . "
 							<span class='line a-bg'></span>
 						</a>
 					</li>
 					<li>
-						<a href='" . get_site_root() . "#contact-section'>
+						<a href='#contact-section'>
 							" . t("Contact", $is_error_page) . "
 							<span class='line a-bg'></span>
 						</a>
