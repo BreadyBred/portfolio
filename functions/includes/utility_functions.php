@@ -263,7 +263,7 @@ function get_current_year(): int {
 function t(string $str, bool $is_url_accessible = true): string {
 	static $dictionary = null;
 
-	if(!$is_url_accessible) {
+	if (!$is_url_accessible) {
 		$lang = get_website_language();
 	} else {
 		$lang = get_browser_language();
