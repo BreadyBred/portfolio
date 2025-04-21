@@ -22,6 +22,7 @@ function display_html_head(string $page_title, string $body_class = ""): string 
 }
 
 function display_header(): string {
+	$flag_icon = (get_language() == "fr") ? "en" : "fr";
 	return "
 		<header class='bottom-border aux-bc'>
 			<nav>
@@ -56,6 +57,12 @@ function display_header(): string {
 					<li>
 						<a href='" . get_site_root() . "#contact-section'>
 							" . t("Contact") . "
+							<span class='line a-bg'></span>
+						</a>
+					</li>
+					<li>
+						<a href='" . get_site_root() . "' class='language-trigger'>
+							<img src='" . get_images_folder() . "/language-icons/flag_$flag_icon.png' alt='' class='language-icon'>
 							<span class='line a-bg'></span>
 						</a>
 					</li>

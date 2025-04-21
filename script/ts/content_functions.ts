@@ -38,3 +38,10 @@ function t(str: string): string {
 
 	return translations[str] || str;
 }
+
+function update_language(): void {
+    const current_cookie: string = document.cookie.includes("lang=fr") ? "fr" : "en";
+    const new_cookie: string = (current_cookie === "en") ? "default" : "en";
+    document.cookie = `lang=${new_cookie}; path=/; max-age=${60 * 60 * 24 * 365 * 10}`;
+    location.reload();
+}
