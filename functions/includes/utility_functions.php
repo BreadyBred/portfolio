@@ -207,16 +207,20 @@ function deactivate_session(): void {
 	exit;
 }
 
-// Renvoie "fr" si non initialisé
-function get_website_language(): string {
-    return (strpos($_SERVER['REQUEST_URI'], "/en") !== false) ? "en" : "fr";
+function is_language_active(): bool {
+	return isset($_COOKIE["lang"]);
 }
 
-// Renvoie "en" si non initialisé car cas rare
-function get_browser_language(): string {
-	$lang = substr($_SERVER["HTTP_ACCEPT_LANGUAGE"], 0, 2);
-	return ($lang == "fr") ? $lang : "en";
+function set_language(): void {
+    setcookie("lang", "fr", time() + get_ten_years(), "/");
+	header("Location: " . $_SERVER["PHP_SELF"]);
+	exit();
 }
+
+function get_language(): string {
+    return $_COOKIE["lang"];
+}
+
 
 function load_env(): array {
     $env_file = ((is_on_localhost()) ? $_SERVER["DOCUMENT_ROOT"] . "/travail/portfolio" : $_SERVER["DOCUMENT_ROOT"]) . "/.env";
@@ -260,14 +264,9 @@ function get_current_year(): int {
 	return (int) date("Y");
 }
 
-function t(string $str, bool $is_url_accessible = true): string {
+function t(string $str): string {
 	static $dictionary = null;
-
-	if (!$is_url_accessible) {
-		$lang = get_website_language();
-	} else {
-		$lang = get_browser_language();
-	}
+	$lang = get_language();
 
 	if ($dictionary === null) {
 		$dictionary = load_dictionary($lang);

@@ -21,41 +21,41 @@ function display_html_head(string $page_title, string $body_class = ""): string 
 	";
 }
 
-function display_header(bool $is_error_page = false): string {
+function display_header(): string {
 	return "
 		<header class='bottom-border aux-bc'>
 			<nav>
-				<a href='' aria-label='" . t("Retour à l'accueil", $is_error_page) . "'>
+				<a href='" . get_site_root() . "' aria-label='" . t("Retour à l'accueil") . "'>
 					<img src='" . get_images_folder() . "/logo/" . get_palette_id() . "/logo_256.png' id='main-logo' alt=''>
 				</a>
 				<ul class='desktop-only'>
 					<li>
-						<a href=''>
-							" . t("Accueil", $is_error_page) . "
+						<a href='" . get_site_root() . "'>
+							" . t("Accueil") . "
 							<span class='line a-bg'></span>
 						</a>
 					</li>
 					<li>
-						<a href='#competences-section'>
-							" . t("Compétences", $is_error_page) . "
+						<a href='" . get_site_root() . "#competences-section'>
+							" . t("Compétences") . "
 							<span class='line a-bg'></span>
 						</a>
 					</li>
 					<li>
-						<a href='#projects-section'>
-							" . t("Projets", $is_error_page) . "
+						<a href='" . get_site_root() . "#projects-section'>
+							" . t("Projets") . "
 							<span class='line a-bg'></span>
 						</a>
 					</li>
 					<li>
-						<a href='#experiences-section'>
-							" . t("Parcours", $is_error_page) . "
+						<a href='" . get_site_root() . "#experiences-section'>
+							" . t("Parcours") . "
 							<span class='line a-bg'></span>
 						</a>
 					</li>
 					<li>
-						<a href='#contact-section'>
-							" . t("Contact", $is_error_page) . "
+						<a href='" . get_site_root() . "#contact-section'>
+							" . t("Contact") . "
 							<span class='line a-bg'></span>
 						</a>
 					</li>
@@ -74,7 +74,7 @@ function display_single_project(string $project_name): string {
 		$project_tech .= "<span class='tech a-bc'>$tech</span>";
 	}
 
-	$description_lines = explode(". ", t("$description"));
+	$description_lines = explode(". ", t($description));
 	$description = "";
 	foreach ($description_lines as $description_line) {
 		$point = (in_array(substr($description_line, -1), [".", "!", "?"])) ? "" : ".";
@@ -192,7 +192,7 @@ function display_error_structure(string $error_type): string {
 
 	);
 
-	$error_infos = $error_codes[get_browser_language()][$error_type];
+	$error_infos = $error_codes[get_language()][$error_type];
 	
 	extract($error_infos); //? $page_title, $main_message, $sub_message, $image_link, $home_link_text, $show_link, $additional_class
 
@@ -214,7 +214,7 @@ function display_error_structure(string $error_type): string {
 }
 
 function display_floating_options(): string {
-	return display_palette_choice() . display_language_choice();
+	return display_palette_choice();
 }
 
 function display_footer(): string {

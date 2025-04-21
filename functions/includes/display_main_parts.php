@@ -326,13 +326,3 @@ function display_palette_choice(): string {
 	
 	return $structure;
 }
-
-function display_language_choice(): string {
-	$flag_icon = (get_website_language() === "fr") ? "en" : "fr";
-	$index_url = ($flag_icon === "fr") ? get_site_root() : get_site_root() . "/en";
-
-	return "
-		<span class='language-item'>
-			<a href='$index_url' target='_blank'><img class='language-option' src='" . get_images_folder() . "/language-icons/flag_$flag_icon.png' alt='$flag_icon option'></a>
-		</span>";
-}
