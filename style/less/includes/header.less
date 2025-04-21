@@ -20,10 +20,6 @@ header {
 				position: relative;
 				cursor: pointer;
 
-				.language-icon {
-					width: @s-icon;
-				}
-
 				.line {
 					display: inline-block;
 					position: absolute;
@@ -38,6 +34,17 @@ header {
 				&:hover .line {
 					opacity: 1;
 				}
+			}
+		}
+
+		.language-trigger {
+			&.mobile-only {
+				position: absolute;
+				right: @s-gap;
+			}
+
+			img {
+				width: @s-icon;
 			}
 		}
 	}

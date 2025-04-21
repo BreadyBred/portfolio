@@ -67,6 +67,9 @@ function display_header(): string {
 						</a>
 					</li>
 				</ul>
+				<a href='" . get_site_root() . "' class='language-trigger mobile-only'>
+					<img src='" . get_images_folder() . "/language-icons/flag_$flag_icon.png' alt='' class='language-icon'>
+				</a>
 			</nav>
 		</header>
 	";

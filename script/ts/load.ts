@@ -11,7 +11,10 @@ document.addEventListener("DOMContentLoaded", (): void => {
     });
     
     document.addEventListener("click", hide_panels);
-    document.querySelector(".language-trigger").addEventListener("click", update_language);
+    
+    document.querySelectorAll(".language-trigger").forEach((trigger: HTMLElement) => {
+        trigger.addEventListener("click", update_language);
+    })
 
     document.querySelectorAll('.relevance-button').forEach((button: HTMLElement) => {
         button.addEventListener('click', toggle_irrelevant_content);
