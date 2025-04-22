@@ -21,10 +21,12 @@ function toggle_irrelevant_content(event: Event): void {
     target.textContent = are_currently_visible ? t("Voir tout") : t("Réduire");
 }
 
-function get_current_language() {
-	const path = window.location.pathname;
-	return path.includes("/en") ? "en" : "fr";
+function get_current_language(): string {
+	const match: RegExpMatchArray = document.cookie.match(/(?:^|;\s*)lang=([^;]+)/);
+	const lang: string = match?.[1];
+	return lang;
 }
+
 
 function t(str: string): string {
     const translations = {

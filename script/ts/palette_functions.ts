@@ -43,91 +43,67 @@ async function load_palettes(): Promise<void> {
 }
 
 function initialize_palette(set_palette: string, landing: boolean = true): void {
-    /*
-    element - color_type
-    element - color_type - palette
-
-    elements:
-        a: accent
-        ac: accent-seethrough
-        aux: auxiliary
-        bg: background
-        s: secondary
-        
-    color_types:
-        ac: accent-color
-        bg: background
-        bc: border-color
-        bs: box-shadow
-        fc: font-color
-        tdc: text-decoration-color
-    */
     const elements: string[] = ["a", "as", "aux", "bg", "s"];
     const color_types: string[] = ["ac", "bc", "bg", "bs", "fc", "tdc"];
 
-    // Elements généraux
-    elements.forEach((element: string) => {
-        color_types.forEach((color_type: string) => {
-            const elements_on_page: NodeListOf<Element> = document.querySelectorAll("." + element + "-" + color_type);
-            elements_on_page.forEach((element_on_page: Element) => {
-                const class_name: string = element + "-" + color_type + "-";
-                remove_classes_from_element(element_on_page as HTMLElement, class_name);
+    const all_elements: NodeListOf<Element> = document.querySelectorAll("[class]");
 
-                element_on_page.classList.add(class_name + set_palette);
-            });
-            
-            const elements_on_page_hover: NodeListOf<Element> = document.querySelectorAll("." + element + "-" + color_type + "-hv");
-            elements_on_page_hover.forEach((element_on_page_hover: Element) => {
-                const class_name: string = element + "-" + color_type + "-";
-                remove_classes_from_element(element_on_page_hover as HTMLElement, class_name, "hover");
+    all_elements.forEach((element: Element) => {
+        const class_list: string[] = Array.from(element.classList);
 
-                element_on_page_hover.classList.add(class_name + "-hv-" + set_palette);
-            });
+        class_list.forEach((class_name: string) => {
+            for (const el of elements) {
+                for (const color_type of color_types) {
+                    const base = `${el}-${color_type}`;
+                    const hover = `${el}-${color_type}-hv`;
+
+                    if (class_name === base) {
+                        remove_classes_from_element(element as HTMLElement, `${base}-`);
+                        element.classList.add(`${base}-${set_palette}`);
+                    } else if (class_name === hover) {
+                        remove_classes_from_element(element as HTMLElement, `${base}-`, "hover");
+                        element.classList.add(`${base}-hv-${set_palette}`);
+                    }
+                }
+            }
         });
     });
 
     // Boutons
-    const button_class_name: string = "button-";
-    const buttons: NodeListOf<Element> = document.querySelectorAll(".button");
+    const buttons = document.querySelectorAll(".button");
     buttons.forEach((button: Element) => {
-        remove_classes_from_element(button as HTMLElement, button_class_name);
-        button.classList.add(button_class_name + set_palette);
+        remove_classes_from_element(button as HTMLElement, "button-");
+        button.classList.add(`button-${set_palette}`);
     });
 
-    if (landing) {
-        return;
-    }
-    
-    // Changement dynamique de palette
+    if (landing) return;
+
     // Favicon
-    const favicon: Element | null = document.querySelector("link[rel='shortcut icon']");
+    const favicon = document.querySelector("link[rel='shortcut icon']") as HTMLLinkElement | null;
     if (favicon) {
-        change_source(favicon as HTMLElement, "href", set_palette);
+        change_source(favicon, "href", set_palette);
     }
 
-    // Logo
-    const main_logo: HTMLElement | null = document.getElementById("main-logo");
+    // Logo principal
+    const main_logo = document.getElementById("main-logo") as HTMLImageElement | null;
     if (main_logo) {
-        (main_logo as HTMLImageElement).src = `${get_images_folder()}/logo/${set_palette}/logo_256.png`;
+        main_logo.src = `${get_images_folder()}/logo/${set_palette}/logo_256.png`;
     }
 
     // Compétences
-    document.querySelectorAll(".competence").forEach((competence: Element) => {
-        let previous_src: string = (competence as HTMLImageElement).src;
-        palettes.forEach((palette: string) => {
-            // auxiliary color
-            previous_src = previous_src.replace(palette[0], palettes[parseInt(set_palette)][0]);
-
-            // accent color
-            previous_src = previous_src.replace(palette[1], palettes[parseInt(set_palette)][1]);
-
-            (competence as HTMLImageElement).src = previous_src;
-        });
+    const new_palette = palettes[parseInt(set_palette)];
+    document.querySelectorAll(".competence").forEach((comp: Element) => {
+        const img = comp as HTMLImageElement;
+        let src = img.src;
+        for (const palette of palettes) {
+            src = src.replace(palette[0], new_palette[0]).replace(palette[1], new_palette[1]);
+        }
+        img.src = src;
     });
 
-    // Logo contact
-    document.querySelectorAll(".contact-logo").forEach((contact_logo: Element) => {
-        change_source(contact_logo as HTMLElement, "src", set_palette);
+    // Logos contact
+    document.querySelectorAll(".contact-logo").forEach((logo: Element) => {
+        change_source(logo as HTMLElement, "src", set_palette);
     });
 }
 
