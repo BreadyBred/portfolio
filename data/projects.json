@@ -1,4 +1,27 @@
 {
+    "ustc_dashboard": {
+        "name": "USTC Dashboard",
+        "synopsis": "Interface de gestion personnelle",
+        "description": "« USTC Dashboard » est une plateforme web personnelle conçue pour centraliser tous les aspects du quotidien. Emploi du temps, horaires de bus, suivi de la condition physique et outils de gestion personnelle s'y regroupent dans une interface élégante, réactive et axée sur les données. Entièrement développé à la main en PHP, TypeScript et LESS, le tableau de bord gère dynamiquement les informations grâce à des fichiers JSON, offrant rapidité et flexibilité. Pensé pour un usage personnel, le projet continue d'évoluer avec des fonctionnalités à venir telles qu'un calendrier académique, un gestionnaire de budget et une version web mobile. Un compagnon clair et efficace pour l'organisation, le suivi des progrès et l'équilibre au quotidien.",
+        "date": "31/10/2025",
+        "link": "https://ustc-dashboard.42web.io/",
+        "image_url": "ustc_dashboard",
+        "thumbnail_url": "ustc_dashboard",
+        "important_techs": [
+            "PHP",
+            "Typescript"
+        ],
+        "tech_used": [
+            "HTML5",
+            "CSS3",
+            "LESS",
+            "PHP",
+            "JavaScript",
+            "Typescript",
+            "JSON"
+        ],
+        "to_show": true
+    },
     "minifier_tools": {
         "name": "Minifier Tools",
         "synopsis": "Utilitaire de minification de fichiers",

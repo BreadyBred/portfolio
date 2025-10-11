@@ -108,7 +108,7 @@ function display_single_project(string $project_name): string {
 							$name
 						</span>
 						<span class='small italic'>
-							$synopsis
+							" . t("$synopsis") . "
 						</span>
 					</span>
 					<span class='project-details'>
