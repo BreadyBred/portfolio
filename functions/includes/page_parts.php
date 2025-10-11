@@ -12,7 +12,7 @@ function display_html_head(string $page_title, string $body_class = ""): string 
 			<meta name='description' content='Portfolio de Romain Gérard, développeur web spécialisé en HTML, CSS, JavaScript, PHP, et MySQL. Diplômé après 3 ans en Université de Rouen, en Normandie, avec une expertise en développement de sites internet et applications web.'>
 			<meta name='author' content='Romain GERARD'>
 
-			<link rel='shortcut icon' href='" . get_images_folder() . "/logo/" . get_palette_id() . "/favicon.ico' type='image/x-icon'>
+			<link rel='shortcut icon' href='" . get_images_folder() . "/logo/favicon.ico' type='image/x-icon'>
 			<link rel='stylesheet' href='" . get_site_root() . "/style/style.css?v=" . time() . "'>
 			<script src='" . get_script_folder() . "/script.js'></script>
 			<title>$page_title - Romain GERARD</title>
@@ -27,7 +27,7 @@ function display_header(): string {
 		<header class='bottom-border aux-bc'>
 			<nav>
 				<a href='" . get_site_root() . "' aria-label='" . t("Retour à l'accueil") . "'>
-					<img src='" . get_images_folder() . "/logo/" . get_palette_id() . "/logo_256.png' id='main-logo' alt=''>
+					<img src='" . get_images_folder() . "/logo/logo_256.png' id='main-logo' alt=''>
 				</a>
 				<ul class='desktop-only'>
 					<li>
@@ -221,10 +221,6 @@ function display_error_structure(string $error_type): string {
 			<img src='$image_link' alt='' class='$additional_class'>
 			$home_link
 		</span>";
-}
-
-function display_floating_options(): string {
-	return display_palette_choice();
 }
 
 function display_footer(): string {

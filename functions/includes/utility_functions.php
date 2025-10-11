@@ -221,7 +221,6 @@ function get_language(): string {
     return $_COOKIE["lang"];
 }
 
-
 function load_env(): array {
     $env_file = ((is_on_localhost()) ? $_SERVER["DOCUMENT_ROOT"] . "/travail/portfolio" : $_SERVER["DOCUMENT_ROOT"]) . "/.env";
     

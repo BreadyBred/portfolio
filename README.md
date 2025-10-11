@@ -12,7 +12,6 @@ This repository contains the source code for my personal portfolio website. It's
     *   Projects
     *   Work Experience & Education
     *   Contact
-*   **Dynamic Color Palette:** Users can dynamically change the website's color scheme for a personalized experience.
 *   **Responsive Design:** The website is designed to be responsive and adapt to different screen sizes.
 
 ## Technologies Used

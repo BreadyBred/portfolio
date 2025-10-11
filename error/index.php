@@ -10,10 +10,6 @@ if ($_GET["e"] == 503 && !is_maintenance_mode_on()) {
 	redirect_to_site_root();
 }
 
-if (!is_palette_active()) {
-	set_primary_palette();
-}
-
 if (!is_language_active()) {
 	set_language();
 }

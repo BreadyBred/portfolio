@@ -281,8 +281,7 @@ function display_experiences(): string {
 }
 
 function display_contact(): string {
-	$palette = get_palette_id();
-	$images_path = get_images_folder() . "/contact-logos/$palette";
+	$images_path = get_images_folder() . "/contact-logos";
 
 	return "
 		<section class='contact-section' id='contact-section'>
@@ -312,17 +311,4 @@ function display_contact(): string {
 				</a>
 			</span>
 		</section>";
-}
-
-function display_palette_choice(): string {
-	$structure = "<span class='palette-item'>";
-	$structure .= "<img class='palette-option palette-trigger' src='" . get_images_folder() . "/palette-icons/palette_plus.png' alt='Palette picker'>";
-	
-	for ($i = 0; $i < count(get_active_palettes()); $i++) {
-		$structure .= "<img class='palette-option palette' src='" . get_images_folder() . "/palette-icons/$i.png' data-id='$i' alt='Palette $i'>";
-	}
-	
-	$structure .= "</span>";
-	
-	return $structure;
 }

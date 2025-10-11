@@ -5,6 +5,11 @@
 	src: url('../medias/fonts/caviar_dreams.woff') format('woff');
 }
 
+@background-c: #031927;
+@auxiliary-c: #508AA8;
+@secondary-c: #9DD1F1;
+@accent-c: #F0F3BD;
+@accent-c-seethrough: #F0F3BD53;
 @grey-c: #929292;
 @white-c: #F0FFF0;
 @success-c: #4ADE80;
@@ -14,6 +19,118 @@
 
 @desktop: 768px;
 @large-desktop: 1440px;
+
+.a-ac {
+	accent-color: @accent-c;
+}
+.a-bg {
+	background-color: @accent-c;
+}
+.a-bc {
+	border-color: @accent-c !important;
+}
+.a-bs {
+	color: @accent-c;
+}
+.a-fc {
+	color: @accent-c;
+}
+.a-tdc {
+	text-decoration-color: @accent-c !important;
+}
+.a-tdc-hv:hover {
+	text-decoration-color: @accent-c !important;
+}
+
+.ac-ac {
+	accent-color: @accent-c-seethrough;
+}
+.ac-bg {
+	background-color: @accent-c-seethrough;
+}
+.ac-bc {
+	border-color: @accent-c-seethrough !important;
+}
+.ac-bs {
+	color: @accent-c-seethrough;
+}
+.ac-fc {
+	color: @accent-c-seethrough;
+}
+.ac-tdc {
+	text-decoration-color: @accent-c-seethrough !important;
+}
+
+.aux-ac {
+	accent-color: @auxiliary-c;
+}
+.aux-bg {
+	background-color: @auxiliary-c;
+}
+.aux-bg-hv:hover {
+	background-color: @auxiliary-c;
+}
+.aux-bc {
+	border-color: @auxiliary-c !important;
+}
+.aux-bs {
+	color: @auxiliary-c;
+}
+.aux-fc {
+	color: @auxiliary-c;
+}
+.aux-tdc {
+	text-decoration-color: @auxiliary-c !important;
+}
+
+.bg-ac {
+	accent-color: @background-c;
+}
+.bg-bg {
+	background-color: @background-c;
+}
+.bg-bc {
+	border-color: @background-c !important;
+}
+.bg-bs {
+	color: @background-c;
+}
+.bg-fc {
+	color: @background-c;
+}
+.bg-tdc {
+	text-decoration-color: @background-c !important;
+}
+
+.s-ac {
+	accent-color: @secondary-c;
+}
+.s-bg {
+	background-color: @secondary-c;
+}
+.s-bc {
+	border-color: @secondary-c !important;
+}
+.s-bs {
+	color: @secondary-c;
+}
+.s-fc {
+	color: @secondary-c;
+}
+.s-tdc {
+	text-decoration-color: @secondary-c !important;
+}
+
+.button {
+	color: @white-c;
+	background-color: @auxiliary-c;
+	box-shadow: 0 0 10px 0 @accent-c-seethrough;
+
+	&:hover {
+		box-shadow: 0 0 20px 0 @accent-c-seethrough;
+		background-color: @secondary-c;
+	}
+}
 
 @media (min-width: @desktop) and (max-width: @large-desktop) {
 	@title-fs: 22px;

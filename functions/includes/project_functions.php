@@ -91,6 +91,5 @@ function move_multiple_images(string $image_tmp, string $repository, string $ima
 }
 
 function get_competence_link(string $formatted_competence, string $competence): string {
-	$color = get_palette_colors();
-	return "https://img.shields.io/badge/$competence-%23$color[0]?style=for-the-badge&logo=$formatted_competence&logoColor=$color[1]";
+	return "https://img.shields.io/badge/$competence-%23508AA8?style=for-the-badge&logo=$formatted_competence&logoColor=F0F3BD";
 }

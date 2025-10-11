@@ -8,7 +8,6 @@ function display_landing_page(): string {
 	. display_projects()
 	. display_experiences()
 	. display_contact()
-	. display_floating_options()
 	. display_footer()
 	. display_html_footer();
 }
