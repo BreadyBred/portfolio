@@ -54,8 +54,8 @@ function initialize_palette(set_palette: string, landing: boolean = true): void 
         class_list.forEach((class_name: string) => {
             for (const el of elements) {
                 for (const color_type of color_types) {
-                    const base = `${el}-${color_type}`;
-                    const hover = `${el}-${color_type}-hv`;
+                    const base: string = `${el}-${color_type}`;
+                    const hover: string = `${el}-${color_type}-hv`;
 
                     if (class_name === base) {
                         remove_classes_from_element(element as HTMLElement, `${base}-`);
@@ -70,7 +70,7 @@ function initialize_palette(set_palette: string, landing: boolean = true): void 
     });
 
     // Boutons
-    const buttons = document.querySelectorAll(".button");
+    const buttons: NodeListOf<Element> = document.querySelectorAll(".button");
     buttons.forEach((button: Element) => {
         remove_classes_from_element(button as HTMLElement, "button-");
         button.classList.add(`button-${set_palette}`);
@@ -91,10 +91,10 @@ function initialize_palette(set_palette: string, landing: boolean = true): void 
     }
 
     // Compétences
-    const new_palette = palettes[parseInt(set_palette)];
+    const new_palette: string = palettes[parseInt(set_palette)];
     document.querySelectorAll(".competence").forEach((comp: Element) => {
         const img = comp as HTMLImageElement;
-        let src = img.src;
+        let src: string = img.src;
         for (const palette of palettes) {
             src = src.replace(palette[0], new_palette[0]).replace(palette[1], new_palette[1]);
         }
